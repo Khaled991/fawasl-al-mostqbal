@@ -68,3 +68,7 @@ a {
 .custom-button {
   @apply bg-primary py-4 text-white font-bold rounded-xl text-xl my-2;
 }
+
+.custom-button:hover {
+  background-color: #057249;
+}
