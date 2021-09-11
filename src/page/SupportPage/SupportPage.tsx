@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import "./SupportPage.scss";
 import questions from "./supportPageData";
+import ReactPageScroller from "react-page-scroller";
 
 const SupportPage = (): ReactElement => {
   const RenderQuestions = (): ReactElement[] => {
@@ -41,21 +42,38 @@ const SupportPage = (): ReactElement => {
   }
 
   return (
-    <div className="support-page">
-      <div className="popular-question-text">
-        <div className="title-green-border-text-container">
-          <span className="title-green-text">شيوعاً</span>
-          <div className="title-green-border" />
+    <ReactPageScroller>
+      <div className="support-page pr-32">
+        <div className="popular-question-text">
+          <div className="title-green-border-text-container">
+            <span className="title-green-text">شيوعاً</span>
+            <div className="title-green-border" />
+          </div>
+          <div className="title-black-border-text-container">
+            <span className="title-black-text">المواضيع الأكثر</span>
+            <div className="title-black-border" />
+          </div>
         </div>
-        <div className="title-black-border-text-container">
-          <span className="title-black-text">المواضيع الأكثر</span>
-          <div className="title-black-border" />
+        <div className="questions-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+          {RenderQuestions()}
         </div>
       </div>
-      <div className="questions-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
-        {RenderQuestions()}
+      <div className="support-page  pr-32">
+        <div className="popular-question-text">
+          <div className="title-green-border-text-container">
+            <span className="title-green-text">شيوعاً</span>
+            <div className="title-green-border" />
+          </div>
+          <div className="title-black-border-text-container">
+            <span className="title-black-text">المواضيع الأكثر</span>
+            <div className="title-black-border" />
+          </div>
+        </div>
+        <div className="questions-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+          {RenderQuestions()}
+        </div>
       </div>
-    </div>
+    </ReactPageScroller>
   );
 };
 
