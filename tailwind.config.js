@@ -15,6 +15,7 @@ module.exports = {
       },
       backgroundImage: {
         complaint: "url('assets/Img/complaintImage.svg')",
+        chat: "url('assets/Img/chatImage.svg')",
       },
     },
   },

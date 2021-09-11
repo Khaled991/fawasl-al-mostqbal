@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 import "./SupportPage.scss";
 import questions from "./supportPageData";
 import ReactPageScroller from "react-page-scroller";
+import chatIcon from "../../assets/Icons/chat.svg";
 
 const SupportPage = (): ReactElement => {
   const RenderQuestions = (): ReactElement[] => {
@@ -31,7 +32,9 @@ const SupportPage = (): ReactElement => {
   function renderQuestion(questionText: string): ReactElement | undefined {
     if (questionText)
       return (
-        <span className="questions-text flex flex-col">- {questionText} </span>
+        <span className="questions-text flex flex-col" style={{ fontSize: 25 }}>
+          - {questionText}{" "}
+        </span>
       );
   }
 
@@ -61,7 +64,7 @@ const SupportPage = (): ReactElement => {
     );
   }
 
-  function ComplainPage(): ReactElement {
+  function ComplaintPage(): ReactElement {
     return (
       <div
         className="bg-bottom-circle w-screen h-screen pr-32 grid grid-cols-2 gap-20 d1"
@@ -84,12 +87,34 @@ const SupportPage = (): ReactElement => {
               rows={10}
               placeholder="تفاصيل الشكوى"
             ></textarea>
-            <button className="bg-primary w-44 py-4 text-white font-bold rounded-xl text-xl my-2">
-              إرسال
+            <button className="custom-button w-44">إرسال</button>
+          </div>
+        </div>
+        <div className="bg-complaint bg-no-repeat bg-center w-11/12" />
+      </div>
+    );
+  }
+
+  function ContactUsPage(): ReactElement {
+    return (
+      <div className="w-screen h-screen pr-32 grid grid-cols-2 d1" dir="rtl">
+        <div className="bg-chat bg-no-repeat bg-bottom bg-contain" />
+        <div className="flex justify-center items-center">
+          <div className="w-10/12 flex flex-col items-center">
+            <div className="text-5xl font-bold mb-4 text-center leading-snug">
+              <div>
+                يمكنك التحدث مع أحد ممثلي{" "}
+                <span className="text-primary">خدمة العملاء</span> إن لم تجد حل
+                لمشكلتك <div>نحن نعمل على الدوام</div>{" "}
+                <span className="text-primary">٢٤</span> ساعة
+              </div>
+            </div>
+            <button className="custom-button flex justify-center px-20 w-3/4 items-center">
+              <img src={chatIcon} alt="chat icon" className="h-6 ml-3" />
+              فتح محادثة
             </button>
           </div>
         </div>
-        <div className="bg-complaint bg-no-repeat bg-center w-11/12"></div>
       </div>
     );
   }
@@ -97,7 +122,8 @@ const SupportPage = (): ReactElement => {
   return (
     <ReactPageScroller>
       <QuestionsPage />
-      <ComplainPage />
+      <ComplaintPage />
+      <ContactUsPage />
     </ReactPageScroller>
   );
 };
