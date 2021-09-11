@@ -5,8 +5,9 @@ import questions from "./supportPageData";
 const SupportPage = (): ReactElement => {
   const RenderQuestions = (): ReactElement[] => {
     const questionsBlocks = [];
-    for (let i = 0; i < questions.length; i += 3) {
-      const blockElements = questions.slice(i, i + 3);
+    const blockItemsCount = 3;
+    for (let i = 0; i < questions.length; i += blockItemsCount) {
+      const blockElements = questions.slice(i, i + blockItemsCount);
       const questionsBlockArray = renderQuestionsBlockArray(blockElements);
       const questionsBlockElement = renderQuestionsBlock(questionsBlockArray);
       questionsBlocks.push(questionsBlockElement);
