@@ -1,0 +1,58 @@
+@import './utils/constants.scss';
+
+@font-face {
+  font-family: Tajawal;
+  src: url(assets/Fonts/Tajawal-Regular.ttf);
+}
+@font-face {
+  font-family: Tajawal;
+  src: url(assets/Fonts/Tajawal-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: Tajawal;
+  src: url(assets/Fonts/Tajawal-Light.ttf);
+  font-weight: 200;
+}
+@font-face {
+  font-family: Tajawal;
+  src: url(assets/Fonts/Tajawal-Bold.ttf);
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+  font-family: Tajawal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  color: $darkColor;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+a {
+  text-decoration: none;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  outline: none;
+}
+.background {
+  height: 100vh;
+  width: 100%;
+  background-image: url('src/assets/Img/backgrond.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';

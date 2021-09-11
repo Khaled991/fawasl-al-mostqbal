@@ -1,0 +1,62 @@
+@import '../../utils/constants.scss';
+
+.support-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // background-color: burlywood;
+  .popular-question-text {
+    display: flex;
+    margin-top: 30px;
+    .title-black-border-text-container {
+      .title-black-text {
+        font-size: 40px;
+        font-weight: bold;
+        color: $darkColor;
+      }
+      .title-black-border {
+        height: 2.3px;
+        margin-top: 2px;
+        background-color: $darkColor;
+      }
+    }
+    .title-green-border-text-container {
+      .title-green-text {
+        font-size: 40px;
+        font-weight: bold;
+        margin-right: 10px;
+        color: $primarycolor;
+      }
+      .title-green-border {
+        height: 2.3px;
+        width: 90%;
+        margin-top: 2px;
+        background-color: $primarycolor;
+      }
+    }
+  }
+  .questions-container {
+    direction: rtl;
+    width: 100%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 90%;
+    // align-items: flex-start;
+    background-color: #ffa;
+    .questions-text {
+      font-size: 20px;
+      color: $darkColor;
+      cursor: pointer;
+      margin-top: 10px;
+      &:hover {
+        color: $primarycolor;
+        // font-weight: bold;
+      }
+    }
+  }
+}
