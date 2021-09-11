@@ -41,38 +41,63 @@ const SupportPage = (): ReactElement => {
     return <div>{questionsElements}</div>;
   }
 
+  function QuestionsPage(): ReactElement {
+    return (
+      <div className="questions-page-container pr-32">
+        <div className="popular-question-text">
+          <div className="title-green-border-text-container">
+            <span className="title-green-text">شيوعاً</span>
+            <div className="title-green-border" />
+          </div>
+          <div className="title-black-border-text-container">
+            <span className="title-black-text">المواضيع الأكثر</span>
+            <div className="title-black-border" />
+          </div>
+        </div>
+        <div className="questions-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+          {RenderQuestions()}
+        </div>
+      </div>
+    );
+  }
+
+  function ComplainPage(): ReactElement {
+    return (
+      <div
+        className="bg-bottom-circle w-screen h-screen pr-32 grid grid-cols-2 gap-20 d1"
+        dir="rtl"
+      >
+        <div className="flex  justify-center items-center">
+          <div className="w-10/12 flex flex-col">
+            <div className="text-5xl font-bold mb-4">
+              تقديم <span className="text-primary">شكوى</span>
+            </div>
+            <input placeholder="الاسم" className="custom-input" />
+            <input
+              placeholder="البريد الإلكتروني"
+              className="custom-input"
+              type="email"
+            />
+            <textarea
+              className="custom-input"
+              cols={30}
+              rows={10}
+              placeholder="تفاصيل الشكوى"
+            ></textarea>
+            <button className="bg-primary w-44 py-4 text-white font-bold rounded-xl text-xl my-2">
+              إرسال
+            </button>
+          </div>
+        </div>
+        <div className="bg-complaint bg-no-repeat bg-center w-11/12"></div>
+      </div>
+    );
+  }
+
   return (
     <ReactPageScroller>
-      <div className="support-page pr-32">
-        <div className="popular-question-text">
-          <div className="title-green-border-text-container">
-            <span className="title-green-text">شيوعاً</span>
-            <div className="title-green-border" />
-          </div>
-          <div className="title-black-border-text-container">
-            <span className="title-black-text">المواضيع الأكثر</span>
-            <div className="title-black-border" />
-          </div>
-        </div>
-        <div className="questions-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
-          {RenderQuestions()}
-        </div>
-      </div>
-      <div className="support-page  pr-32">
-        <div className="popular-question-text">
-          <div className="title-green-border-text-container">
-            <span className="title-green-text">شيوعاً</span>
-            <div className="title-green-border" />
-          </div>
-          <div className="title-black-border-text-container">
-            <span className="title-black-text">المواضيع الأكثر</span>
-            <div className="title-black-border" />
-          </div>
-        </div>
-        <div className="questions-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
-          {RenderQuestions()}
-        </div>
-      </div>
+      <QuestionsPage />
+      <ComplainPage />
     </ReactPageScroller>
   );
 };

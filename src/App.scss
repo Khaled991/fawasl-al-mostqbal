@@ -2,21 +2,21 @@
 
 @font-face {
   font-family: Tajawal;
-  src: url(assets/Fonts/Tajawal-Regular.ttf);
+  src: url(./assets/Fonts/Tajawal-Regular.ttf);
 }
 @font-face {
   font-family: Tajawal;
-  src: url(assets/Fonts/Tajawal-Medium.ttf);
+  src: url(./assets/Fonts/Tajawal-Medium.ttf);
   font-weight: 500;
 }
 @font-face {
   font-family: Tajawal;
-  src: url(assets/Fonts/Tajawal-Light.ttf);
+  src: url(./assets/Fonts/Tajawal-Light.ttf);
   font-weight: 200;
 }
 @font-face {
   font-family: Tajawal;
-  src: url(assets/Fonts/Tajawal-Bold.ttf);
+  src: url(./assets/Fonts/Tajawal-Bold.ttf);
   font-weight: bold;
 }
 
@@ -60,3 +60,7 @@ a {
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.custom-input {
+  @apply border-primary border-2 border-solid rounded-xl px-4 py-3 my-2 text-lg;
+}
