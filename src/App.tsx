@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { ReactElement, lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import './App.scss';
@@ -6,7 +6,7 @@ import './App.scss';
 const SupportPage = lazy(() => import('./page/SupportPage/SupportPage'));
 const HomePage = lazy(() => import('./page/HomePage/HomePage'));
 
-const App = () => {
+const App = (): ReactElement => {
   return (
     <BrowserRouter>
       <NavBar />

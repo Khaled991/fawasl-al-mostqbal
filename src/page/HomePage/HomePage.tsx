@@ -1,11 +1,12 @@
 import './HomePage.scss';
+import HomePageImage from '../../assets/Img/homePageImage.svg';
 
 const HomePage = () => {
   return (
     <div className="home-page absolute md:relative">
       <div className="home-page-image-container w-full z--1 right-0 md:z-1">
         <img
-          src="src/assets/Img/homePageImage.svg"
+          src={HomePageImage}
           alt="homePageImage"
           className="home-page-image"
         />
@@ -13,7 +14,7 @@ const HomePage = () => {
       {/* lg:text-3xl xl:text-4xl  */}
       <div className="css-typing md:text-3xl md:leading-loose lg:text-4xl lg:leading-lg xl:text-5xl xl:leading-xl">
         <p>
-          لم يكن من السهل ادارة{' '}
+          لم يكن من السهل ادارة
           <span className="special-text-color">نقاط البيع</span>
         </p>
         <p>

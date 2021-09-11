@@ -1,7 +1,7 @@
-import { Component } from 'solid-js';
+import { ReactElement } from 'react';
 import './SupportPage.scss';
 
-const SupportPage: Component = () => {
+const SupportPage = (): ReactElement => {
   return (
     <div className="support-page">
       <div className="popular-question-text">

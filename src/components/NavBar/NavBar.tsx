@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.scss';
+import Logo from '../../assets/Img/logo.svg';
+import HomeIcon from '../../assets/Icons/home.svg';
+import VideosIcon from '../../assets/Icons/videos.svg';
+import DistributorsIcon from '../../assets/Icons/distributors.svg';
+import ServicesIcon from '../../assets/Icons/services.svg';
+import SupportIcon from '../../assets/Icons/support.svg';
 
 const NavBar = () => {
   const [menuIsOpened, setMenuIsOpened] = useState(false);
@@ -28,37 +34,25 @@ const NavBar = () => {
         } md:right-5 transition-all duration-500`}
       >
         <div className="navbar-items">
-          <img
-            src="src/assets/Img/logo.svg"
-            alt="logo"
-            className="navbar-logo"
-          />
+          <img src={Logo} alt="logo" className="navbar-logo" />
           <div className="menu-icon"></div>
           <div className="nav-menu">
             <Link to="/">
               <div className="nav-link-container">
-                <img
-                  src="src/assets/Icons/home.svg"
-                  alt="navIcon"
-                  className="nav-icon"
-                />
+                <img src={HomeIcon} alt="navIcon" className="nav-icon" />
                 <span className="nav-link">الرئيسية</span>
               </div>
             </Link>
             <Link to="/">
               <div className="nav-link-container">
-                <img
-                  src="src/assets/Icons/videos.svg"
-                  alt="navIcon"
-                  className="nav-icon"
-                />
+                <img src={VideosIcon} alt="navIcon" className="nav-icon" />
                 <span className="nav-link">فيديوهات</span>
               </div>
             </Link>
             <Link to="/">
               <div className="nav-link-container">
                 <img
-                  src="src/assets/Icons/distributors.svg"
+                  src={DistributorsIcon}
                   alt="navIcon"
                   className="nav-icon"
                 />
@@ -67,21 +61,13 @@ const NavBar = () => {
             </Link>
             <Link to="/">
               <div className="nav-link-container">
-                <img
-                  src="src/assets/Icons/services.svg"
-                  alt="navIcon"
-                  className="nav-icon"
-                />
+                <img src={ServicesIcon} alt="navIcon" className="nav-icon" />
                 <span className="nav-link">خدماتنا</span>
               </div>
             </Link>
             <Link to="/support">
               <div className="nav-link-container">
-                <img
-                  src="src/assets/Icons/support.svg"
-                  alt="navIcon"
-                  className="nav-icon"
-                />
+                <img src={SupportIcon} alt="navIcon" className="nav-icon" />
                 <span className="nav-link">الدعم</span>
               </div>
             </Link>
