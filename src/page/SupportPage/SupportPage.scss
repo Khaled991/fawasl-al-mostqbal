@@ -1,4 +1,4 @@
-@import '../../utils/constants.scss';
+@import "../../utils/constants.scss";
 
 .support-page {
   height: 100%;
@@ -40,7 +40,6 @@
     direction: rtl;
     width: 100%;
     padding: 20px;
-    background-color: rgb(211, 255, 229);
     .questions-text {
       font-size: 20px;
       color: $darkColor;
@@ -48,7 +47,6 @@
       margin-top: 10px;
       &:hover {
         color: $primarycolor;
-        // font-weight: bold;
       }
     }
   }

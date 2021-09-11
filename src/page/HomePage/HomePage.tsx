@@ -1,5 +1,5 @@
-import './HomePage.scss';
-import HomePageImage from '../../assets/Img/homePageImage.svg';
+import "./HomePage.scss";
+import HomePageImage from "../../assets/Img/homePageImage.svg";
 
 const HomePage = () => {
   return (
@@ -14,7 +14,7 @@ const HomePage = () => {
       {/* lg:text-3xl xl:text-4xl  */}
       <div className="css-typing md:text-3xl md:leading-loose lg:text-4xl lg:leading-lg xl:text-5xl xl:leading-xl">
         <p>
-          لم يكن من السهل ادارة
+          لم يكن من السهل ادارة{" "}
           <span className="special-text-color">نقاط البيع</span>
         </p>
         <p>

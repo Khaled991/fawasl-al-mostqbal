@@ -1,31 +1,43 @@
-import { ReactElement } from 'react';
-import './SupportPage.scss';
+import { ReactElement } from "react";
+import "./SupportPage.scss";
+import questions from "./supportPageData";
 
 const SupportPage = (): ReactElement => {
-  const questions = Array.from({ length: 100 }).map(() => 'طريقة التثبيت');
-
   const RenderQuestions = (): ReactElement[] => {
     const questionsBlocks = [];
     for (let i = 0; i < questions.length; i += 3) {
-      const questionsBlockArray = [];
-      for (let j = i; j < i + 3; j++) {
-        const questionElement = renderQuestion(questions[j]);
-        questionsBlockArray.push(questionElement);
-      }
+      const blockElements = questions.slice(i, i + 3);
+      const questionsBlockArray = renderQuestionsBlockArray(blockElements);
       const questionsBlockElement = renderQuestionsBlock(questionsBlockArray);
       questionsBlocks.push(questionsBlockElement);
     }
 
-    function renderQuestion(questionText: string): ReactElement {
-      return <span className="questions-text">{questionText}</span>;
-    }
-
-    function renderQuestionsBlock(questionsElements: ReactElement[]) {
-      return <div>{questionsElements}</div>;
-    }
-
     return questionsBlocks;
   };
+
+  function renderQuestionsBlockArray(questions: string[]) {
+    const questionsBlockArray = [];
+
+    for (let i = 0; i < questions.length; i++) {
+      const questionElement = renderQuestion(questions[i]);
+      if (questionElement != null) questionsBlockArray.push(questionElement);
+    }
+
+    return questionsBlockArray;
+  }
+
+  function renderQuestion(questionText: string): ReactElement | undefined {
+    if (questionText)
+      return (
+        <span className="questions-text flex flex-col">- {questionText} </span>
+      );
+  }
+
+  function renderQuestionsBlock(
+    questionsElements: ReactElement[]
+  ): ReactElement {
+    return <div>{questionsElements}</div>;
+  }
 
   return (
     <div className="support-page">
@@ -39,11 +51,8 @@ const SupportPage = (): ReactElement => {
           <div className="title-black-border" />
         </div>
       </div>
-      <div className="questions-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
-        {/* {Array.from({ length: 100 }).map(() => (
-          <span className="questions-text">- طريقة التثبيت</span>
-        ))} */}
-        {RenderQuestions}
+      <div className="questions-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+        {RenderQuestions()}
       </div>
     </div>
   );
