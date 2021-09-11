@@ -39,15 +39,8 @@
   .questions-container {
     direction: rtl;
     width: 100%;
-    padding-right: 10%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    max-height: 90%;
-    // align-items: flex-start;
-    background-color: #ffa;
+    padding: 20px;
+    background-color: rgb(211, 255, 229);
     .questions-text {
       font-size: 20px;
       color: $darkColor;
