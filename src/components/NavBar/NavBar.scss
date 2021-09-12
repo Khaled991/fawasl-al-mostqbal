@@ -18,6 +18,16 @@
     .navbar-logo {
       width: 85px;
       padding: 20px;
+      fill: $whiteColor;
+      cursor: pointer;
+      transition: 0.8s;
+      transform: scale(1, 1);
+      &:hover {
+        transform: scale(1.1, 1.1);
+      }
+      &:active {
+        transform: scale(0.5, 0.5);
+      }
     }
 
     .nav-menu {
