@@ -132,7 +132,7 @@ const SupportPage = (): ReactElement => {
               className="w-4 cursor-pointer rounded"
               onClick={() => setShowChat(false)}
             />
-            <div className="text-xl">المحادثة</div>
+            <div className="text-xl font-bold">المحادثة</div>
             <img
               src={callIcon}
               alt="call"
