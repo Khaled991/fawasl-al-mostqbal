@@ -1,21 +1,21 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './NavBar.scss';
-import Logo from '../../assets/Img/logo.svg';
-import HomeIcon from '../../assets/Icons/home.svg';
-import VideosIcon from '../../assets/Icons/videos.svg';
-import DistributorsIcon from '../../assets/Icons/distributors.svg';
-import ServicesIcon from '../../assets/Icons/services.svg';
-import SupportIcon from '../../assets/Icons/support.svg';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import "./NavBar.scss";
+import Logo from "../../assets/Img/logo.svg";
+import HomeIcon from "../../assets/Icons/home.svg";
+import VideosIcon from "../../assets/Icons/videos.svg";
+import DistributorsIcon from "../../assets/Icons/distributors.svg";
+import ServicesIcon from "../../assets/Icons/services.svg";
+import SupportIcon from "../../assets/Icons/support.svg";
 
 const NavBar = () => {
   const [menuIsOpened, setMenuIsOpened] = useState(false);
 
   return (
-    <div className="z-10">
+    <div className="z-100">
       <div
         className={`md:hidden absolute z-50 right-1 pointer flex flex-col items-end mr-2 mt-3 ${
-          menuIsOpened ? 'opacity-0' : ''
+          menuIsOpened ? "opacity-0" : ""
         } transition-all duration-500`}
         onClick={() => setMenuIsOpened(true)}
       >
@@ -30,7 +30,7 @@ const NavBar = () => {
       </div>
       <nav
         className={`navbar-items-container ${
-          menuIsOpened ? 'right-5' : ''
+          menuIsOpened ? "right-5" : ""
         } md:right-5 transition-all duration-500`}
       >
         <div className="navbar-items">

@@ -9,14 +9,16 @@ const HomePage = lazy(() => import("./page/HomePage/HomePage"));
 const App = (): ReactElement => {
   return (
     <BrowserRouter>
-      <NavBar />
-      <div className="pr-8 md:pr-32">
-        <Switch>
-          <Suspense fallback={<div>loading...</div>}>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/support" component={SupportPage} />
-          </Suspense>
-        </Switch>
+      <div className="absolute">
+        <NavBar />
+        <div className="z-1">
+          <Switch>
+            <Suspense fallback={<div>loading...</div>}>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/support" component={SupportPage} />
+            </Suspense>
+          </Switch>
+        </div>
       </div>
     </BrowserRouter>
   );

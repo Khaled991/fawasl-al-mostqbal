@@ -17,6 +17,9 @@ module.exports = {
         complaint: "url('assets/Img/complaintImage.svg')",
         chat: "url('assets/Img/chatImage.svg')",
       },
+      animation: {
+        spin: "spin 15s linear infinite",
+      },
     },
   },
   variants: {

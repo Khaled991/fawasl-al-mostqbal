@@ -3,6 +3,9 @@ import "./SupportPage.scss";
 import questions from "./supportPageData";
 import ReactPageScroller from "react-page-scroller";
 import chatIcon from "../../assets/Icons/chat.svg";
+import chat from "../../assets/Img/chatImage.svg";
+import circle from "../../assets/Img/circle.svg";
+import complaint from "../../assets/Img/complaintImage.svg";
 
 const SupportPage = (): ReactElement => {
   const RenderQuestions = (): ReactElement[] => {
@@ -66,43 +69,66 @@ const SupportPage = (): ReactElement => {
 
   function ComplaintPage(): ReactElement {
     return (
-      <div
-        className="bg-bottom-circle w-screen h-screen pr-32 grid grid-cols-2 gap-20 d1"
-        dir="rtl"
-      >
-        <div className="flex  justify-center items-center">
-          <div className="w-10/12 flex flex-col">
-            <div className="text-5xl font-bold mb-4">
-              تقديم <span className="text-primary">شكوى</span>
+      <div className="relative">
+        <div className="w-screen h-screen grid grid-cols-2 grid-rows-2 md:pr-32 gap-10 place-content-center">
+          <img
+            className="w-full lg:p-10 xl:p-28 hidden lg:block row-span-2 self-center"
+            src={complaint}
+            alt="complaint"
+          />
+          <div
+            className="flex justify-center items-center row-span-2 col-span-2 lg:col-span-1"
+            dir="rtl"
+          >
+            <div className="w-10/12 flex flex-col">
+              <div className="text-5xl font-bold mb-4">
+                تقديم <span className="text-primary">شكوى</span>
+              </div>
+              <input placeholder="الاسم" className="custom-input" />
+              <input
+                placeholder="البريد الإلكتروني"
+                className="custom-input"
+                type="email"
+              />
+              <textarea
+                className="custom-input"
+                cols={30}
+                rows={10}
+                placeholder="تفاصيل الشكوى"
+              ></textarea>
+              <button className="custom-button w-44">إرسال</button>
             </div>
-            <input placeholder="الاسم" className="custom-input" />
-            <input
-              placeholder="البريد الإلكتروني"
-              className="custom-input"
-              type="email"
-            />
-            <textarea
-              className="custom-input"
-              cols={30}
-              rows={10}
-              placeholder="تفاصيل الشكوى"
-            ></textarea>
-            <button className="custom-button w-44">إرسال</button>
           </div>
         </div>
-        <div className="bg-complaint bg-no-repeat bg-center w-11/12" />
+        <img
+          src={circle}
+          alt="circle"
+          className="w-80 sm:w-96 h-80 sm:h-96 absolute animate-spin dura"
+          style={{
+            top: "-12rem",
+            left: "-12rem",
+          }}
+        />
       </div>
     );
   }
 
   function ContactUsPage(): ReactElement {
     return (
-      <div className="w-screen h-screen pr-32 grid grid-cols-2 d1" dir="rtl">
-        <div className="bg-chat bg-no-repeat bg-bottom bg-contain" />
-        <div className="flex justify-center items-center">
-          <div className="w-10/12 flex flex-col items-center">
-            <div className="text-5xl font-bold mb-4 text-center leading-snug">
-              <div>
+      <div className="w-screen h-screen grid grid-cols-2 grid-rows-4 gap-10 md:pr-32">
+        <div
+          className="
+          col-span-2
+          row-span-3
+          md:row-span-2
+          xl:row-span-4
+          xl:col-span-1
+          place-self-center
+        "
+        >
+          <div className="flex flex-col items-center md:px-20">
+            <div className="font-bold mb-4 text-center leading-snug text-4xl xl:text-5xl xl:leading-normal">
+              <div className="w-full">
                 يمكنك التحدث مع أحد ممثلي{" "}
                 <span className="text-primary">خدمة العملاء</span> إن لم تجد حل
                 لمشكلتك <div>نحن نعمل على الدوام</div>{" "}
@@ -110,11 +136,27 @@ const SupportPage = (): ReactElement => {
               </div>
             </div>
             <button className="custom-button flex justify-center px-20 w-3/4 items-center">
-              <img src={chatIcon} alt="chat icon" className="h-6 ml-3" />
               فتح محادثة
+              <img src={chatIcon} alt="chat icon" className="h-6 ml-3" />
             </button>
           </div>
         </div>
+
+        <img
+          className="
+            h-full
+            row-span-1
+            col-span-2
+            place-self-center
+            md:row-span-2
+            xl:h-auto
+            xl:col-span-1
+            xl:row-span-4
+            xl:place-self-end
+          "
+          src={chat}
+          alt="chat"
+        />
       </div>
     );
   }
