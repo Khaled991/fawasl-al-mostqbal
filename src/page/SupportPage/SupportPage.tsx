@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 import "./SupportPage.scss";
 import questions from "./supportPageData";
 import ReactPageScroller from "react-page-scroller";
@@ -6,8 +6,17 @@ import chatIcon from "../../assets/Icons/chat.svg";
 import chat from "../../assets/Img/chatImage.svg";
 import circle from "../../assets/Img/circle.svg";
 import complaint from "../../assets/Img/complaintImage.svg";
+import callIcon from "../../assets/Icons/call.svg";
+import xIcon from "../../assets/Icons/x.svg";
+import sendIcon from "../../assets/Icons/send.svg";
+import attachImageIcon from "../../assets/Icons/attachImage.svg";
+import customerFemale from "../../assets/Icons/customerFemale.svg";
+import customerService from "../../assets/Icons/customerService.svg";
+import formatAMPM from "./../../utils/formatAMPM";
 
 const SupportPage = (): ReactElement => {
+  const [showChat, setShowChat] = useState<boolean>(false);
+
   const RenderQuestions = (): ReactElement[] => {
     const questionsBlocks = [];
     const blockItemsCount = 3;
@@ -112,10 +121,93 @@ const SupportPage = (): ReactElement => {
       </div>
     );
   }
-
   function ContactUsPage(): ReactElement {
+    function Chat(): ReactElement {
+      function ChatHeader(): ReactElement {
+        return (
+          <div className="border-b border-primary border-solid flex justify-between items-center pb-2 cursor-pointer">
+            <img
+              src={xIcon}
+              alt="x"
+              className="w-4 cursor-pointer rounded"
+              onClick={() => setShowChat(false)}
+            />
+            <div className="text-xl">المحادثة</div>
+            <img
+              src={callIcon}
+              alt="call"
+              className="w-6 cursor-pointer rounded"
+            />
+          </div>
+        );
+      }
+      function ChatMessages(): ReactElement {
+        interface IMessage {
+          isMe: boolean;
+          msg: string;
+          time: Date;
+        }
+
+        function Message({ isMe, msg, time }: IMessage): ReactElement {
+          return (
+            <div className={isMe ? "my-message" : "peer-message"}>
+              <div>
+                {msg}
+                <div className="text-xs mt-1">{formatAMPM(time)}</div>
+              </div>
+              <img
+                src={isMe ? customerFemale : customerService}
+                alt={isMe ? "me" : "peer"}
+                className={isMe ? "my-message-image" : "peer-message-image"}
+              />
+            </div>
+          );
+        }
+
+        return (
+          <div className="py-2 text-xl overflow-y-auto flex flex-col">
+            <Message isMe={true} msg="مرحباً" time={new Date()} />
+            <Message isMe={false} msg="مرحباً" time={new Date()} />
+          </div>
+        );
+      }
+
+      function ChatFooter(): ReactElement {
+        return (
+          <div className="border-t border-primary border-solid flex items-center pt-2">
+            <img
+              src={sendIcon}
+              alt="send"
+              className="w-6 cursor-pointer rounded mr-2"
+            />
+            <div className="flex-1 border-solid border border-primary rounded-xl w-full px-2 py-2 text-right flex">
+              <img
+                src={attachImageIcon}
+                alt="attach"
+                className="w-6 cursor-pointer rounded mr-2"
+              />
+              <input
+                type="text"
+                className="flex-1"
+                placeholder="اكتب رسالة ..."
+                dir="rtl"
+              />
+            </div>
+          </div>
+        );
+      }
+
+      return (
+        <div className="absolute bottom-8 left-8 grid grid-rows-chat-layout bg-white w-96 rounded-3xl border-solid border-primary border-2 py-3 px-4">
+          <ChatHeader />
+          <ChatMessages />
+          <ChatFooter />
+        </div>
+      );
+    }
+
     return (
-      <div className="w-screen h-screen grid grid-cols-2 grid-rows-4 gap-10 md:pr-32">
+      <div className="w-screen h-screen grid grid-cols-2 grid-rows-4 gap-10 md:pr-32 relative">
         <div
           className="
           col-span-2
@@ -135,7 +227,10 @@ const SupportPage = (): ReactElement => {
                 <span className="text-primary">٢٤</span> ساعة
               </div>
             </div>
-            <button className="custom-button flex justify-center px-20 w-3/4 items-center">
+            <button
+              className="custom-button flex justify-center px-20 w-3/4 items-center"
+              onClick={() => setShowChat(true)}
+            >
               فتح محادثة
               <img src={chatIcon} alt="chat icon" className="h-6 ml-3" />
             </button>
@@ -157,6 +252,7 @@ const SupportPage = (): ReactElement => {
           src={chat}
           alt="chat"
         />
+        {showChat ? <Chat /> : ""}
       </div>
     );
   }

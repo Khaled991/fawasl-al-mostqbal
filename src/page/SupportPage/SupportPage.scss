@@ -51,3 +51,16 @@
     }
   }
 }
+
+.my-message {
+  @apply my-1 p-3 rounded-xl self-start bg-primary text-white flex text-right mr-8 text-base flex-row-reverse;
+  .my-message-image {
+    @apply w-10 mr-3 cursor-pointer;
+  }
+}
+.peer-message {
+  @apply my-1 p-3 rounded-xl self-end bg-primary text-white flex text-right ml-8 text-base;
+  .peer-message-image {
+    @apply w-10 ml-3 cursor-pointer;
+  }
+}

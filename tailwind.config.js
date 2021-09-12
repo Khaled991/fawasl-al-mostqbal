@@ -20,6 +20,9 @@ module.exports = {
       animation: {
         spin: "spin 15s linear infinite",
       },
+      gridTemplateRows: {
+        "chat-layout": "50px 400px 50px",
+      },
     },
   },
   variants: {
