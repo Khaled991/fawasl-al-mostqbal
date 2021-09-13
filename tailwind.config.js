@@ -4,15 +4,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#308d62',
+        primary: "#308d62",
       },
       lineHeight: {
-        'xl': '70px',
-        'lg': '50px',
+        xl: "70px",
+        lg: "50px",
       },
       zIndex: {
-        '-10': '-10',
-      }
+        "-10": "-10",
+      },
+      backgroundImage: {
+        complaint: "url('assets/Img/complaintImage.svg')",
+        chat: "url('assets/Img/chatImage.svg')",
+      },
+      animation: {
+        spin: "spin 15s linear infinite",
+      },
+      gridTemplateRows: {
+        "chat-layout": "50px 400px 50px",
+      },
     },
   },
   variants: {
