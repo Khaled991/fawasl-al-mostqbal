@@ -12,7 +12,7 @@ const NavBar = () => {
   const [menuIsOpened, setMenuIsOpened] = useState(false);
 
   return (
-    <div className="z-10">
+    <div className="z-100">
       <div
         style={{ cursor: 'pointer' }}
         className={`md:hidden absolute z-50 right-1 pointer flex flex-col items-end mr-2 mt-3 ${
