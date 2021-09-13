@@ -27,12 +27,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
+
   color: $darkColor;
 
   background-image: url("./assets/Img/background.webp");
   background-repeat: repeat;
   background-size: cover;
+}
+
+#root {
+  height: 100vh;
 }
 
 code {

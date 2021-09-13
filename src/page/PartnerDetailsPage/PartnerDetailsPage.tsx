@@ -1,39 +1,39 @@
-import { ReactElement } from 'react';
-import { ReactComponent as Logo } from '../../assets/Img/logo.svg';
-import { ReactComponent as Mobile } from '../../assets/Icons/mobile.svg';
-import { ReactComponent as Phone } from '../../assets/Icons/phone.svg';
-import { ReactComponent as Location } from '../../assets/Icons/location.svg';
-import { ReactComponent as CommercialRecord } from '../../assets/Icons/commercial-record.svg';
-import { ReactComponent as Email } from '../../assets/Icons/email.svg';
-import './PartnerDetailsPage.scss';
-import { motion } from 'framer-motion';
+import { ReactElement } from "react";
+import { ReactComponent as Logo } from "../../assets/Img/logo.svg";
+import { ReactComponent as Mobile } from "../../assets/Icons/mobile.svg";
+import { ReactComponent as Phone } from "../../assets/Icons/phone.svg";
+import { ReactComponent as Location } from "../../assets/Icons/location.svg";
+import { ReactComponent as CommercialRecord } from "../../assets/Icons/commercial-record.svg";
+import { ReactComponent as Email } from "../../assets/Icons/email.svg";
+import "./PartnerDetailsPage.scss";
+import { motion } from "framer-motion";
 
 const PartnerDetailsPage = (): ReactElement => {
   const derailsData = [
     {
-      text: '+٩٦٦٥٩٣٧٢٩١٨١٩',
+      text: "+٩٦٦٥٩٣٧٢٩١٨١٩",
       Icon: Mobile,
-      href: '-',
+      href: "-",
     },
     {
-      text: '٠٢٥٩٣٧٢٩١٨١٩',
+      text: "٠٢٥٩٣٧٢٩١٨١٩",
       Icon: Phone,
-      href: '-',
+      href: "-",
     },
     {
-      text: 'fawaslalmostaqbl@gmail.com',
+      text: "fawaslalmostaqbl@gmail.com",
       Icon: Email,
-      href: '-',
+      href: "-",
     },
     {
-      text: '٧٨٩-٤٥٦-١٢٣',
+      text: "٧٨٩-٤٥٦-١٢٣",
       Icon: CommercialRecord,
-      href: '-',
+      href: "-",
     },
     {
-      text: '٦ ش صبر السمان متفرع من اللاشين',
+      text: "٦ ش صبر السمان متفرع من اللاشين",
       Icon: Location,
-      href: '-',
+      href: "-",
     },
   ];
   return (
