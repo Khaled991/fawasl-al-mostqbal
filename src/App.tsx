@@ -30,7 +30,6 @@ const App = (): ReactElement => {
             <Route exact path="/download" component={DownloadPage} />
           </Suspense>
         </Switch>
-        {/* </div> */}
       </div>
     </BrowserRouter>
   );
