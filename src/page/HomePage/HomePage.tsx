@@ -1,5 +1,7 @@
 import './HomePage.scss';
 import HomePageImage from '../../assets/Img/homePageImage.svg';
+import Button from '../../components/Button/Button';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
@@ -11,10 +13,9 @@ const HomePage = () => {
           className="home-page-image"
         />
       </div>
-      {/* lg:text-3xl xl:text-4xl  */}
       <div className="css-typing md:text-3xl md:leading-loose lg:text-4xl lg:leading-lg xl:text-5xl xl:leading-xl">
         <p>
-          لم يكن من السهل ادارة
+          لم يكن من السهل ادارة{' '}
           <span className="special-text-color">نقاط البيع</span>
         </p>
         <p>
@@ -24,7 +25,14 @@ const HomePage = () => {
         <p>
           يمكنك الان <span className="special-text-color">ببرنامجنا</span>
         </p>
+        <div className="buttons-and-text-container">
+          <Link to="/download">
+            <Button>تجربة مجانية</Button>
+          </Link>
+          <Button>تجربة كاملة</Button>
+        </div>
       </div>
+
       {/* <div className="home-page-chat-button-container">
         <img
           src="src/assets/Icons/chat.svg"

@@ -4,6 +4,7 @@ import NavBar from './components/NavBar/NavBar';
 import './App.scss';
 
 const HomePage = lazy(() => import('./page/HomePage/HomePage'));
+const DownloadPage = lazy(() => import('./page/DownloadPage/DownloadPage'));
 const SupportPage = lazy(() => import('./page/SupportPage/SupportPage'));
 const PartnersPage = lazy(() => import('./page/PartnersPage/PartnersPage'));
 const PartnerDetailsPage = lazy(
@@ -25,6 +26,7 @@ const App = (): ReactElement => {
               path="/partnerDetails"
               component={PartnerDetailsPage}
             />
+            <Route exact path="/download" component={DownloadPage} />
           </Suspense>
         </Switch>
       </div>

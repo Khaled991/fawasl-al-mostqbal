@@ -20,6 +20,9 @@
     flex-direction: column;
     justify-content: center;
     width: 50%;
+    .buttons-and-text-container {
+      display: flex;
+    }
   }
   .css-typing p {
     margin: 5px;
