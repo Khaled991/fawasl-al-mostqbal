@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 import './HomePage.scss';
 import HomePageImage from '../../assets/Img/homePageImage.svg';
 import Button from '../../components/Button/Button';
 import { Link } from 'react-router-dom';
-=======
-import "./HomePage.scss";
-import HomePageImage from "../../assets/Img/homePageImage.svg";
->>>>>>> 7b3aa969b87a2e28d9218366b7907ad25e9584a5
 
 const HomePage = () => {
   return (
@@ -20,11 +15,7 @@ const HomePage = () => {
       </div>
       <div className="css-typing md:text-3xl md:leading-loose lg:text-4xl lg:leading-lg xl:text-5xl xl:leading-xl">
         <p>
-<<<<<<< HEAD
           لم يكن من السهل ادارة{' '}
-=======
-          لم يكن من السهل ادارة{" "}
->>>>>>> 7b3aa969b87a2e28d9218366b7907ad25e9584a5
           <span className="special-text-color">نقاط البيع</span>
         </p>
         <p>

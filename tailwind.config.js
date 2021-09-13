@@ -4,11 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-<<<<<<< HEAD
         darkColor: '#1f2937',
-=======
-        primary: "#308d62",
->>>>>>> 7b3aa969b87a2e28d9218366b7907ad25e9584a5
       },
       lineHeight: {
         xl: "70px",
