@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Loading from "./components/loading/loading";
 import "./App.scss";
-import Footer from "./components/Footer/Footer";
+// import Footer from "./components/Footer/Footer";
 
 const HomePage = lazy(() => import("./page/HomePage/HomePage"));
 const DownloadPage = lazy(() => import("./page/DownloadPage/DownloadPage"));
