@@ -23,7 +23,11 @@ const PartnersPage = (): ReactElement => {
           className="partners grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 py-3 justify-items-center"
         >
           {PartnersData.map(({ Logo, name }) => (
-            <Link to="/partnerDetails" className="partner">
+            <Link
+              to="/partnerDetails"
+              className="partner text-center"
+              key={name}
+            >
               <Logo className="partner-logo" />
               <motion.span
                 transition={{ duration: 1 }}
