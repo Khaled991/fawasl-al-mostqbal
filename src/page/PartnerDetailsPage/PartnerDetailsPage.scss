@@ -1,4 +1,4 @@
-@import "../../utils/constants.scss";
+@import '../../utils/constants.scss';
 .partner-details-page {
   width: 100%;
   height: 100vh;
@@ -49,9 +49,10 @@
         display: flex;
         color: $darkColor;
         .details-icon {
-          width: 35px;
+          max-width: 35px;
           fill: $primarycolor;
           margin-left: 10px;
+          max-height: 35px;
         }
       }
     }

@@ -73,9 +73,9 @@ const NavBar = () => {
         } transition-all duration-500`}
         onClick={() => setNavbarIsActive(true)}
       >
-        <div className="bg-primary w-10 h-1 m-1 rounded-lg" />
-        <div className="bg-primary w-10 h-1 m-1 rounded-lg" />
-        <div className="bg-primary w-8 h-1 m-1 rounded-lg" />
+        <div className="bg-darkColor w-10 h-1 m-1 rounded-lg" />
+        <div className="bg-darkColor w-10 h-1 m-1 rounded-lg" />
+        <div className="bg-darkColor w-8 h-1 m-1 rounded-lg" />
       </div>
       <nav
         className={`navbar-items-container ${
