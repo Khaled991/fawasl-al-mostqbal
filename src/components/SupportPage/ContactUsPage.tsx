@@ -1,13 +1,13 @@
 import { ReactElement, useState } from "react";
-import callIcon from "../../../assets/Icons/call.svg";
-import xIcon from "../../../assets/Icons/x.svg";
-import sendIcon from "../../../assets/Icons/send.svg";
-import attachImageIcon from "../../../assets/Icons/attachImage.svg";
-import customerFemale from "../../../assets/Icons/customerFemale.svg";
-import customerService from "../../../assets/Icons/customerService.svg";
-import formatAMPM from "../../../utils/formatAMPM";
-import chatIcon from "../../../assets/Icons/chat.svg";
-import chat from "../../../assets/Img/chatImage.svg";
+import callIcon from "../../assets/Icons/call.svg";
+import xIcon from "../../assets/Icons/x.svg";
+import sendIcon from "../../assets/Icons/send.svg";
+import attachImageIcon from "../../assets/Icons/attachImage.svg";
+import customerFemale from "../../assets/Icons/customerFemale.svg";
+import customerService from "../../assets/Icons/customerService.svg";
+import formatAMPM from "../../utils/formatAMPM";
+import chatIcon from "../../assets/Icons/chat.svg";
+import chat from "../../assets/Img/chatImage.svg";
 
 function ContactUsPage(): ReactElement {
   const [showChat, setShowChat] = useState<boolean>(false);

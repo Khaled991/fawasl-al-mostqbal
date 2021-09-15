@@ -1,10 +1,11 @@
 import { ReactElement } from "react";
-import "./SupportPage.scss";
 
 import ReactPageScroller from "react-page-scroller";
-import QuestionsPage from "./SupportPages/QuestionsPage";
-import ComplaintPage from "./SupportPages/ComplaintPage";
-import ContactUsPage from "./SupportPages/ContactUsPage";
+import QuestionsPage from "../../components/SupportPage/QuestionsPage";
+import ComplaintPage from "../../components/SupportPage/ComplaintPage";
+import ContactUsPage from "../../components/SupportPage/ContactUsPage";
+
+import "./SupportPage.scss";
 
 const SupportPage = (): ReactElement => {
   return (

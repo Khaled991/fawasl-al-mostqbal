@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
-import circle from "../../../assets/Img/circle.svg";
-import complaint from "../../../assets/Img/complaintImage.svg";
+import circle from "../../assets/Img/circle.svg";
+import complaint from "../../assets/Img/complaintImage.svg";
 
 function ComplaintPage(): ReactElement {
   return (

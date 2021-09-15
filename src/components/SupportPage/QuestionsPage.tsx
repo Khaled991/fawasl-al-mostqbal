@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import questions from "../supportPageData";
+import questions from "../../page/SupportPage/supportPageData";
 
 export default function QuestionsPage(): ReactElement {
   return (
