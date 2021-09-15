@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
 import { ReactComponent as Logo } from "../../assets/Img/logo.svg";
@@ -34,6 +34,7 @@ function useOutsideCloseNavbar(
       // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref]);
 }
 
