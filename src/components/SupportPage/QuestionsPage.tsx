@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
-import questions from "../../page/SupportPage/supportPageData";
+import { Link } from "react-router-dom";
+import { questions } from "../../page/SupportPage/supportPageData";
 
 export default function QuestionsPage(): ReactElement {
   return (
@@ -27,7 +28,12 @@ const RenderQuestions = (): ReactElement[] => {
   for (let i = 0; i < questions.length; i += blockItemsCount) {
     const blockElements = questions.slice(i, i + blockItemsCount);
     const questionsBlockArray = renderQuestionsBlockArray(blockElements);
-    const questionsBlockElement = renderQuestionsBlock(questionsBlockArray);
+
+    const blockId = i / blockItemsCount;
+    const questionsBlockElement = renderQuestionsBlock(
+      questionsBlockArray,
+      blockId
+    );
     questionsBlocks.push(questionsBlockElement);
   }
 
@@ -38,22 +44,28 @@ function renderQuestionsBlockArray(questions: string[]) {
   const questionsBlockArray = [];
 
   for (let i = 0; i < questions.length; i++) {
-    const questionElement = renderQuestion(questions[i]);
+    const questionElement = renderQuestion(i);
     if (questionElement != null) questionsBlockArray.push(questionElement);
   }
 
   return questionsBlockArray;
 }
 
-function renderQuestion(questionText: string): ReactElement | undefined {
+function renderQuestion(index: number): ReactElement | undefined {
+  const questionText = questions[index];
   if (questionText)
     return (
-      <span className="questions-text flex flex-col" style={{ fontSize: 25 }}>
-        - {questionText}{" "}
-      </span>
+      <Link key={index} to={`support/AnswerOfQuestion/${index}`}>
+        <span className="questions-text flex flex-col" style={{ fontSize: 25 }}>
+          - {questionText}{" "}
+        </span>
+      </Link>
     );
 }
 
-function renderQuestionsBlock(questionsElements: ReactElement[]): ReactElement {
-  return <div>{questionsElements}</div>;
+function renderQuestionsBlock(
+  questionsElements: ReactElement[],
+  blockId: number
+): ReactElement {
+  return <div key={blockId}>{questionsElements}</div>;
 }

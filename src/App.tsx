@@ -10,6 +10,9 @@ const PartnersPage = lazy(() => import("./page/PartnersPage/PartnersPage"));
 const PartnerDetailsPage = lazy(
   () => import("./page/PartnerDetailsPage/PartnerDetailsPage")
 );
+const AnswerOfQuestion = lazy(
+  () => import("./page/SupportPage/subpage/AnswerOfQuestion")
+);
 
 const App = (): ReactElement => {
   return (
@@ -25,6 +28,11 @@ const App = (): ReactElement => {
               exact
               path="/partnerDetails"
               component={PartnerDetailsPage}
+            />
+            <Route
+              exact
+              path="/support/AnswerOfQuestion/:id"
+              component={AnswerOfQuestion}
             />
           </Suspense>
         </Switch>

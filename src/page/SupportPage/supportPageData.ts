@@ -1,4 +1,4 @@
-const supportPageData: string[] = [
+export const questions: string[] = [
   "طريقة التثبيت",
   "طريقة الاستخدام",
   "مزايا النسخة الكاملة",
@@ -12,4 +12,14 @@ const supportPageData: string[] = [
   "إدارة الاشتراك",
 ];
 
-export default supportPageData;
+export const answers: string[] = Array.from({ length: 11 }).map(
+  () => `
+1- قم بتحميل البرنامج.
+2- قم بتحميل البرنامج.
+3- قم بتحميل البرنامج.
+4- قم بتحميل البرنامج.
+5- قم بتحميل البرنامج.
+6- قم بتحميل البرنامج.
+7- قم بتحميل البرنامج.
+`
+);
