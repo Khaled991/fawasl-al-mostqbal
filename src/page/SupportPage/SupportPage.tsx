@@ -1,18 +1,18 @@
-import { ReactElement, useState } from "react";
-import "./SupportPage.scss";
-import questions from "./supportPageData";
-import ReactPageScroller from "react-page-scroller";
-import chatIcon from "../../assets/Icons/chat.svg";
-import chat from "../../assets/Img/chatImage.svg";
-import circle from "../../assets/Img/circle.svg";
-import complaint from "../../assets/Img/complaintImage.svg";
-import callIcon from "../../assets/Icons/call.svg";
-import xIcon from "../../assets/Icons/x.svg";
-import sendIcon from "../../assets/Icons/send.svg";
-import attachImageIcon from "../../assets/Icons/attachImage.svg";
-import customerFemale from "../../assets/Icons/customerFemale.svg";
-import customerService from "../../assets/Icons/customerService.svg";
-import formatAMPM from "./../../utils/formatAMPM";
+import { ReactElement, useState } from 'react';
+import './SupportPage.scss';
+import questions from './supportPageData';
+import ReactPageScroller from 'react-page-scroller';
+import chatIcon from '../../assets/Icons/chat.svg';
+import chat from '../../assets/Img/chatImage.svg';
+import circle from '../../assets/Img/circle.svg';
+import complaint from '../../assets/Img/complaintImage.svg';
+import callIcon from '../../assets/Icons/call.svg';
+import xIcon from '../../assets/Icons/x.svg';
+import sendIcon from '../../assets/Icons/send.svg';
+import attachImageIcon from '../../assets/Icons/attachImage.svg';
+import customerFemale from '../../assets/Icons/customerFemale.svg';
+import customerService from '../../assets/Icons/customerService.svg';
+import formatAMPM from './../../utils/formatAMPM';
 
 const SupportPage = (): ReactElement => {
   const [showChat, setShowChat] = useState<boolean>(false);
@@ -45,7 +45,7 @@ const SupportPage = (): ReactElement => {
     if (questionText)
       return (
         <span className="questions-text flex flex-col" style={{ fontSize: 25 }}>
-          - {questionText}{" "}
+          - {questionText}{' '}
         </span>
       );
   }
@@ -114,8 +114,8 @@ const SupportPage = (): ReactElement => {
           alt="circle"
           className="w-80 sm:w-96 h-80 sm:h-96 absolute animate-spin dura"
           style={{
-            top: "-12rem",
-            left: "-12rem",
+            top: '-12rem',
+            left: '-12rem',
           }}
         />
       </div>
@@ -150,15 +150,15 @@ const SupportPage = (): ReactElement => {
 
         function Message({ isMe, msg, time }: IMessage): ReactElement {
           return (
-            <div className={isMe ? "my-message" : "peer-message"}>
+            <div className={isMe ? 'my-message' : 'peer-message'}>
               <div>
                 {msg}
                 <div className="text-xs mt-1">{formatAMPM(time)}</div>
               </div>
               <img
                 src={isMe ? customerFemale : customerService}
-                alt={isMe ? "me" : "peer"}
-                className={isMe ? "my-message-image" : "peer-message-image"}
+                alt={isMe ? 'me' : 'peer'}
+                className={isMe ? 'my-message-image' : 'peer-message-image'}
               />
             </div>
           );
@@ -221,9 +221,9 @@ const SupportPage = (): ReactElement => {
           <div className="flex flex-col items-center md:px-20">
             <div className="font-bold mb-4 text-center leading-snug text-4xl xl:text-5xl xl:leading-normal">
               <div className="w-full">
-                يمكنك التحدث مع أحد ممثلي{" "}
+                يمكنك التحدث مع أحد ممثلي{' '}
                 <span className="text-primary">خدمة العملاء</span> إن لم تجد حل
-                لمشكلتك <div>نحن نعمل على الدوام</div>{" "}
+                لمشكلتك <div>نحن نعمل على الدوام</div>{' '}
                 <span className="text-primary">٢٤</span> ساعة
               </div>
             </div>
@@ -252,7 +252,7 @@ const SupportPage = (): ReactElement => {
           src={chat}
           alt="chat"
         />
-        {showChat ? <Chat /> : ""}
+        {showChat ? <Chat /> : ''}
       </div>
     );
   }
