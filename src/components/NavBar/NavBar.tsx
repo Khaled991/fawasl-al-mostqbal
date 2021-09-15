@@ -8,8 +8,23 @@ import DistributorsIcon from "../../assets/Icons/distributors.svg";
 import ServicesIcon from "../../assets/Icons/services.svg";
 import SupportIcon from "../../assets/Icons/support.svg";
 
+interface INavBarData {
+  icon: string;
+  path: string;
+  label: string;
+}
+
 const NavBar = () => {
   const [menuIsOpened, setMenuIsOpened] = useState(false);
+  const [activePage, setActivePage] = useState("/");
+
+  const navBarData: INavBarData[] = [
+    { icon: HomeIcon, path: "/", label: "الرئيسية" },
+    { path: "/videos", icon: VideosIcon, label: "فيديوهات" },
+    { path: "/partners", icon: DistributorsIcon, label: "الموزعين" },
+    { path: "/services", icon: ServicesIcon, label: "خدماتنا" },
+    { path: "/support", icon: SupportIcon, label: "الدعم" },
+  ];
 
   return (
     <div className="z-100">
@@ -33,20 +48,48 @@ const NavBar = () => {
           <Logo className="navbar-logo" />
           <div className="menu-icon"></div>
           <div className="nav-menu">
-            <Link to="/">
-              <div className="nav-link-container">
+            {navBarData.map(({ icon, path, label }) => (
+              <Link to={path}>
+                <div
+                  className={`nav-link-container ${
+                    activePage === path ? "active" : ""
+                  }`}
+                  onClick={() => setActivePage(path)}
+                >
+                  <img src={icon} alt="navIcon" className="nav-icon" />
+                  <span className="nav-link">{label}</span>
+                </div>
+              </Link>
+            ))}
+            {/* <Link to="/">
+              <div
+                className={`nav-link-container ${
+                  activePage !== "/" ? "active" : ""
+                }`}
+                onClick={() => setActivePage("/")}
+              >
                 <img src={HomeIcon} alt="navIcon" className="nav-icon" />
                 <span className="nav-link">الرئيسية</span>
               </div>
             </Link>
             <Link to="/">
-              <div className="nav-link-container">
+              <div
+                className={`nav-link-container ${
+                  activePage !== "/" ? "active" : ""
+                }`}
+                onClick={() => setActivePage("/")}
+              >
                 <img src={VideosIcon} alt="navIcon" className="nav-icon" />
                 <span className="nav-link">فيديوهات</span>
               </div>
             </Link>
             <Link to="/partners">
-              <div className="nav-link-container">
+              <div
+                className={`nav-link-container ${
+                  activePage == "/partne=rs" ? "active" : ""
+                }`}
+                onClick={() => setActivePage("/partners")}
+              >
                 <img
                   src={DistributorsIcon}
                   alt="navIcon"
@@ -56,17 +99,27 @@ const NavBar = () => {
               </div>
             </Link>
             <Link to="/">
-              <div className="nav-link-container">
+              <div
+                className={`nav-link-container ${
+                  activePage !== "/" ? "active" : ""
+                }`}
+                onClick={() => setActivePage("/")}
+              >
                 <img src={ServicesIcon} alt="navIcon" className="nav-icon" />
                 <span className="nav-link">خدماتنا</span>
               </div>
             </Link>
             <Link to="/support">
-              <div className="nav-link-container">
+              <div
+                className={`nav-link-container ${
+                  activePage == "/suppo=rt" ? "active" : ""
+                }`}
+                onClick={() => setActivePage("/support")}
+              >
                 <img src={SupportIcon} alt="navIcon" className="nav-icon" />
                 <span className="nav-link">الدعم</span>
               </div>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </nav>
