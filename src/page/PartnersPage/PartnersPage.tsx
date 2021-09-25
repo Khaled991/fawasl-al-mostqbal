@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import "./PartnersPage.scss";
 import PartnersPageImage from "../../assets/Img/partnersPageImage.svg";
-import PartnersData from "./PartnersData";
+import { getNameAndLogoPartners } from "./PartnersData";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -22,19 +22,29 @@ const PartnersPage = (): ReactElement => {
           animate={{ scale: 1 }}
           className="partners grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 py-3 justify-items-center"
         >
-          {PartnersData.map(({ Logo, name }) => (
-            <Link to="/partnerDetails" className="partner">
-              <Logo className="partner-logo" />
-              <motion.span
-                transition={{ duration: 1 }}
-                initial={{ x: 1000, scale: 0 }}
-                animate={{ x: 0, scale: 1 }}
-                className="partner-name mt-3"
+          {getNameAndLogoPartners().map(function ({ logo, name }, i) {
+            return (
+              <Link
+                key={i}
+                to={{
+                  pathname: "/partnerDetails",
+                  state: { ...{ logo, name }, i },
+                }}
+                className="partner"
               >
-                {name}
-              </motion.span>
-            </Link>
-          ))}
+                <img src={logo} alt={`${name} logo`} className="partner-logo" />
+                {/* <Logo className="partner-logo" /> */}
+                <motion.span
+                  transition={{ duration: 1 }}
+                  initial={{ x: 1000, scale: 0 }}
+                  animate={{ x: 0, scale: 1 }}
+                  className="partner-name mt-3"
+                >
+                  {name}
+                </motion.span>
+              </Link>
+            );
+          })}
         </motion.div>
       </div>
     </div>

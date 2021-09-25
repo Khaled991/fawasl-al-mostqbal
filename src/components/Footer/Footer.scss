@@ -1,0 +1,19 @@
+@import '../../utils/constants.scss';
+.footer {
+  width: 100%;
+  height: 150px;
+  background-color: $primarycolor;
+  display: flex;
+  align-items: flex-end;
+  .copyright {
+    width: 100%;
+    height: 70.5px;
+    background-color: #216244;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 17px;
+    color: $whiteColor;
+  }
+}

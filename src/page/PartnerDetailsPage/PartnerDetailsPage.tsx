@@ -1,41 +1,65 @@
-import { ReactElement } from "react";
-import { ReactComponent as Logo } from "../../assets/Img/logo.svg";
-import { ReactComponent as Mobile } from "../../assets/Icons/mobile.svg";
-import { ReactComponent as Phone } from "../../assets/Icons/phone.svg";
-import { ReactComponent as Location } from "../../assets/Icons/location.svg";
-import { ReactComponent as CommercialRecord } from "../../assets/Icons/commercial-record.svg";
-import { ReactComponent as Email } from "../../assets/Icons/email.svg";
-import "./PartnerDetailsPage.scss";
-import { motion } from "framer-motion";
+import { ReactElement } from 'react';
+// import { ReactComponent as Logo } from '../../assets/Img/logo.svg';
+import Mobile from '../../assets/Icons/mobile.svg';
+import Phone from '../../assets/Icons/phone.svg';
+import Location from '../../assets/Icons/location.svg';
+import CommercialRecord from '../../assets/Icons/commercial-record.svg';
+import Email from '../../assets/Icons/email.svg';
+import './PartnerDetailsPage.scss';
+import { motion } from 'framer-motion';
+import { getRestPartnerData } from '../PartnersPage/PartnersData';
 
-const PartnerDetailsPage = (): ReactElement => {
-  const derailsData = [
-    {
-      text: "+٩٦٦٥٩٣٧٢٩١٨١٩",
-      Icon: Mobile,
-      href: "-",
-    },
-    {
-      text: "٠٢٥٩٣٧٢٩١٨١٩",
-      Icon: Phone,
-      href: "-",
-    },
-    {
-      text: "fawaslalmostaqbl@gmail.com",
-      Icon: Email,
-      href: "-",
-    },
-    {
-      text: "٧٨٩-٤٥٦-١٢٣",
-      Icon: CommercialRecord,
-      href: "-",
-    },
-    {
-      text: "٦ ش صبر السمان متفرع من اللاشين",
-      Icon: Location,
-      href: "-",
-    },
-  ];
+const PartnerDetailsPage = ({ location: { state } }: any): ReactElement => {
+  const details = {
+    ...getRestPartnerData(state.i),
+    logo: state.logo,
+    name: state.name,
+  };
+
+  function RenderDetailsData(): ReactElement {
+    return (
+      <motion.div
+        transition={{ duration: 1.2 }}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        className="details-container"
+      >
+        <motion.a
+          href={`tele:${details.mobile}`}
+          className="details-text flex items-center text-lg"
+        >
+          <img src={Mobile} alt="mobile" className="details-icon" />
+          {details.mobile}
+        </motion.a>
+        <motion.a
+          href={`tele:${details.phoneNumber}`}
+          className="details-text flex items-center text-lg"
+        >
+          <img src={Phone} alt="phone" className="details-icon" />
+          {details.phoneNumber}
+        </motion.a>
+        <motion.a
+          href={`mailto:${details.email}`}
+          className="details-text flex items-center text-lg"
+        >
+          <img src={Email} alt="email" className="details-icon" />
+          {details.email}
+        </motion.a>
+        <motion.div className="details-text flex items-center text-lg">
+          <img
+            src={CommercialRecord}
+            alt="CommercialRecord"
+            className="details-icon"
+          />
+          {details.CommercialRecord}
+        </motion.div>
+        <motion.div className="details-text flex items-center text-lg">
+          <img src={Location} alt="Location" className="details-icon" />
+          {details.address}
+        </motion.div>
+      </motion.div>
+    );
+  }
   return (
     <div className="partner-details-page flex flex-col-reverse lg:flex-col">
       <div className="name-bar mt-5 lg:mt-16 flex justify-center md:justify-start items-center">
@@ -45,7 +69,7 @@ const PartnerDetailsPage = (): ReactElement => {
           animate={{ y: 0 }}
           className="text-2xl md:text-4xl mr-0 md:mr-8"
         >
-          فواصل المستقبل
+          {details.name}
         </motion.span>
       </div>
 
@@ -56,22 +80,14 @@ const PartnerDetailsPage = (): ReactElement => {
           animate={{ scale: 1 }}
           className="logo-container w-4/6 md:w-7/12 p-12 md:p-12"
         >
-          <Logo className="partner-details-logo w-20 " />
+          <img
+            src={details.logo}
+            className="partner-details-logo w-20"
+            alt={`${state.name} logo`}
+          />
         </motion.div>
 
-        <motion.div
-          transition={{ duration: 1.2 }}
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          className="details-container"
-        >
-          {derailsData.map(({ Icon, text, href }) => (
-            <motion.a href={href} className="details-text text-lg">
-              <Icon className="details-icon" />
-              {text}
-            </motion.a>
-          ))}
-        </motion.div>
+        <RenderDetailsData />
       </div>
       <div className="google-map-container w-11/12 lg:w-2/5 xl:w-2/4  h-1/3 self-center lg:self-end 2xl:w-3/5  lg:h-2/3  lg:mr-12 xl:mr-24  mt-16 lg:mt-8">
         <iframe
