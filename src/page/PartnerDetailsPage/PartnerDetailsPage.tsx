@@ -1,13 +1,13 @@
-import { ReactElement } from 'react';
+import { ReactElement } from "react";
 // import { ReactComponent as Logo } from '../../assets/Img/logo.svg';
-import Mobile from '../../assets/Icons/mobile.svg';
-import Phone from '../../assets/Icons/phone.svg';
-import Location from '../../assets/Icons/location.svg';
-import CommercialRecord from '../../assets/Icons/commercial-record.svg';
-import Email from '../../assets/Icons/email.svg';
-import './PartnerDetailsPage.scss';
-import { motion } from 'framer-motion';
-import { getRestPartnerData } from '../PartnersPage/PartnersData';
+import Mobile from "../../assets/Icons/mobile.svg";
+import Phone from "../../assets/Icons/phone.svg";
+import Location from "../../assets/Icons/location.svg";
+import CommercialRecord from "../../assets/Icons/commercial-record.svg";
+import Email from "../../assets/Icons/email.svg";
+import "./PartnerDetailsPage.scss";
+import { motion } from "framer-motion";
+import { getRestPartnerData } from "../PartnersPage/PartnersData";
 
 const PartnerDetailsPage = ({ location: { state } }: any): ReactElement => {
   const details = {
