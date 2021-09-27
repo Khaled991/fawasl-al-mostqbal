@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Loading from './components/loading/loading';
 import './App.scss';
-// import Footer from './components/Footer/Footer';
+// import Footer from "./components/Footer/Footer";
 
 const HomePage = lazy(() => import('./page/HomePage/HomePage'));
 const DownloadPage = lazy(() => import('./page/DownloadPage/DownloadPage'));
@@ -11,6 +11,9 @@ const SupportPage = lazy(() => import('./page/SupportPage/SupportPage'));
 const PartnersPage = lazy(() => import('./page/PartnersPage/PartnersPage'));
 const PartnerDetailsPage = lazy(
   () => import('./page/PartnerDetailsPage/PartnerDetailsPage')
+);
+const AnswerOfQuestion = lazy(
+  () => import('./page/SupportPage/subpage/AnswerOfQuestion')
 );
 
 const App = (): ReactElement => {
@@ -27,6 +30,11 @@ const App = (): ReactElement => {
               exact
               path="/partnerDetails"
               component={PartnerDetailsPage}
+            />
+            <Route
+              exact
+              path="/support/AnswerOfQuestion/:id"
+              component={AnswerOfQuestion}
             />
             <Route exact path="/download" component={DownloadPage} />
           </Suspense>

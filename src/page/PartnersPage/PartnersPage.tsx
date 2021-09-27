@@ -1,9 +1,9 @@
-import { ReactElement } from 'react';
-import './PartnersPage.scss';
-import PartnersPageImage from '../../assets/Img/partnersPageImage.svg';
-import { getNameAndLogoPartners } from './PartnersData';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { ReactElement } from "react";
+import "./PartnersPage.scss";
+import PartnersPageImage from "../../assets/Img/partnersPageImage.svg";
+import { getNameAndLogoPartners } from "./PartnersData";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const PartnersPage = (): ReactElement => {
   return (
@@ -27,7 +27,7 @@ const PartnersPage = (): ReactElement => {
               <Link
                 key={i}
                 to={{
-                  pathname: '/partnerDetails',
+                  pathname: "/partnerDetails",
                   state: { ...{ logo, name }, i },
                 }}
                 className="partner"

@@ -1,4 +1,4 @@
-@import '../../utils/constants.scss';
+@import "../../utils/constants.scss";
 
 .navbar-items-container {
   display: flex;
@@ -36,6 +36,7 @@
       align-items: center;
       justify-content: center;
       height: 100%;
+
       .nav-link-container {
         display: flex;
         flex-direction: column;
@@ -52,14 +53,6 @@
           transform: scale(1, 1);
           color: $whiteColor;
         }
-        &:active .nav-link {
-          background-color: $secondcolor;
-        }
-        &:active .nav-link {
-          transform: scale(1, 1);
-          color: $whiteColor;
-        }
-
         .nav-icon {
           width: 57px;
           padding: 9px;
@@ -70,6 +63,20 @@
           transform: scale(0.5, 0.5);
           transition: 0.8s;
           color: rgba(255, 255, 255, 0);
+        }
+      }
+      .active {
+        & .nav-icon {
+          background-color: $secondcolor;
+          border-radius: 10px;
+          transition: 0.8s;
+        }
+        & .nav-link {
+          font-size: 15px;
+          font-weight: bold;
+          transform: scale(1, 1);
+          transition: 0.8s;
+          color: #fff;
         }
       }
     }
