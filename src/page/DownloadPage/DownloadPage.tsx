@@ -1,20 +1,22 @@
-import { ReactElement } from 'react';
-import ReactPageScroller from 'react-page-scroller';
+import { ReactElement } from "react";
+import ReactPageScroller from "react-page-scroller";
 import {
   DownloadCardsPages,
   ProgramAndDownloadPages,
   ProgramAndDownloadPages2,
   ProgramAndDownloadPages3,
-} from './programAndDownloadPages';
+} from "./programAndDownloadPages";
 
 const DownloadPage = (): ReactElement => {
   return (
-    <ReactPageScroller>
-      <ProgramAndDownloadPages />
-      <ProgramAndDownloadPages2 />
-      <ProgramAndDownloadPages3 />
-      <DownloadCardsPages />
-    </ReactPageScroller>
+    <div className="download-scroll-page">
+      <ReactPageScroller>
+        <ProgramAndDownloadPages />
+        <ProgramAndDownloadPages2 />
+        <ProgramAndDownloadPages3 />
+        <DownloadCardsPages />
+      </ReactPageScroller>
+    </div>
   );
 };
 

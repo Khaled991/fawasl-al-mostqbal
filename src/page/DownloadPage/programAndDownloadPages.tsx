@@ -1,13 +1,13 @@
-import { ReactElement } from 'react';
-import ProgramImage from '../../assets/Img/programImage.webp';
-import ProgramImage2 from '../../assets/Img/programImage2.webp';
-import programImage3 from '../../assets/Img/programImage3.webp';
-import circleDark from '../../assets/Img/circleDark.svg';
-import HeaderDownloadCenterSide from '../../assets/Img/header-download-center-side.webp';
-import HeaderDownloadLeftSide from '../../assets/Img/header-download-left-side.webp';
-import HeaderDownloadRightSide from '../../assets/Img/header-download-right-side.webp';
-import { motion } from 'framer-motion';
-import './DownloadPage.scss';
+import { ReactElement } from "react";
+import ProgramImage from "../../assets/Img/programImage.webp";
+import ProgramImage2 from "../../assets/Img/programImage2.webp";
+import programImage3 from "../../assets/Img/programImage3.webp";
+import circleDark from "../../assets/Img/circleDark.svg";
+import HeaderDownloadCenterSide from "../../assets/Img/header-download-center-side.webp";
+import HeaderDownloadLeftSide from "../../assets/Img/header-download-left-side.webp";
+import HeaderDownloadRightSide from "../../assets/Img/header-download-right-side.webp";
+import { motion } from "framer-motion";
+import "./DownloadPage.scss";
 
 export const ProgramAndDownloadPages = (): ReactElement => {
   return (
@@ -23,12 +23,12 @@ export const ProgramAndDownloadPages = (): ReactElement => {
         </span>
       </div>
 
-      <div className="show-image-and-description-about-program flex flex-col mt-8 lg:mt-0 lg:flex-row h-full justify-center">
-        <div className="program-description-and-title-container w-full lg:w-1/2 items-center lg:items-start  justify-start lg:justify-center pr-0 lg:pr-20">
+      <div className="show-image-and-description-about-program flex flex-col mt-8 lg:mt-0 lg:flex-row h-full justify-center md:pr-36">
+        <div className="program-description-and-title-container w-full lg:w-1/2 items-center lg:items-start  justify-start lg:justify-center pr-0">
           <span className="program-description-title text-4xl">
             إنشاء فواتير
           </span>
-          <span className="program-description text-3xl">
+          <span className="program-description  text-3xl">
             سرعة و سهولة إنشاء الفواتير وطباعتها.
           </span>
         </div>
@@ -36,7 +36,7 @@ export const ProgramAndDownloadPages = (): ReactElement => {
           <img
             src={ProgramImage}
             alt="programImage"
-            className="program-image"
+            className="program-image lg:w-11/12"
           />
         </div>
       </div>
@@ -47,7 +47,7 @@ export const ProgramAndDownloadPages = (): ReactElement => {
 export const ProgramAndDownloadPages2 = (): ReactElement => {
   return (
     <div className="download-page justify-center">
-      <div className="show-image-and-description-about-program flex flex-col-reverse lg:flex-row h-auto lg:h-full  mt-14 md:mt-8 ">
+      <div className="show-image-and-description-about-program flex flex-col-reverse lg:flex-row h-auto lg:h-full  mt-14 md:mt-8 md:pr-36">
         <div className="program-page-container  items-start lg:items-center w-full lg:w-1/2 mr-0 lg:mr-20">
           <img
             src={ProgramImage2}
@@ -67,8 +67,8 @@ export const ProgramAndDownloadPages2 = (): ReactElement => {
         alt="circleDark"
         className="w-80 sm:w-96 h-80 sm:h-96 absolute animate-spin dura"
         style={{
-          bottom: '-12rem',
-          left: '-12rem',
+          bottom: "-12rem",
+          left: "-12rem",
         }}
       />
     </div>
@@ -77,7 +77,7 @@ export const ProgramAndDownloadPages2 = (): ReactElement => {
 export const ProgramAndDownloadPages3 = (): ReactElement => {
   return (
     <div className="download-page ">
-      <div className="show-image-and-description-about-program flex flex-col mt-8 lg:mt-0 lg:flex-row h-full justify-center">
+      <div className="show-image-and-description-about-program md:pr-36 flex flex-col mt-8 lg:mt-0 lg:flex-row h-full justify-center">
         <div className="program-description-and-title-container w-full lg:w-1/2 items-center lg:items-start  justify-start lg:justify-center pr-0 lg:pr-20">
           <span className="program-description-title text-4xl">
             السرعة في استخراج التقارير
@@ -99,8 +99,8 @@ export const ProgramAndDownloadPages3 = (): ReactElement => {
 };
 export const DownloadCardsPages = (): ReactElement => {
   return (
-    <div className="download-page items-start">
-      <div className="dowmload-page-header justify-center xl:justify-between">
+    <div className="download-page items-start md:pr-36">
+      {/* <div className="dowmload-page-header justify-center xl:justify-between">
         <motion.img
           src={HeaderDownloadRightSide}
           alt="HeaderDownloadRightSide"
@@ -127,7 +127,6 @@ export const DownloadCardsPages = (): ReactElement => {
             animate={{ y: 0, scale: 1 }}
           />
         </div>
-
         <motion.img
           transition={{ duration: 1.3 }}
           initial={{ x: -550, scale: 0 }}
@@ -136,7 +135,7 @@ export const DownloadCardsPages = (): ReactElement => {
           alt="HeaderDownloadLeftSide"
           className="hidden xl:block "
         />
-      </div>
+      </div> */}
       <div className="pricing-table">
         <div className="pricing-card ">
           <h3 className="pricing-card-header">نسخة كاملة</h3>
@@ -164,7 +163,7 @@ export const DownloadCardsPages = (): ReactElement => {
         <div className="pricing-card">
           <h3 className="pricing-card-header">نسخة مجانية</h3>
           <div className="price">
-            <sup>SAR</sup>0<span>/ يومان</span>
+            <sup>SAR</sup>0<span> يومان</span>
           </div>
           <ul>
             <li>
