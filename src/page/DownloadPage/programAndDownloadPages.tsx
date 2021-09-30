@@ -3,10 +3,10 @@ import ProgramImage from "../../assets/Img/programImage.webp";
 import ProgramImage2 from "../../assets/Img/programImage2.webp";
 import programImage3 from "../../assets/Img/programImage3.webp";
 import circleDark from "../../assets/Img/circleDark.svg";
-import HeaderDownloadCenterSide from "../../assets/Img/header-download-center-side.webp";
-import HeaderDownloadLeftSide from "../../assets/Img/header-download-left-side.webp";
-import HeaderDownloadRightSide from "../../assets/Img/header-download-right-side.webp";
-import { motion } from "framer-motion";
+// import HeaderDownloadCenterSide from "../../assets/Img/header-download-center-side.webp";
+// import HeaderDownloadLeftSide from "../../assets/Img/header-download-left-side.webp";
+// import HeaderDownloadRightSide from "../../assets/Img/header-download-right-side.webp";
+// import { motion } from "framer-motion";
 import "./DownloadPage.scss";
 
 export const ProgramAndDownloadPages = (): ReactElement => {

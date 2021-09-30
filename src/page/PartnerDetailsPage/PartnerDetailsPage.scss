@@ -1,4 +1,4 @@
-@import '../../utils/constants.scss';
+@import "../../utils/constants.scss";
 .partner-details-page {
   width: 100%;
   height: 100vh;
@@ -69,6 +69,76 @@
       width: 100%;
       height: 100%;
       border-radius: 30px;
+    }
+  }
+}
+
+.title-grid {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgb(193, 255, 136);
+}
+
+.logo-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+  min-height: 250px;
+  background-color: rgb(255, 234, 177);
+}
+
+.info-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(97, 255, 163);
+}
+
+.map-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 168, 168);
+}
+
+@media only screen and (min-width: 768px) {
+  .grid-partner-details-page {
+    grid-template-columns: 0.5fr 1fr 2.5fr 1fr 10fr 0.5fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr 6fr 1.5fr 0.5fr;
+    // height: auto;
+    .title-grid {
+      grid-row: 1/ 4;
+      grid-column: 1/ 7;
+
+      border-radius: 30px;
+      height: 200px;
+      background-color: $darkColor;
+      direction: rtl;
+      color: $whiteColor;
+      transition: 0.7s;
+      font-weight: bold;
+    }
+
+    .logo-grid {
+      grid-row: 2/ 5;
+      grid-column: 3/ 4;
+      min-width: 250px;
+      min-height: 250px;
+      background-color: rgb(255, 234, 177);
+    }
+
+    .info-grid {
+      grid-row: 3/ 6;
+      grid-column: 2/ 5;
+      background-color: rgb(97, 255, 163);
+    }
+
+    .map-grid {
+      grid-row: 4/ 7;
+      grid-column: 5/ 7;
+      background-color: rgb(255, 168, 168);
     }
   }
 }

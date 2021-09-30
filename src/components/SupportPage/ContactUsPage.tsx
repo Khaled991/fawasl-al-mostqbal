@@ -13,7 +13,7 @@ function ContactUsPage(): ReactElement {
   const [showChat, setShowChat] = useState<boolean>(false);
 
   return (
-    <div className="w-screen h-screen grid grid-cols-2 grid-rows-4 gap-10 md:pr-32 relative">
+    <div className="w-full h-screen grid grid-cols-2 grid-rows-4 gap-10 md:pr-32 relative pt-8">
       <div
         className="
         col-span-2

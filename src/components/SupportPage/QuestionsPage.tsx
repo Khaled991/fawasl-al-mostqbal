@@ -4,7 +4,7 @@ import { questions } from "../../page/SupportPage/supportPageData";
 
 export default function QuestionsPage(): ReactElement {
   return (
-    <div className="questions-page-container pr-32">
+    <div className="questions-page-container pb-8 md:pt-8">
       <div className="popular-question-text">
         <div className="title-green-border-text-container">
           <span className="title-green-text">شيوعاً</span>
