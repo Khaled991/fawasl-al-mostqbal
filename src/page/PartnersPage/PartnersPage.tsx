@@ -20,7 +20,7 @@ const PartnersPage = (): ReactElement => {
           transition={{ duration: 1.5 }}
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          className="partners grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 py-3 justify-items-center"
+          className="partners grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 py-3 justify-items-center text-center"
         >
           {getNameAndLogoPartners().map(function ({ logo, name }, i) {
             return (
