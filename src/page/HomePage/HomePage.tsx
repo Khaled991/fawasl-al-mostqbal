@@ -27,19 +27,13 @@ const HomePage = () => {
         </p>
         <div className="buttons-and-text-container">
           <Link to="/download">
-            <Button>تجربة مجانية</Button>
+            <Button buttonStyleType="solidGreen">تجربة مجانية</Button>
           </Link>
-          <Button>تجربة كاملة</Button>
+          <Link to="/download">
+            <Button buttonStyleType="greenBorder">تجربة كاملة</Button>
+          </Link>
         </div>
       </div>
-
-      {/* <div className="home-page-chat-button-container">
-        <img
-          src="src/assets/Icons/chat.svg"
-          alt="chatIcon"
-          className="home-page-chat-button"
-        />
-      </div> */}
     </div>
   );
 };

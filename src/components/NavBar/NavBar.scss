@@ -1,4 +1,4 @@
-@import "../../utils/constants.scss";
+@import '../../utils/constants.scss';
 
 .navbar-items-container {
   display: flex;
@@ -42,7 +42,7 @@
         flex-direction: column;
         align-items: center;
         cursor: pointer;
-        margin-bottom: 35px;
+        margin-bottom: 30px;
 
         &:hover .nav-icon {
           background-color: $secondcolor;
@@ -54,7 +54,7 @@
           color: $whiteColor;
         }
         .nav-icon {
-          width: 57px;
+          width: 55px;
           padding: 9px;
         }
         .nav-link {

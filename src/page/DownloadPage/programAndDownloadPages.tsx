@@ -1,13 +1,11 @@
-import { ReactElement } from "react";
-import ProgramImage from "../../assets/Img/programImage.webp";
-import ProgramImage2 from "../../assets/Img/programImage2.webp";
-import programImage3 from "../../assets/Img/programImage3.webp";
-import circleDark from "../../assets/Img/circleDark.svg";
-import HeaderDownloadCenterSide from "../../assets/Img/header-download-center-side.webp";
-import HeaderDownloadLeftSide from "../../assets/Img/header-download-left-side.webp";
-import HeaderDownloadRightSide from "../../assets/Img/header-download-right-side.webp";
-import { motion } from "framer-motion";
-import "./DownloadPage.scss";
+import { ReactElement } from 'react';
+import ProgramImage from '../../assets/Img/programImage.webp';
+import ProgramImage2 from '../../assets/Img/programImage2.webp';
+import programImage3 from '../../assets/Img/programImage3.webp';
+import circleDark from '../../assets/Img/circleDark.svg';
+import True from '../../assets/Icons/true.svg';
+import False from '../../assets/Icons/false.svg';
+import './DownloadPage.scss';
 
 export const ProgramAndDownloadPages = (): ReactElement => {
   return (
@@ -67,8 +65,8 @@ export const ProgramAndDownloadPages2 = (): ReactElement => {
         alt="circleDark"
         className="w-80 sm:w-96 h-80 sm:h-96 absolute animate-spin dura"
         style={{
-          bottom: "-12rem",
-          left: "-12rem",
+          bottom: '-12rem',
+          left: '-12rem',
         }}
       />
     </div>
@@ -100,42 +98,6 @@ export const ProgramAndDownloadPages3 = (): ReactElement => {
 export const DownloadCardsPages = (): ReactElement => {
   return (
     <div className="download-page items-start md:pr-36">
-      {/* <div className="dowmload-page-header justify-center xl:justify-between">
-        <motion.img
-          src={HeaderDownloadRightSide}
-          alt="HeaderDownloadRightSide"
-          transition={{ duration: 1.3 }}
-          initial={{ x: 550, scale: 0 }}
-          animate={{ x: 0, scale: 1 }}
-          className="hidden xl:block "
-        />
-        <div>
-          <motion.img
-            src={HeaderDownloadCenterSide}
-            alt="HeaderDownloadCenterSide"
-            className="header-download-center-side-bottom relative bottom-0 left-0 xl:-bottom-32 xl:-left-16"
-            transition={{ duration: 1.3 }}
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-          />
-          <motion.img
-            src={HeaderDownloadCenterSide}
-            alt="HeaderDownloadCenterSide"
-            className="header-download-center-side-top absolute "
-            transition={{ duration: 1.3 }}
-            initial={{ y: -200, scale: 0 }}
-            animate={{ y: 0, scale: 1 }}
-          />
-        </div>
-        <motion.img
-          transition={{ duration: 1.3 }}
-          initial={{ x: -550, scale: 0 }}
-          animate={{ x: 0, scale: 1 }}
-          src={HeaderDownloadLeftSide}
-          alt="HeaderDownloadLeftSide"
-          className="hidden xl:block "
-        />
-      </div> */}
       <div className="pricing-table">
         <div className="pricing-card ">
           <h3 className="pricing-card-header">نسخة كاملة</h3>
@@ -143,17 +105,29 @@ export const DownloadCardsPages = (): ReactElement => {
             <sup>SAR</sup>01<span>/ شهرياٌ</span>
           </div>
           <ul>
-            <li>
-              <strong>true</strong>تحتوي على مزاية اكتر
+            <li className="flex flex-row items-center justify-center">
+              <strong>
+                <img src={True} alt="صواب" width="20" className="mr-1" />
+              </strong>
+              تحتوي على مزاية اكتر
             </li>
-            <li>
-              <strong>true</strong>تحتوي على تحكم اكبر
+            <li className="flex flex-row items-center justify-center">
+              <strong>
+                <img src={True} alt="صواب" width="20" className="mr-1" />
+              </strong>
+              تحتوي على تحكم اكبر
             </li>
-            <li>
-              <strong>true</strong>سرعة البرنامج
+            <li className="flex flex-row items-center justify-center">
+              <strong>
+                <img src={True} alt="صواب" width="20" className="mr-1" />
+              </strong>
+              سرعة البرنامج
             </li>
-            <li>
-              <strong>true</strong>إنشاء الفواتير و طباعتها
+            <li className="flex flex-row items-center justify-center">
+              <strong>
+                <img src={True} alt="صواب" width="20" className="mr-1" />
+              </strong>
+              إنشاء الفواتير و طباعتها
             </li>
           </ul>
           <a href="=" className="order-btn">
@@ -166,17 +140,29 @@ export const DownloadCardsPages = (): ReactElement => {
             <sup>SAR</sup>0<span> يومان</span>
           </div>
           <ul>
-            <li>
-              <strong>false</strong>تحتوي على مزاية اكتر
+            <li className="flex flex-row items-center justify-center">
+              <strong>
+                <img src={False} alt="خطأ" width="15" className="mr-1" />
+              </strong>
+              تحتوي على مزاية اكتر
             </li>
-            <li>
-              <strong>false</strong>تحتوي على تحكم اكبر
+            <li className="flex flex-row items-center justify-center">
+              <strong>
+                <img src={False} alt="خطأ" width="20" className="mr-1" />
+              </strong>
+              تحتوي على تحكم اكبر
             </li>
-            <li>
-              <strong>true</strong>سرعة البرنامج
+            <li className="flex flex-row items-center justify-center">
+              <strong>
+                <img src={True} alt="صواب" width="20" className="mr-1" />
+              </strong>
+              سرعة البرنامج
             </li>
-            <li>
-              <strong>true</strong>إنشاء الفواتير و طباعتها
+            <li className="flex flex-row items-center justify-center">
+              <strong>
+                <img src={True} alt="صواب" width="20" className="mr-1" />
+              </strong>
+              إنشاء الفواتير و طباعتها
             </li>
           </ul>
           <a href="=" className="order-btn">

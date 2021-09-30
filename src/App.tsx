@@ -10,6 +10,7 @@ const HomePage = lazy(() => import('./page/HomePage/HomePage'));
 const DownloadPage = lazy(() => import('./page/DownloadPage/DownloadPage'));
 const SupportPage = lazy(() => import('./page/SupportPage/SupportPage'));
 const PartnersPage = lazy(() => import('./page/PartnersPage/PartnersPage'));
+const ServicesPage = lazy(() => import('./page/ServicesPage/ServicesPage'));
 const PartnerDetailsPage = lazy(
   () => import('./page/PartnerDetailsPage/PartnerDetailsPage')
 );
@@ -38,6 +39,7 @@ const App = (): ReactElement => {
               component={AnswerOfQuestion}
             />
             <Route exact path="/download" component={DownloadPage} />
+            <Route exact path="/services" component={ServicesPage} />
             <Route exact path="/test" component={GridTest} />
           </Suspense>
         </Switch>

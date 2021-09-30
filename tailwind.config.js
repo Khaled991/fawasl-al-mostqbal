@@ -24,6 +24,10 @@ module.exports = {
       gridTemplateRows: {
         "chat-layout": "50px 400px 50px",
       },
+      fontSize: {
+        '4-5xl': '2.5rem',
+
+      }
     },
   },
   variants: {
