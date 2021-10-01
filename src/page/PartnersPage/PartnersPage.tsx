@@ -5,7 +5,7 @@ import { getNameAndLogoPartners } from "./PartnersData";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const PartnersPage = (): ReactElement => {
+const PartnersPage = ({ match: { url } }: any): ReactElement => {
   return (
     <div className="partners-page grid-cols-1: lg:grid-cols-2">
       <div className="partners-image-container w-full">
@@ -24,14 +24,7 @@ const PartnersPage = (): ReactElement => {
         >
           {getNameAndLogoPartners().map(function ({ logo, name }, i) {
             return (
-              <Link
-                key={i}
-                to={{
-                  pathname: "/partnerDetails",
-                  state: { ...{ logo, name }, i },
-                }}
-                className="partner"
-              >
+              <Link key={i} to={`${url}/${i}`} className="partner">
                 <img src={logo} alt={`${name} logo`} className="partner-logo" />
                 {/* <Logo className="partner-logo" /> */}
                 <motion.span

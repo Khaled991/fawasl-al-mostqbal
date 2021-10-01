@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./NavBar.scss";
 import { ReactComponent as Logo } from "../../assets/Img/logo.svg";
 import HomeIcon from "../../assets/Icons/home.svg";
@@ -41,7 +41,7 @@ function useOutsideCloseNavbar(
 const NavBar = () => {
   const wrapperRef = useRef(null);
   const [navbarIsActive, setNavbarIsActive] = useState(false);
-  const [activePage, setActivePage] = useState("/");
+  const [activePage, setActivePage] = useState("");
 
   useOutsideCloseNavbar(wrapperRef, closeNavBar);
 
@@ -50,22 +50,24 @@ const NavBar = () => {
   }
 
   const navBarData: INavBarData[] = [
-    { icon: HomeIcon, path: "/", label: "الرئيسية" },
+    { path: "/", icon: HomeIcon, label: "الرئيسية" },
     { path: "/videos", icon: VideosIcon, label: "فيديوهات" },
     { path: "/partners", icon: DistributorsIcon, label: "الموزعين" },
-    { path: "/services", icon: ServicesIcon, label: "خدماتنا" },
+    { path: "/services", icon: ServicesIcon, label: "طلبات خاصة" },
     { path: "/support", icon: SupportIcon, label: "الدعم" },
   ];
   function onClickNavbarLink(path: string): void {
     setActivePage(path);
     closeNavBar();
   }
+  const location = useLocation();
+
+  useEffect(() => {
+    setActivePage(location.pathname);
+  }, [location.pathname]);
+
   return (
-    <div
-      className="z-100"
-      // onClick={(e) => console.log(e.target)}
-      ref={wrapperRef}
-    >
+    <div className="z-100" ref={wrapperRef}>
       <div
         style={{ cursor: "pointer" }}
         className={`md:hidden absolute z-50 right-1 pointer flex flex-col items-end mr-2 mt-3 ${
@@ -83,81 +85,35 @@ const NavBar = () => {
         } md:right-5 transition-all duration-500 z-10`}
       >
         <div className="navbar-items">
-          <Logo className="navbar-logo" />
-          <div className="menu-icon"></div>
+          <Link to="/">
+            <Logo className="navbar-logo" />
+          </Link>
+
           <div className="nav-menu">
-            {navBarData.map(({ icon, path, label }) => (
-              <Link to={path} key={path}>
-                <div
-                  className={`nav-link-container ${
-                    activePage === path ? "active" : ""
-                  }`}
-                  onClick={() => onClickNavbarLink(path)}
-                >
-                  <img src={icon} alt="navIcon" className="nav-icon" />
-                  <span className="nav-link">{label}</span>
-                </div>
-              </Link>
-            ))}
-            {/* <Link to="/">
-              <div
-                className={`nav-link-container ${
-                  activePage !== "/" ? "active" : ""
-                }`}
-                onClick={() => setActivePage("/")}
-              >
-                <img src={HomeIcon} alt="navIcon" className="nav-icon" />
-                <span className="nav-link">الرئيسية</span>
-              </div>
-            </Link>
-            <Link to="/">
-              <div
-                className={`nav-link-container ${
-                  activePage !== "/" ? "active" : ""
-                }`}
-                onClick={() => setActivePage("/")}
-              >
-                <img src={VideosIcon} alt="navIcon" className="nav-icon" />
-                <span className="nav-link">فيديوهات</span>
-              </div>
-            </Link>
-            <Link to="/partners">
-              <div
-                className={`nav-link-container ${
-                  activePage == "/partne=rs" ? "active" : ""
-                }`}
-                onClick={() => setActivePage("/partners")}
-              >
-                <img
-                  src={DistributorsIcon}
-                  alt="navIcon"
-                  className="nav-icon"
-                />
-                <span className="nav-link">الموزعين</span>
-              </div>
-            </Link>
-            <Link to="/">
-              <div
-                className={`nav-link-container ${
-                  activePage !== "/" ? "active" : ""
-                }`}
-                onClick={() => setActivePage("/")}
-              >
-                <img src={ServicesIcon} alt="navIcon" className="nav-icon" />
-                <span className="nav-link">خدماتنا</span>
-              </div>
-            </Link>
-            <Link to="/support">
-              <div
-                className={`nav-link-container ${
-                  activePage == "/suppo=rt" ? "active" : ""
-                }`}
-                onClick={() => setActivePage("/support")}
-              >
-                <img src={SupportIcon} alt="navIcon" className="nav-icon" />
-                <span className="nav-link">الدعم</span>
-              </div>
-            </Link> */}
+            {navBarData.map(({ icon, path, label }) => {
+              console.log("/");
+              return (
+                <Link to={path} key={path}>
+                  <div
+                    className={`nav-link-container ${
+                      (
+                        path === "/"
+                          ? path === activePage
+                          : activePage.includes(
+                              path === "/" ? "/" : path.replaceAll("/", "")
+                            )
+                      )
+                        ? "active"
+                        : ""
+                    }`}
+                    onClick={() => onClickNavbarLink(path)}
+                  >
+                    <img src={icon} alt="navIcon" className="nav-icon" />
+                    <span className="nav-link">{label}</span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </nav>

@@ -1,6 +1,7 @@
-import { ReactElement } from "react";
-import circle from "../../assets/Img/circle.svg";
-import complaint from "../../assets/Img/complaintImage.svg";
+import { ReactElement } from 'react';
+import circle from '../../assets/Img/circle.svg';
+import complaint from '../../assets/Img/complaintImage.svg';
+import Button from '../Button/Button';
 
 function ComplaintPage(): ReactElement {
   return (
@@ -10,8 +11,8 @@ function ComplaintPage(): ReactElement {
         alt="circle"
         className="w-80 h-80 absolute animate-spin hidden lg:block"
         style={{
-          top: "-10rem",
-          left: "-10rem",
+          top: '-10rem',
+          left: '-10rem',
         }}
       />
       <div className="w-full h-screen grid grid-cols-2 grid-rows-2 md:pr-32 gap-10 place-content-center">
@@ -40,7 +41,7 @@ function ComplaintPage(): ReactElement {
               rows={10}
               placeholder="تفاصيل الشكوى"
             ></textarea>
-            <button className="custom-button w-44">إرسال</button>
+            <Button buttonStyleType="solidGreen w-44">إرسال</Button>
           </div>
         </div>
       </div>

@@ -1,0 +1,89 @@
+@import '../../utils/constants.scss';
+.Not-found-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .container-error-404 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    .h1-error-404 {
+      font-size: 200px;
+      color: $primarycolor;
+      font-family: monospace;
+      position: relative;
+    }
+    .circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 10px solid $primarycolor;
+      border-left-color: transparent;
+      position: absolute;
+      top: 100px;
+      left: 120px;
+      animation: 1s infinite cir;
+    }
+    @keyframes cir {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .cir2 {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 5px solid $primarycolor;
+
+      border-right-color: transparent;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      animation: 2s infinite cir2;
+    }
+    @keyframes cir2 {
+      0% {
+        transform: rotate(0deg);
+      }
+      30% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  p {
+    color: $primarycolor;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+    right: 20px;
+    // top: -100px;
+  }
+  // .h {
+  //   left: 10px;
+  // }
+  @media (min-width: 700px) {
+    .container-error-404 {
+      display: flex;
+      width: 410px;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: monospace;
+    }
+
+    .container-error-404 > .h1-error-404:first-of-type {
+      width: 250px;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@import "./utils/constants.scss";
+@import './utils/constants.scss';
 
 @font-face {
   font-family: Tajawal;
@@ -22,14 +22,14 @@
 
 body {
   margin: 0;
-  font-family: Tajawal, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: Tajawal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $darkColor;
-  min-height: 100vh;
-  background-image: url("./assets/Img/background.webp");
+  height: 100vh;
+  background-image: url('./assets/Img/background.webp');
   background-repeat: repeat;
   background-size: cover;
 }
@@ -44,30 +44,6 @@ a {
   box-sizing: border-box;
   outline: none;
 }
-.background {
-  // height: 100vh;
-  // width: 100%;
-  background-image: url("./assets/Img/background.webp");
-  background-repeat: repeat;
-  background-size: cover;
-}
-
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
-.custom-input {
-  @apply border-primary border-2 border-solid rounded-xl px-4 py-3 my-2 text-lg;
-}
-
-.custom-button {
-  @apply bg-primary py-4 text-white font-bold rounded-xl text-xl my-2;
-}
-
-.custom-button:hover {
-  background-color: #057249;
-}
-
 * {
   box-sizing: border-box;
 }
