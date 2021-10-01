@@ -69,7 +69,7 @@
 }
 @media only screen and (min-width: 768px) {
   .grid-partner-details-page {
-    grid-template-columns: 0.5fr 1fr 2.5fr 1fr 10fr 0.5fr;
+    grid-template-columns: 0.5fr 50px 250px 50px 10fr 0.5fr;
     grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr 6fr 1.5fr 0.5fr;
 
     .title-grid {
