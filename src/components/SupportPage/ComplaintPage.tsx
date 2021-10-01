@@ -4,8 +4,17 @@ import complaint from "../../assets/Img/complaintImage.svg";
 
 function ComplaintPage(): ReactElement {
   return (
-    <div className="relative">
-      <div className="w-screen h-screen grid grid-cols-2 grid-rows-2 md:pr-32 gap-10 place-content-center">
+    <div className="relative py-8">
+      <img
+        src={circle}
+        alt="circle"
+        className="w-80 h-80 absolute animate-spin hidden lg:block"
+        style={{
+          top: "-10rem",
+          left: "-10rem",
+        }}
+      />
+      <div className="w-full h-screen grid grid-cols-2 grid-rows-2 md:pr-32 gap-10 place-content-center">
         <img
           className="w-full lg:p-10 xl:p-28 hidden lg:block row-span-2 self-center"
           src={complaint}
@@ -35,15 +44,6 @@ function ComplaintPage(): ReactElement {
           </div>
         </div>
       </div>
-      <img
-        src={circle}
-        alt="circle"
-        className="w-80 sm:w-96 h-80 sm:h-96 absolute animate-spin dura"
-        style={{
-          top: "-12rem",
-          left: "-12rem",
-        }}
-      />
     </div>
   );
 }

@@ -1,14 +1,13 @@
 @import "../../utils/constants.scss";
 
 .questions-page-container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   .popular-question-text {
     display: flex;
-    margin-top: 30px;
     .title-black-border-text-container {
       .title-black-text {
         font-size: 40px;

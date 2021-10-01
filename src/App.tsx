@@ -4,7 +4,6 @@ import NavBar from './components/NavBar/NavBar';
 import Loading from './components/loading/loading';
 import './App.scss';
 import './test.scss';
-// import Footer from "./components/Footer/Footer";
 
 const HomePage = lazy(() => import('./page/HomePage/HomePage'));
 const DownloadPage = lazy(() => import('./page/DownloadPage/DownloadPage'));
@@ -22,7 +21,7 @@ const App = (): ReactElement => {
   return (
     <BrowserRouter>
       <NavBar />
-      <div className="background pr-0 md:pr-32">
+      <div className="background pr-0 md:pr-32 pt-16 md:pt-0">
         <Switch>
           <Suspense fallback={<Loading />}>
             <Route exact path="/" component={HomePage} />
@@ -40,7 +39,7 @@ const App = (): ReactElement => {
             />
             <Route exact path="/download" component={DownloadPage} />
             <Route exact path="/services" component={ServicesPage} />
-            <Route exact path="/test" component={GridTest} />
+            {/* <Route exact path="/test" component={GridTest} /> */}
           </Suspense>
         </Switch>
       </div>
@@ -51,12 +50,3 @@ const App = (): ReactElement => {
 };
 
 export default App;
-
-const GridTest = () => (
-  <div className="grid gap-4 h-screen grid-partner-details-page">
-    <div className="title-grid">title</div>
-    <div className="info-grid">info</div>
-    <div className="logo-grid">logo</div>
-    <div className="map-grid">map</div>
-  </div>
-);
