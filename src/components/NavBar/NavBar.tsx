@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./NavBar.scss";
 import { ReactComponent as Logo } from "../../assets/Img/logo.svg";
 import HomeIcon from "../../assets/Icons/home.svg";
@@ -41,7 +41,7 @@ function useOutsideCloseNavbar(
 const NavBar = () => {
   const wrapperRef = useRef(null);
   const [navbarIsActive, setNavbarIsActive] = useState(false);
-  const [activePage, setActivePage] = useState("/");
+  const [activePage, setActivePage] = useState("");
 
   useOutsideCloseNavbar(wrapperRef, closeNavBar);
 
@@ -60,6 +60,12 @@ const NavBar = () => {
     setActivePage(path);
     closeNavBar();
   }
+  const location = useLocation();
+
+  useEffect(() => {
+    setActivePage(location.pathname);
+  }, [location.pathname]);
+
   return (
     <div
       className="z-100"

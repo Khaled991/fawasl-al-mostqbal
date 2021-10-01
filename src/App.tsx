@@ -25,11 +25,7 @@ const App = (): ReactElement => {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/support" component={SupportPage} />
             <Route exact path="/partners" component={PartnersPage} />
-            <Route
-              exact
-              path="/partnerDetails"
-              component={PartnerDetailsPage}
-            />
+            <Route exact path="/partners/:id" component={PartnerDetailsPage} />
             <Route
               exact
               path="/support/AnswerOfQuestion/:id"

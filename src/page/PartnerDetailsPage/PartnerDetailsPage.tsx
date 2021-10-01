@@ -7,15 +7,21 @@ import CommercialRecord from "../../assets/Icons/commercial-record.svg";
 import Email from "../../assets/Icons/email.svg";
 import "./PartnerDetailsPage.scss";
 import { motion } from "framer-motion";
-import { getRestPartnerData } from "../PartnersPage/PartnersData";
 import LogoSvg from "../../assets/Img/logo.svg";
+import { partnersData } from "./../PartnersPage/PartnersData";
 
-const PartnerDetailsPage = ({ location: { state } }: any): ReactElement => {
-  const details = {
-    ...getRestPartnerData(state.i),
-    logo: state.logo,
-    name: state.name,
-  };
+const PartnerDetailsPage = ({
+  location: { state },
+  match: {
+    params: { id },
+  },
+}: any): ReactElement => {
+  const details = partnersData[id];
+  // {
+  //   ...getRestPartnerData(id),
+  //   logo: state.logo,
+  //   name: state.name,
+  // };
 
   function RenderDetailsData(): ReactElement {
     return (
