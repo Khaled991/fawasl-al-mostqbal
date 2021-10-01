@@ -68,9 +68,11 @@ const PartnerDetailsPage = ({ location: { state } }: any): ReactElement => {
       <div className="title-grid">
         <Name name={details.name} />
       </div>
-      <div className="info-grid">info</div>
       <div className="logo-grid">
         <Logo />
+      </div>
+      <div className="info-grid">
+        <RenderDetailsData />
       </div>
       <div className="map-grid">
         <Map />
@@ -120,7 +122,7 @@ const PartnerDetailsPage = ({ location: { state } }: any): ReactElement => {
 };
 
 const Name = ({ name }: any) => (
-  <div className="name-bar mt-5 lg:mt-16 flex justify-center md:justify-start items-center">
+  <div className="name-bar my-5 lg:my-16 flex justify-center md:justify-start items-center">
     <motion.span
       transition={{ duration: 1.2 }}
       initial={{ y: -300 }}
@@ -137,7 +139,7 @@ const Logo = () => (
     transition={{ duration: 1.2 }}
     initial={{ scale: 0 }}
     animate={{ scale: 1 }}
-    className="logo-container w-4/6 md:w-7/12 p-12 md:p-12 grid place-content-center"
+    className="logo-container w-4/6 md:w-7/12 grid place-content-center"
   >
     <img
       src={LogoSvg}
