@@ -1,5 +1,5 @@
 import { ReactElement, lazy, Suspense } from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Loading from "./components/loading/loading";
 import "./App.scss";
@@ -22,10 +22,9 @@ const App = (): ReactElement => {
     <BrowserRouter>
       <NavBar />
       <div className="pr-0 md:pr-32 pt-16 md:pt-0">
-        <Switch>
-          <Suspense fallback={<Loading />}>
+        <Suspense fallback={<Loading />}>
+          <Switch>
             <Route exact path="/" component={HomePage} />
-
             <Route exact path="/support" component={SupportPage} />
             <Route exact path="/partners" component={PartnersPage} />
             <Route exact path="/partners/:id" component={PartnerDetailsPage} />
@@ -36,10 +35,11 @@ const App = (): ReactElement => {
             />
             <Route exact path="/download" component={DownloadPage} />
             <Route exact path="/services" component={ServicesPage} />
-            <Route exact path="/404" component={NotFoundPage} />
-            <Redirect to="/404" />
-          </Suspense>
-        </Switch>
+            {/* <Route exact path="/404" component={NotFoundPage} />
+              <Redirect to="/404" /> */}
+            <Route component={NotFoundPage} />
+          </Switch>
+        </Suspense>
       </div>
       {/* TODO footer */}
       {/* <Footer /> */}

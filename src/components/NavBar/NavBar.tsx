@@ -90,19 +90,30 @@ const NavBar = () => {
           </Link>
 
           <div className="nav-menu">
-            {navBarData.map(({ icon, path, label }) => (
-              <Link to={path} key={path}>
-                <div
-                  className={`nav-link-container ${
-                    activePage.includes(path) ? "active" : ""
-                  }`}
-                  onClick={() => onClickNavbarLink(path)}
-                >
-                  <img src={icon} alt="navIcon" className="nav-icon" />
-                  <span className="nav-link">{label}</span>
-                </div>
-              </Link>
-            ))}
+            {navBarData.map(({ icon, path, label }) => {
+              console.log("/");
+              return (
+                <Link to={path} key={path}>
+                  <div
+                    className={`nav-link-container ${
+                      (
+                        path === "/"
+                          ? path === activePage
+                          : activePage.includes(
+                              path === "/" ? "/" : path.replaceAll("/", "")
+                            )
+                      )
+                        ? "active"
+                        : ""
+                    }`}
+                    onClick={() => onClickNavbarLink(path)}
+                  >
+                    <img src={icon} alt="navIcon" className="nav-icon" />
+                    <span className="nav-link">{label}</span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </nav>

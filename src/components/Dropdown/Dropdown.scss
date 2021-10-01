@@ -1,4 +1,4 @@
-@import '../../utils/constants.scss';
+@import "../../utils/constants.scss";
 .container {
   .select-box {
     display: flex;
@@ -44,15 +44,17 @@
     font-size: 17px;
 
     &::after {
-      content: '';
-      background: url('../../assets/Icons/down-arrow.svg');
+      content: "";
+      background: url("../../assets/Icons/down-arrow.svg");
       background-size: contain;
+      background-position: center;
       background-repeat: no-repeat;
       position: absolute;
       height: 50%;
       width: 17px;
       left: 10px;
       transition: all 0.4s;
+      vertical-align: middle;
     }
   }
 }
