@@ -67,11 +67,7 @@ const NavBar = () => {
   }, [location.pathname]);
 
   return (
-    <div
-      className="z-100"
-      // onClick={(e) => console.log(e.target)}
-      ref={wrapperRef}
-    >
+    <div className="z-100" ref={wrapperRef}>
       <div
         style={{ cursor: "pointer" }}
         className={`md:hidden absolute z-50 right-1 pointer flex flex-col items-end mr-2 mt-3 ${
@@ -96,7 +92,7 @@ const NavBar = () => {
               <Link to={path} key={path}>
                 <div
                   className={`nav-link-container ${
-                    activePage === path ? "active" : ""
+                    activePage.includes(path) ? "active" : ""
                   }`}
                   onClick={() => onClickNavbarLink(path)}
                 >

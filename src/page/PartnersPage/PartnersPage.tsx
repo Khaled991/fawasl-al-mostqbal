@@ -24,15 +24,7 @@ const PartnersPage = ({ match: { url } }: any): ReactElement => {
         >
           {getNameAndLogoPartners().map(function ({ logo, name }, i) {
             return (
-              <Link
-                key={i}
-                to={`${url}${i}`}
-                // to={{
-                //   pathname: `${url}/${i}`,
-                //   state: { ...{ logo, name }, i },
-                // }}
-                className="partner"
-              >
+              <Link key={i} to={`${url}/${i}`} className="partner">
                 <img src={logo} alt={`${name} logo`} className="partner-logo" />
                 {/* <Logo className="partner-logo" /> */}
                 <motion.span

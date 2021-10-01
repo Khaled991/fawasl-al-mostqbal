@@ -39,15 +39,20 @@
     .details-container {
       margin-top: 80px;
       margin-bottom: 10px;
-      .details-text {
+      .details-container {
         margin: 45px 0;
         display: flex;
         color: $darkColor;
+
         .details-icon {
           max-width: 35px;
           fill: $primarycolor;
           margin-left: 10px;
           max-height: 35px;
+        }
+
+        .details-text {
+          direction: ltr;
         }
       }
     }
@@ -66,7 +71,7 @@
   .grid-partner-details-page {
     grid-template-columns: 0.5fr 1fr 2.5fr 1fr 10fr 0.5fr;
     grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr 6fr 1.5fr 0.5fr;
-    // height: auto;
+
     .title-grid {
       grid-row: 2/ 4;
       grid-column: 1/ 7;
@@ -109,7 +114,7 @@
     justify-content: center;
     align-items: center;
     .details-container {
-      margin-top: 10px !important;
+      margin: 22.5px 0 !important;
     }
   }
 }

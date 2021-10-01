@@ -33,36 +33,36 @@ const PartnerDetailsPage = ({
       >
         <motion.a
           href={`tele:${details.mobile}`}
-          className="details-text flex items-center text-lg"
+          className="details-container flex items-center text-lg"
         >
           <img src={Mobile} alt="mobile" className="details-icon" />
-          {details.mobile}
+          <div className="details-text">{details.mobile}</div>
         </motion.a>
         <motion.a
           href={`tele:${details.phoneNumber}`}
-          className="details-text flex items-center text-lg"
+          className="details-container flex items-center text-lg"
         >
           <img src={Phone} alt="phone" className="details-icon" />
-          {details.phoneNumber}
+          <div className="details-text">{details.phoneNumber}</div>
         </motion.a>
         <motion.a
           href={`mailto:${details.email}`}
-          className="details-text flex items-center text-lg"
+          className="details-container flex items-center text-lg"
         >
           <img src={Email} alt="email" className="details-icon" />
-          {details.email}
+          <div className="details-text">{details.email}</div>
         </motion.a>
-        <motion.div className="details-text flex items-center text-lg">
+        <motion.div className="details-container flex items-center text-lg">
           <img
             src={CommercialRecord}
             alt="CommercialRecord"
             className="details-icon"
           />
-          {details.CommercialRecord}
+          <div className="details-text">{details.CommercialRecord}</div>
         </motion.div>
-        <motion.div className="details-text flex items-center text-lg">
+        <motion.div className="details-container flex items-center text-lg">
           <img src={Location} alt="Location" className="details-icon" />
-          {details.address}
+          <div>{details.address}</div>
         </motion.div>
       </motion.div>
     );
