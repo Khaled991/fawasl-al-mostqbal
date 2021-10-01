@@ -1,22 +1,22 @@
 import { ReactElement, lazy, Suspense } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Loading from './components/loading/loading';
 import './App.scss';
 import './test.scss';
 
-// const NotFoundPage = lazy(() => import('./page/NotFoundPage/NotFoundPage'));
-const HomePage = lazy(() => import('./page/HomePage/HomePage'));
-const DownloadPage = lazy(() => import('./page/DownloadPage/DownloadPage'));
-const SupportPage = lazy(() => import('./page/SupportPage/SupportPage'));
-const PartnersPage = lazy(() => import('./page/PartnersPage/PartnersPage'));
-const ServicesPage = lazy(() => import('./page/ServicesPage/ServicesPage'));
 const PartnerDetailsPage = lazy(
   () => import('./page/PartnerDetailsPage/PartnerDetailsPage')
 );
 const AnswerOfQuestion = lazy(
   () => import('./page/SupportPage/subpage/AnswerOfQuestion')
 );
+const HomePage = lazy(() => import('./page/HomePage/HomePage'));
+const DownloadPage = lazy(() => import('./page/DownloadPage/DownloadPage'));
+const SupportPage = lazy(() => import('./page/SupportPage/SupportPage'));
+const PartnersPage = lazy(() => import('./page/PartnersPage/PartnersPage'));
+const ServicesPage = lazy(() => import('./page/ServicesPage/ServicesPage'));
+const NotFoundPage = lazy(() => import('./page/NotFoundPage/NotFoundPage'));
 
 const App = (): ReactElement => {
   return (
@@ -42,7 +42,8 @@ const App = (): ReactElement => {
             <Route exact path="/download" component={DownloadPage} />
             <Route exact path="/services" component={ServicesPage} />
             {/* <Route exact path="/test" component={GridTest} /> */}
-            {/* <Route component={NotFoundPage} /> */}
+            <Route exact path="/404" component={NotFoundPage} />
+            <Redirect to="/404" />
           </Suspense>
         </Switch>
       </div>
