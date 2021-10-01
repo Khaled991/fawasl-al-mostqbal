@@ -107,25 +107,25 @@ export const DownloadCardsPages = (): ReactElement => {
           <ul>
             <li className="flex flex-row items-center justify-center">
               <strong>
-                <img src={True} alt="صواب" width="20" className="mr-1" />
+                <img src={True} alt="صواب" width="20" className="mr-2" />
               </strong>
               تحتوي على مزاية اكتر
             </li>
             <li className="flex flex-row items-center justify-center">
               <strong>
-                <img src={True} alt="صواب" width="20" className="mr-1" />
+                <img src={True} alt="صواب" width="20" className="mr-2" />
               </strong>
               تحتوي على تحكم اكبر
             </li>
             <li className="flex flex-row items-center justify-center">
               <strong>
-                <img src={True} alt="صواب" width="20" className="mr-1" />
+                <img src={True} alt="صواب" width="20" className="mr-2" />
               </strong>
               سرعة البرنامج
             </li>
             <li className="flex flex-row items-center justify-center">
               <strong>
-                <img src={True} alt="صواب" width="20" className="mr-1" />
+                <img src={True} alt="صواب" width="20" className="mr-2" />
               </strong>
               إنشاء الفواتير و طباعتها
             </li>
@@ -142,25 +142,25 @@ export const DownloadCardsPages = (): ReactElement => {
           <ul>
             <li className="flex flex-row items-center justify-center">
               <strong>
-                <img src={False} alt="خطأ" width="15" className="mr-1" />
+                <img src={False} alt="خطأ" width="15" className="mr-2" />
               </strong>
               تحتوي على مزاية اكتر
             </li>
             <li className="flex flex-row items-center justify-center">
               <strong>
-                <img src={False} alt="خطأ" width="20" className="mr-1" />
+                <img src={False} alt="خطأ" width="15" className="mr-2" />
               </strong>
               تحتوي على تحكم اكبر
             </li>
             <li className="flex flex-row items-center justify-center">
               <strong>
-                <img src={True} alt="صواب" width="20" className="mr-1" />
+                <img src={True} alt="صواب" width="20" className="mr-2" />
               </strong>
               سرعة البرنامج
             </li>
             <li className="flex flex-row items-center justify-center">
               <strong>
-                <img src={True} alt="صواب" width="20" className="mr-1" />
+                <img src={True} alt="صواب" width="20" className="mr-2" />
               </strong>
               إنشاء الفواتير و طباعتها
             </li>

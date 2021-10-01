@@ -50,7 +50,7 @@ const NavBar = () => {
   }
 
   const navBarData: INavBarData[] = [
-    { icon: HomeIcon, path: '/', label: 'الرئيسية' },
+    { path: '/', icon: HomeIcon, label: 'الرئيسية' },
     { path: '/videos', icon: VideosIcon, label: 'فيديوهات' },
     { path: '/partners', icon: DistributorsIcon, label: 'الموزعين' },
     { path: '/services', icon: ServicesIcon, label: 'طلبات خاصة' },
@@ -83,8 +83,10 @@ const NavBar = () => {
         } md:right-5 transition-all duration-500 z-10`}
       >
         <div className="navbar-items">
-          <Logo className="navbar-logo" />
-          <div className="menu-icon"></div>
+          <Link to="/">
+            <Logo className="navbar-logo" />
+          </Link>
+
           <div className="nav-menu">
             {navBarData.map(({ icon, path, label }) => (
               <Link to={path} key={path}>

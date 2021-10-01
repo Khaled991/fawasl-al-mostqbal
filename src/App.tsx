@@ -5,6 +5,7 @@ import Loading from './components/loading/loading';
 import './App.scss';
 import './test.scss';
 
+// const NotFoundPage = lazy(() => import('./page/NotFoundPage/NotFoundPage'));
 const HomePage = lazy(() => import('./page/HomePage/HomePage'));
 const DownloadPage = lazy(() => import('./page/DownloadPage/DownloadPage'));
 const SupportPage = lazy(() => import('./page/SupportPage/SupportPage'));
@@ -21,10 +22,11 @@ const App = (): ReactElement => {
   return (
     <BrowserRouter>
       <NavBar />
-      <div className="background pr-0 md:pr-32 pt-16 md:pt-0">
+      <div className="pr-0 md:pr-32 pt-16 md:pt-0">
         <Switch>
           <Suspense fallback={<Loading />}>
             <Route exact path="/" component={HomePage} />
+
             <Route exact path="/support" component={SupportPage} />
             <Route exact path="/partners" component={PartnersPage} />
             <Route
@@ -40,6 +42,7 @@ const App = (): ReactElement => {
             <Route exact path="/download" component={DownloadPage} />
             <Route exact path="/services" component={ServicesPage} />
             {/* <Route exact path="/test" component={GridTest} /> */}
+            {/* <Route component={NotFoundPage} /> */}
           </Suspense>
         </Switch>
       </div>

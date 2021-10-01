@@ -2,7 +2,7 @@ import { ReactElement, useState } from 'react';
 import './ServicesPage.scss';
 import Services1 from '../../assets/Img/services1.svg';
 import Services2 from '../../assets/Img/services2.svg';
-import { ReactComponent as EmojiSmile } from '../../assets/Icons/emojiSmile.svg';
+import EmojiSmile from '../../assets/Icons/emojiSmile.svg';
 import Button from '../../components/Button/Button';
 import Dropdown from '../../components/Dropdown/Dropdown';
 
@@ -10,8 +10,8 @@ const ServicesPage = (): ReactElement => {
   const [selectedIndex, setSelectedIndex] = useState({});
 
   return (
-    <div className="services-page-container">
-      <div className="services-page grid grid-cols-1 lg:grid-cols-2  items-center">
+    <>
+      <div className="services-page grid grid-cols-1 xl:grid-cols-2 items-center">
         <img src={Services1} alt="طلبات خاصة" className="p-7" />
         <div className="services-description-container pr-0 lg:pr-8 pl-0 lg:pl-16 text-center lg:text-right	">
           <span className="text-3xl lg:text-4xl">
@@ -22,12 +22,18 @@ const ServicesPage = (): ReactElement => {
             <span className="text-primary">سهولة</span> الاستخدام يمكنك{' '}
             <span className="text-primary inline-flex items-center">
               {' '}
-              الطلب الان <EmojiSmile width="60" className="pl-2 pr-2 pt-2" />
+              الطلب الان{' '}
+              <img
+                src={EmojiSmile}
+                alt="وجة مبتسم"
+                width="60"
+                className="pl-2 pr-2 pt-2"
+              />
             </span>
           </span>
         </div>
       </div>
-      {/* page2 */}
+
       <div className="services-page grid grid-cols-1 xl:grid-cols-2 items-center">
         <div className="program-details flex flex-col items-center ">
           <div className="services-description-container px-0 md:px-28 text-center mb-8">
@@ -68,7 +74,7 @@ const ServicesPage = (): ReactElement => {
           className="p-9 hidden xl:block"
         />
       </div>
-    </div>
+    </>
   );
 };
 
