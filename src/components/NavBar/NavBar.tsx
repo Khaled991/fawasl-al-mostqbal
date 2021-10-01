@@ -50,10 +50,10 @@ const NavBar = () => {
   }
 
   const navBarData: INavBarData[] = [
-    { icon: HomeIcon, path: "/", label: "الرئيسية" },
+    { path: "/", icon: HomeIcon, label: "الرئيسية" },
     { path: "/videos", icon: VideosIcon, label: "فيديوهات" },
     { path: "/partners", icon: DistributorsIcon, label: "الموزعين" },
-    { path: "/services", icon: ServicesIcon, label: "خدماتنا" },
+    { path: "/services", icon: ServicesIcon, label: "طلبات خاصة" },
     { path: "/support", icon: SupportIcon, label: "الدعم" },
   ];
   function onClickNavbarLink(path: string): void {
@@ -85,8 +85,10 @@ const NavBar = () => {
         } md:right-5 transition-all duration-500 z-10`}
       >
         <div className="navbar-items">
-          <Logo className="navbar-logo" />
-          <div className="menu-icon"></div>
+          <Link to="/">
+            <Logo className="navbar-logo" />
+          </Link>
+
           <div className="nav-menu">
             {navBarData.map(({ icon, path, label }) => (
               <Link to={path} key={path}>
@@ -101,65 +103,6 @@ const NavBar = () => {
                 </div>
               </Link>
             ))}
-            {/* <Link to="/">
-              <div
-                className={`nav-link-container ${
-                  activePage !== "/" ? "active" : ""
-                }`}
-                onClick={() => setActivePage("/")}
-              >
-                <img src={HomeIcon} alt="navIcon" className="nav-icon" />
-                <span className="nav-link">الرئيسية</span>
-              </div>
-            </Link>
-            <Link to="/">
-              <div
-                className={`nav-link-container ${
-                  activePage !== "/" ? "active" : ""
-                }`}
-                onClick={() => setActivePage("/")}
-              >
-                <img src={VideosIcon} alt="navIcon" className="nav-icon" />
-                <span className="nav-link">فيديوهات</span>
-              </div>
-            </Link>
-            <Link to="/partners">
-              <div
-                className={`nav-link-container ${
-                  activePage == "/partne=rs" ? "active" : ""
-                }`}
-                onClick={() => setActivePage("/partners")}
-              >
-                <img
-                  src={DistributorsIcon}
-                  alt="navIcon"
-                  className="nav-icon"
-                />
-                <span className="nav-link">الموزعين</span>
-              </div>
-            </Link>
-            <Link to="/">
-              <div
-                className={`nav-link-container ${
-                  activePage !== "/" ? "active" : ""
-                }`}
-                onClick={() => setActivePage("/")}
-              >
-                <img src={ServicesIcon} alt="navIcon" className="nav-icon" />
-                <span className="nav-link">خدماتنا</span>
-              </div>
-            </Link>
-            <Link to="/support">
-              <div
-                className={`nav-link-container ${
-                  activePage == "/suppo=rt" ? "active" : ""
-                }`}
-                onClick={() => setActivePage("/support")}
-              >
-                <img src={SupportIcon} alt="navIcon" className="nav-icon" />
-                <span className="nav-link">الدعم</span>
-              </div>
-            </Link> */}
           </div>
         </div>
       </nav>
