@@ -61,7 +61,7 @@ const ServicesPage = (): ReactElement => {
             style={{ resize: 'none' }}
             draggable={true}
             rows={13}
-            placeholder="تفاصيل الشكوى"
+            placeholder="تفاصيل الطلب"
           />
           <Button buttonStyleType="solidGreen flex w-11/12 md:w-4/6 justify-center">
             ارسال الطلب

@@ -1,13 +1,13 @@
-import { ReactElement, useState } from "react";
-import callIcon from "../../assets/Icons/call.svg";
-import xIcon from "../../assets/Icons/x.svg";
-import sendIcon from "../../assets/Icons/send.svg";
-import attachImageIcon from "../../assets/Icons/attachImage.svg";
-import customerFemale from "../../assets/Icons/customerFemale.svg";
-import customerService from "../../assets/Icons/customerService.svg";
-import formatAMPM from "../../utils/formatAMPM";
-import chatIcon from "../../assets/Icons/chat.svg";
-import chat from "../../assets/Img/chatImage.svg";
+import { ReactElement, useState } from 'react';
+import callIcon from '../../assets/Icons/call.svg';
+import xIcon from '../../assets/Icons/x.svg';
+import sendIcon from '../../assets/Icons/send.svg';
+import attachImageIcon from '../../assets/Icons/attachImage.svg';
+import customerFemale from '../../assets/Icons/customerFemale.svg';
+import customerService from '../../assets/Icons/customerService.svg';
+import formatAMPM from '../../utils/formatAMPM';
+import chatIcon from '../../assets/Icons/chat.svg';
+import chat from '../../assets/Img/chatImage.svg';
 
 function ContactUsPage(): ReactElement {
   const [showChat, setShowChat] = useState<boolean>(false);
@@ -25,11 +25,11 @@ function ContactUsPage(): ReactElement {
       "
       >
         <div className="flex flex-col items-center md:px-20">
-          <div className="font-bold mb-4 text-center leading-snug text-4xl xl:text-5xl xl:leading-normal">
+          <div className="font-bold mb-4 text-center leading-snug text-4xl xl:text-4-5xl xl:leading-normal">
             <div className="w-full">
-              يمكنك التحدث مع أحد ممثلي{" "}
+              يمكنك التحدث مع أحد ممثلي{' '}
               <span className="text-primary">خدمة العملاء</span> إن لم تجد حل
-              لمشكلتك <div>نحن نعمل على الدوام</div>{" "}
+              لمشكلتك <div>نحن نعمل على الدوام</div>{' '}
               <span className="text-primary">٢٤</span> ساعة
             </div>
           </div>
@@ -58,7 +58,7 @@ function ContactUsPage(): ReactElement {
         src={chat}
         alt="chat"
       />
-      {showChat ? <Chat hideChat={() => setShowChat(false)} /> : ""}
+      {showChat ? <Chat hideChat={() => setShowChat(false)} /> : ''}
     </div>
   );
 }
@@ -87,15 +87,15 @@ function Chat({ hideChat }: any): ReactElement {
 
     function Message({ isMe, msg, time }: IMessage): ReactElement {
       return (
-        <div className={isMe ? "my-message" : "peer-message"}>
+        <div className={isMe ? 'my-message' : 'peer-message'}>
           <div>
             {msg}
             <div className="text-xs mt-1">{formatAMPM(time)}</div>
           </div>
           <img
             src={isMe ? customerFemale : customerService}
-            alt={isMe ? "me" : "peer"}
-            className={isMe ? "my-message-image" : "peer-message-image"}
+            alt={isMe ? 'me' : 'peer'}
+            className={isMe ? 'my-message-image' : 'peer-message-image'}
           />
         </div>
       );

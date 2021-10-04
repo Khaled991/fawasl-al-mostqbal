@@ -9,20 +9,19 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     .h1-error-404 {
-      font-size: 200px;
+      font-size: 260px;
       color: $primarycolor;
-      font-family: monospace;
       position: relative;
     }
     .circle {
-      width: 120px;
-      height: 120px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       border: 10px solid $primarycolor;
       border-left-color: transparent;
       position: absolute;
-      top: 100px;
-      left: 120px;
+      top: 130px;
+      left: 156px;
       animation: 1s infinite cir;
     }
     @keyframes cir {
@@ -37,8 +36,8 @@
       }
     }
     .cir2 {
-      width: 90px;
-      height: 90px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       border: 5px solid $primarycolor;
 
@@ -60,18 +59,9 @@
       }
     }
   }
-
-  p {
-    color: $primarycolor;
-    font-size: 30px;
-    font-weight: 500;
-    position: relative;
-    right: 20px;
-    // top: -100px;
+  .h {
+    left: 70px;
   }
-  // .h {
-  //   left: 10px;
-  // }
   @media (min-width: 700px) {
     .container-error-404 {
       display: flex;
@@ -79,11 +69,33 @@
       position: relative;
       margin-left: auto;
       margin-right: auto;
-      font-family: monospace;
     }
-
     .container-error-404 > .h1-error-404:first-of-type {
       width: 250px;
+    }
+  }
+  .not-found-button {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    color: $primarycolor;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+    left: 20px;
+    top: -30px;
+    transition: all 0.5s;
+    &:hover {
+      color: $darkColor;
+      .left-arrow {
+        fill: $darkColor;
+      }
+    }
+    .left-arrow {
+      transition: all 0.5s;
+      width: 30px;
+      fill: $primarycolor;
+      margin: 0px 15px 0 0px;
     }
   }
 }

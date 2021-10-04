@@ -38,7 +38,7 @@ function ComplaintPage(): ReactElement {
             <textarea
               className="custom-input"
               cols={30}
-              rows={10}
+              rows={13}
               placeholder="تفاصيل الشكوى"
             ></textarea>
             <Button buttonStyleType="solidGreen w-44">إرسال</Button>

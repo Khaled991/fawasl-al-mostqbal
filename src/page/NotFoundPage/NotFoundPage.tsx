@@ -1,4 +1,6 @@
 import { ReactElement } from 'react';
+import { Link } from 'react-router-dom';
+import { ReactComponent as LeftArrow } from '../../assets/Icons/left-arrow.svg';
 import './NotFoundPage.scss';
 
 const NotFoundPage = (): ReactElement => {
@@ -11,7 +13,12 @@ const NotFoundPage = (): ReactElement => {
         </div>
         <h1 className="h1-error-404 h">4</h1>
       </div>
-      <p>الصفحة غير موجودة</p>
+      <Link to="/">
+        <p className="not-found-button">
+          <LeftArrow className="left-arrow" />
+          رجوع للصفحة الرئيسية
+        </p>
+      </Link>
     </div>
   );
 };
