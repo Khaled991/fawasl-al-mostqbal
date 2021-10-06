@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Loading from './components/loading/loading';
 import './App.scss';
+import BusinessPartnersPage from './page/BusinessPartnersPage/BusinessPartnersPage';
 
 const PartnerDetailsPage = lazy(
   () => import('./page/PartnerDetailsPage/PartnerDetailsPage')
@@ -37,6 +38,11 @@ const App = (): ReactElement => {
             <Route exact path="/download" component={DownloadPage} />
             <Route exact path="/services" component={ServicesPage} />
             <Route exact path="/videos" component={VideosPage} />
+            <Route
+              exact
+              path="/businessPartners"
+              component={BusinessPartnersPage}
+            />
             <Route component={NotFoundPage} />
           </Switch>
         </Suspense>

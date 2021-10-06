@@ -1,0 +1,24 @@
+.page-layout {
+  @apply grid lg:grid-cols-2 lg:place-content-center lg:items-center gap-16 overflow-hidden w-full px-4;
+  grid-auto-rows: minmax(min-content, max-content);
+
+  @media (min-width: 768px) {
+    min-height: calc(100vh - 64px);
+  }
+
+  .image {
+    @apply lg:place-self-center justify-self-center;
+    height: fit-content;
+  }
+
+  .content {
+    @apply row-start-2  lg:row-start-1 w-full;
+    height: fit-content;
+  }
+
+  &.reverse {
+    .content {
+      @apply lg:col-start-2;
+    }
+  }
+}

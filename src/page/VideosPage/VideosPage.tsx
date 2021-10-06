@@ -26,7 +26,7 @@ const VideosPage = (): ReactElement => {
           <img src={Search} alt="" width="22" />
         </div>
       </div>
-      <div className="videos-container mt-7 md:mt-0">
+      <div className="videos-container mt-7 md:mt-0 justify-center md:justify-start ">
         <div className="video-and-title flex flex-col">
           <div className="relative float-left">
             <iframe

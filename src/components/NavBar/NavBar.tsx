@@ -7,6 +7,7 @@ import VideosIcon from '../../assets/Icons/videos.svg';
 import DistributorsIcon from '../../assets/Icons/distributors.svg';
 import ServicesIcon from '../../assets/Icons/services.svg';
 import SupportIcon from '../../assets/Icons/support.svg';
+import BusinessPartners from '../../assets/Icons/businessPartners.svg';
 
 interface INavBarData {
   icon: string;
@@ -54,6 +55,7 @@ const NavBar = () => {
     { path: '/videos', icon: VideosIcon, label: 'فيديوهات' },
     { path: '/partners', icon: DistributorsIcon, label: 'الموزعين' },
     { path: '/services', icon: ServicesIcon, label: 'طلبات خاصة' },
+    { path: '/businessPartners', icon: BusinessPartners, label: 'شركائنا' },
     { path: '/support', icon: SupportIcon, label: 'الدعم' },
   ];
   function onClickNavbarLink(path: string): void {
