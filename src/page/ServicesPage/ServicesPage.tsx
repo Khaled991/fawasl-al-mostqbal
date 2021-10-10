@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement, useState, useEffect } from 'react';
 import './ServicesPage.scss';
 import Services1 from '../../assets/Img/services1.svg';
 import Services2 from '../../assets/Img/services2.svg';
@@ -6,8 +6,34 @@ import EmojiSmile from '../../assets/Icons/emojiSmile.svg';
 import Button from '../../components/Button/Button';
 import Dropdown from '../../components/Dropdown/Dropdown';
 
+// import { collection, addDoc } from 'firebase/firestore';
+
 const ServicesPage = (): ReactElement => {
   const [selectedIndex, setSelectedIndex] = useState({});
+  const [ReqDescriptionValue, setReqDescriptionValue] = useState('');
+
+  useEffect(() => {
+    console.log('selectedIndex');
+    console.log(selectedIndex);
+    console.log(ReqDescriptionValue);
+  }, [selectedIndex, ReqDescriptionValue]);
+
+  const onChangeReqAnService = ({ target: { value } }: any) => {
+    setReqDescriptionValue(value);
+  };
+  const onPressSendReq = async () => {
+    if (selectedIndex === {}) alert('يجب اختيار نوع الطلب');
+    if (ReqDescriptionValue === '') alert('يجب أضافة تفاصيل الطلب');
+
+    // Add a new document with a generated id.
+    // const docRef = await addDoc(collection(firestor, 'workReq'), {
+    //   requestType: selectedIndex,
+    //   requestDetails: descriptionReqValue,
+    // });
+    // return docRef;
+    // setSelectedIndex({});
+    // setDescriptionReqValue('');
+  };
 
   return (
     <>
@@ -62,8 +88,12 @@ const ServicesPage = (): ReactElement => {
             draggable={true}
             rows={13}
             placeholder="تفاصيل الطلب"
+            onChange={onChangeReqAnService}
           />
-          <Button buttonStyleType="solidGreen flex w-11/12 md:w-4/6 justify-center">
+          <Button
+            onClick={onPressSendReq}
+            buttonStyleType="solidGreen flex w-11/12 md:w-4/6 justify-center"
+          >
             ارسال الطلب
           </Button>
         </div>
