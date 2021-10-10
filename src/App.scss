@@ -1,4 +1,4 @@
-@import './utils/constants.scss';
+@import "./utils/constants.scss";
 
 @font-face {
   font-family: Tajawal;
@@ -22,14 +22,14 @@
 
 body {
   margin: 0;
-  font-family: Tajawal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: Tajawal, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $darkColor;
   height: 100vh;
-  background-image: url('./assets/Img/background.webp');
+  background-image: url("./assets/Img/background.webp");
   background-repeat: repeat;
   background-size: cover;
 }
@@ -46,4 +46,13 @@ a {
 }
 * {
   box-sizing: border-box;
+}
+
+input,
+textarea {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
