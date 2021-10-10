@@ -1,18 +1,17 @@
 import { ReactElement, useState } from 'react';
-import chatIcon from '../../assets/Icons/chat.svg';
+import { ReactComponent as ChatIcon } from '../../assets/Icons/chat.svg';
 import chat from '../../assets/Img/chatImage.svg';
 import { createStructuredSelector } from 'reselect';
 import { connect, useDispatch } from 'react-redux';
 import { IRootReducer } from '../../redux/redux.models';
-import ChatHeader from '../chat/chat-header';
-import ChatBody from '../chat/chat-body';
-import ChatFooter from '../chat/chat-footer';
+import ChatHeader from '../Chat/chat-header';
+import ChatBody from '../Chat/chat-body';
+import ChatFooter from '../Chat/chat-footer';
 import { signInAnonymously } from 'firebase/auth';
 import { auth } from '../../utils/firebase';
 import { Dispatch } from 'redux';
 import { setAuthUuidAction } from '../../redux/uuid/auth.actions';
 import Button from '../Button/Button';
-import chatIcon from '../../assets/Icons/chat.svg';
 
 // interface IContactUsPageProps {}
 
@@ -60,7 +59,7 @@ function ContactUsPage(): ReactElement {
             onClick={onClickOpenChat}
           >
             فتح محادثة
-            <chatIcon className="chat-icon h-6 ml-3" />
+            <ChatIcon className="chat-icon h-6 ml-3" />
           </Button>
         </div>
       </div>

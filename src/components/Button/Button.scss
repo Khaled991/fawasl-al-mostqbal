@@ -13,18 +13,31 @@
 .btn.greenBorder {
   border: 2px solid $primarycolor;
   color: $primarycolor;
+  svg {
+    fill: $primarycolor;
+  }
   &:hover {
     background-color: $primarycolor;
     color: $whiteColor;
+    svg {
+      fill: $whiteColor;
+    }
   }
 }
 .btn.solidGreen {
   background-color: $primarycolor;
   border: 2px solid $primarycolor;
   color: $whiteColor;
+  transition: 0.5s;
+  svg {
+    fill: $whiteColor;
+  }
   &:hover {
     border: 2px solid $primarycolor;
     background-color: #f6f6f6;
     color: $primarycolor;
+    svg {
+      fill: $primarycolor;
+    }
   }
 }

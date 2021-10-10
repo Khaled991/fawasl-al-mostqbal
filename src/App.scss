@@ -1,4 +1,4 @@
-@import "./utils/constants.scss";
+@import './utils/constants.scss';
 
 @font-face {
   font-family: Tajawal;
@@ -28,7 +28,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: $darkColor;
   height: 100vh;
-  background-image: url("./assets/Img/background.webp");
+  background-image: url('./assets/Img/background.webp');
   background-repeat: repeat;
   background-size: cover;
 }
@@ -45,8 +45,6 @@ a {
   box-sizing: border-box;
   outline: none;
 }
-<<<<<<< HEAD
-=======
 * {
   box-sizing: border-box;
 }
@@ -59,4 +57,3 @@ textarea {
   -ms-user-select: text;
   user-select: text;
 }
->>>>>>> 4b37cdef48095a933023107cb7606624ff07d872
