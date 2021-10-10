@@ -91,6 +91,7 @@ const ChatBody = (): ReactElement => {
     );
 
     return () => unsubscribe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, myUuid, firstMessageUid]);
 
   const scrollChatToMostBottom = () => {
@@ -114,7 +115,7 @@ const ChatBody = (): ReactElement => {
 
   useEffect(() => {
     fixScrollAtSamePositionAfterFetchingMoreMessages();
-    // eslint-disable-ne  xt-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [messages]);
 
   function fixScrollAtSamePositionAfterFetchingMoreMessages() {
