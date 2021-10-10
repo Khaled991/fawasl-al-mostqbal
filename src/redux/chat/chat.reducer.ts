@@ -1,6 +1,6 @@
 import { chatActionTypes } from "./chat.types";
 import { IChatState } from "./chat.models";
-import { IAction } from "./../../redux.models";
+import { IAction } from "../redux.models";
 import { modifyMessagesState } from "./chat.utils";
 
 const INITIAL_STATE: IChatState = {

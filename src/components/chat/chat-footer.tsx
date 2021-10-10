@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 
 import sendIcon from "../../assets/Icons/send.svg";
 import attachImageIcon from "../../assets/Icons/attachImage.svg";
-import { sendMessageToFireStore } from "../../redux/reducers/chat/chat.utils";
-import { selectUuid } from "../../redux/uuid/auth.selector";
+import { sendMessageToFireStore } from "../../redux/chat/chat.utils";
+import { selectUuid } from "../../redux/auth/auth.selector";
 
 // interface IChatFooterProps {}
 

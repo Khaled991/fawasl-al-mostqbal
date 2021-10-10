@@ -10,7 +10,7 @@ import ChatFooter from "../chat/chat-footer";
 import { signInAnonymously } from "firebase/auth";
 import { auth } from "../../utils/firebase";
 import { Dispatch } from "redux";
-import { setAuthUuidAction } from "../../redux/uuid/auth.actions";
+import { setAuthUuidAction } from "../../redux/auth/auth.actions";
 
 // interface IContactUsPageProps {}
 

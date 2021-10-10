@@ -6,7 +6,7 @@ import {
   query,
 } from "@firebase/firestore";
 import { firestore } from "../../utils/firebase";
-import { IMessageFirebase } from "./../../redux/reducers/chat/chat.models";
+import { IMessageFirebase } from "../../redux/chat/chat.models";
 
 const messageRef = collection(firestore, "messages");
 

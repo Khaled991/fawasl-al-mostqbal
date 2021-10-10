@@ -1,7 +1,7 @@
 import {
   DocumentData,
   QueryDocumentSnapshot,
-} from "../../../../node_modules/firebase/firestore/dist/firestore";
+} from "../../../node_modules/firebase/firestore/dist/firestore";
 
 export interface IChatState {
   messages: IMessageFirebase[];

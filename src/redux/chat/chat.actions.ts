@@ -1,8 +1,8 @@
 import {
   DocumentData,
   QueryDocumentSnapshot,
-} from "../../../../node_modules/firebase/firestore/dist/firestore";
-import { IAction } from "../../redux.models";
+} from "../../../node_modules/firebase/firestore/dist/firestore";
+import { IAction } from "../redux.models";
 import { IMessageFirebase } from "./chat.models";
 import { chatActionTypes } from "./chat.types";
 

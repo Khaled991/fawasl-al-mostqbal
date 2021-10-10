@@ -1,7 +1,7 @@
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-import rootReducer from "./reducers/rootReducer";
+import rootReducer from "./root.reducer";
 
 const middlewares: any[] = [];
 

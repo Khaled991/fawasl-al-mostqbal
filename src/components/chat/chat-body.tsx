@@ -1,13 +1,13 @@
 import { ReactElement, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "redux";
-import { IMessageFirebase } from "../../redux/reducers/chat/chat.models";
+import { IMessageFirebase } from "../../redux/chat/chat.models";
 import {
   selectChat,
   selectFirstMessageUid,
   selectMessages,
   selectScrollHeight,
-} from "../../redux/reducers/chat/chat.selector";
+} from "../../redux/chat/chat.selector";
 import { toJsDateAndTimeFromFirestoreDate } from "../../utils/firebase";
 import { onSnapshot } from "@firebase/firestore";
 
@@ -20,12 +20,12 @@ import {
   modifyScrollHeightAction,
   setMessagesAction,
   updateFirstMessageUidAction,
-} from "../../redux/reducers/chat/chat.actions";
-import { selectUuid } from "../../redux/uuid/auth.selector";
+} from "../../redux/chat/chat.actions";
+import { selectUuid } from "../../redux/auth/auth.selector";
 import {
   collectionMyMessagesRef,
   getTenMessages,
-} from "./../../redux/reducers/chat/chat.utils";
+} from "../../redux/chat/chat.utils";
 
 const ChatBody = (): ReactElement => {
   const messages: IMessageFirebase[] = useSelector(selectMessages);

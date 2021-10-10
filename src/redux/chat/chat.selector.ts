@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import { IRootReducer } from "../../redux.models";
+import { IRootReducer } from "../redux.models";
 import { IChatState } from "./chat.models";
 
 export const selectChat = (state: IRootReducer) => state.chat;

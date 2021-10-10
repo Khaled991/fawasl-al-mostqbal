@@ -12,8 +12,8 @@ import {
   QueryDocumentSnapshot,
   DocumentData,
 } from "@firebase/firestore";
-import { firestore } from "../../../utils/firebase";
-import { store } from "./../../store";
+import { firestore } from "../../utils/firebase";
+import { store } from "../store";
 
 export async function sendMessageToFireStore(
   myMessageText: string,
