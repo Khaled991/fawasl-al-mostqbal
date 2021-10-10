@@ -69,7 +69,8 @@ const ChatBody = (): ReactElement => {
       );
       scrollChatToMostBottom();
     })();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (!myUuid) return;
@@ -90,25 +91,17 @@ const ChatBody = (): ReactElement => {
     );
 
     return () => unsubscribe();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, myUuid, firstMessageUid]);
 
   const scrollChatToMostBottom = () => {
-    // console.log("scrollChatToMostBottom");
     return scrollTo(messagesContainerRef?.current.scrollHeight);
   };
 
   const scrollTo = (position: number) => {
-    console.log(position);
     messagesContainerRef?.current.scrollTo(0, position);
   };
 
   async function fetchMoreMessagesAtMostTop(event: any) {
-    console.log({
-      "messagesContainerRef?.current.scrollHeight":
-        messagesContainerRef?.current.scrollHeight,
-    });
-
     const scrollMostTopPosition = event.target.scrollTop === 0;
 
     if (scrollMostTopPosition && willFetchMoreMessages()) {
@@ -121,7 +114,7 @@ const ChatBody = (): ReactElement => {
 
   useEffect(() => {
     fixScrollAtSamePositionAfterFetchingMoreMessages();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-ne  xt-line react-hooks/exhaustive-deps
   }, [messages]);
 
   function fixScrollAtSamePositionAfterFetchingMoreMessages() {
