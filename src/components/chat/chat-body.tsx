@@ -69,7 +69,7 @@ const ChatBody = (): ReactElement => {
       );
       scrollChatToMostBottom();
     })();
-  }, []);
+  });
 
   useEffect(() => {
     if (!myUuid) return;
@@ -90,6 +90,7 @@ const ChatBody = (): ReactElement => {
     );
 
     return () => unsubscribe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, myUuid, firstMessageUid]);
 
   const scrollChatToMostBottom = () => {
@@ -103,9 +104,6 @@ const ChatBody = (): ReactElement => {
   };
 
   async function fetchMoreMessagesAtMostTop(event: any) {
-    // console.log("event.target.scrollHeight", event.target.scrollHeight);
-    // console.log("event.target.scrollTop", event.target.scrollTop);
-
     console.log({
       "messagesContainerRef?.current.scrollHeight":
         messagesContainerRef?.current.scrollHeight,
@@ -123,42 +121,15 @@ const ChatBody = (): ReactElement => {
 
   useEffect(() => {
     fixScrollAtSamePositionAfterFetchingMoreMessages();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [messages]);
 
   function fixScrollAtSamePositionAfterFetchingMoreMessages() {
-    // console.log("fixScrollAtSamePositionAfterFetchingMoreMessages");
-    // console.log({
-    //   scrollHeight,
-    //   height: messagesContainerRef?.current.scrollHeight,
-    //   firstMessageUid,
-    //   messages,
-    // });
-
-    // console.log(
-    //   "scrollHeight !== messagesContainerRef?.current.scrollHeight",
-    //   scrollHeight !== messagesContainerRef?.current.scrollHeight
-    // );
-    // console.log(
-    //   "firstMessageUid !== messages[0]?.msgId",
-    //   firstMessageUid !== messages[0]?.msgId
-    // );
     if (
       scrollHeight !== messagesContainerRef?.current.scrollHeight &&
       firstMessageUid !== messages[0]?.msgId
     ) {
-      // console.log("here");
       const perviousScrollHeight = scrollHeight;
-      // const currentScrollHeight =
-      //   messagesContainerRef?.current.scrollHeight - perviousScrollHeight;
-
-      console.log({
-        // perviousScrollHeight,
-        // currentScrollHeight,
-        "messagesContainerRef?.current.scrollHeight":
-          messagesContainerRef?.current.scrollHeight,
-      });
-      const ascsac = messagesContainerRef?.current.scrollHeight;
-
       dispatch(
         modifyScrollHeightAction(messagesContainerRef?.current.scrollHeight)
       );
