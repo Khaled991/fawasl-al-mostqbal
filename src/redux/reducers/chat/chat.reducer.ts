@@ -1,0 +1,62 @@
+import { chatActionTypes } from "./chat.types";
+import { IChatState } from "./chat.models";
+import { IAction } from "./../../redux.models";
+import { modifyMessagesState } from "./chat.utils";
+
+const INITIAL_STATE: IChatState = {
+  messages: [],
+  lastLoadedMessageDocument: undefined,
+  scrollHeight: 0,
+  firstMessageUid: "",
+};
+
+const chatReducer = (
+  state: IChatState = INITIAL_STATE,
+  action: IAction<any>
+): IChatState | any => {
+  switch (action.type) {
+    case chatActionTypes.ADD_MESSAGE:
+      return {
+        ...state,
+        messages: [...state.messages, action.payload],
+      };
+
+    case chatActionTypes.SET_MESSAGES:
+      return {
+        ...state,
+        ...action.payload,
+        firstMessageUid: action.payload.messages.length
+          ? action.payload.messages[0].msgId
+          : "",
+      };
+
+    case chatActionTypes.MODIFY_MESSAGE:
+      return {
+        ...state,
+        messages: modifyMessagesState(action.payload, state.messages),
+      };
+
+    case chatActionTypes.ADD_MORE_MESSAGES_AT_TOP:
+      return {
+        ...state,
+        messages: [...action.payload.messages, ...state.messages],
+        lastLoadedMessageDocument: action.payload.lastLoadedMessageDocument,
+      };
+
+    case chatActionTypes.MODIFY_SCROLL_HEIGHT:
+      return {
+        ...state,
+        scrollHeight: action.payload,
+      };
+    case chatActionTypes.UPDATE_FIRST_MESSAGE_UID:
+      return {
+        ...state,
+        firstMessageUid: state.messages[0].msgId,
+      };
+
+    default:
+      return state;
+  }
+};
+
+export default chatReducer;
