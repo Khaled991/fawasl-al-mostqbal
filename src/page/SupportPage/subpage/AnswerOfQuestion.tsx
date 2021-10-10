@@ -4,11 +4,9 @@ import "../SupportPage.scss";
 import { questions } from "./../supportPageData";
 
 export default function AnswerOfQuestion({ match }: any): ReactElement {
-  console.log(match);
   const { id } = match.params;
   const [lastWord, restWords] = splitQuestionTitleToLastWordAndRestWords(id);
 
-  console.log(lastWord, restWords);
   const sentanceWithoutLastWord = restWords.join(" ");
 
   return (

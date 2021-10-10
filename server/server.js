@@ -12,9 +12,10 @@ var io = socketio(server, {
 io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId) => {
     socket.join(roomId);
-    socket.broadcast.to(roomId).emit("user-connected",userId)
+    socket.broadcast.to(roomId).emit("user-connected", userId);
   });
 });
 
+app.get("/test", (req, res) => res.send("working"));
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => console.log(`working on port ${PORT}`));
