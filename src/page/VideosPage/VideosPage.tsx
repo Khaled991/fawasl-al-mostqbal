@@ -5,9 +5,10 @@ import './VideosPage.scss';
 
 const VideosPage = (): ReactElement => {
   const [showModal, setShowModal] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
 
   const handelChangeValue = ({ target: { value } }: any) => {
-    console.log(value);
+    setSearchValue(value);
   };
 
   return (
@@ -22,6 +23,7 @@ const VideosPage = (): ReactElement => {
             placeholder="بحث..."
             className="pl-2 w-72"
             onChange={handelChangeValue}
+            value={searchValue}
           />
           <img src={Search} alt="" width="22" />
         </div>

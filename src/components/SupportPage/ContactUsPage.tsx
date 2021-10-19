@@ -1,36 +1,19 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 import { ReactComponent as ChatIcon } from '../../assets/Icons/chat.svg';
 import chat from '../../assets/Img/chatImage.svg';
-import { createStructuredSelector } from 'reselect';
-import { connect, useDispatch } from 'react-redux';
-import { IRootReducer } from '../../redux/redux.models';
-import ChatHeader from '../Chat/chat-header';
-import ChatBody from '../Chat/chat-body';
-import ChatFooter from '../Chat/chat-footer';
-import { signInAnonymously } from 'firebase/auth';
-import { auth } from '../../utils/firebase';
+import { useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
-import { setAuthUuidAction } from '../../redux/uuid/auth.actions';
 import Button from '../Button/Button';
+import { toggleChatAction } from '../../redux/chat/chat.actions';
 
 // interface IContactUsPageProps {}
 
 function ContactUsPage(): ReactElement {
   // {}: IContactUsPageProps
-  const [showChat, setShowChat] = useState<boolean>(false);
   const dispatch: Dispatch = useDispatch();
 
   function onClickOpenChat() {
-    signInAnonymously(auth)
-      .then(async () => {
-        setShowChat(true);
-        dispatch(setAuthUuidAction(auth.currentUser?.uid ?? ''));
-      })
-      .catch(error => {
-        // const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorMessage);
-      });
+    dispatch(toggleChatAction());
   }
 
   return (
@@ -79,21 +62,8 @@ function ContactUsPage(): ReactElement {
         src={chat}
         alt="chat"
       />
-      {showChat ? <Chat hideChat={() => setShowChat(false)} /> : ''}
     </div>
   );
 }
 
-function Chat({ hideChat }: any): ReactElement {
-  return (
-    <div className="absolute bottom-8 left-8 grid grid-rows-chat-layout bg-white w-96 rounded-3xl border-solid border-primary border-2 py-3 px-4">
-      <ChatHeader hideChat={hideChat} />
-      <ChatBody />
-      <ChatFooter />
-    </div>
-  );
-}
-
-const mapStateToProps = createStructuredSelector<IRootReducer, any>({});
-
-export default connect(mapStateToProps)(ContactUsPage);
+export default ContactUsPage;

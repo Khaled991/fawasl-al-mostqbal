@@ -3,7 +3,8 @@ import complaint from '../../assets/Img/complaintImage.svg';
 import Button from '../Button/Button';
 import LayoutPage from './../../page/LayoutPage/LayoutPage';
 import circle from '../../assets/Img/circle.svg';
-// import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore';
+import { firestore } from '../../utils/firebase';
 
 function ComplaintPage(): ReactElement {
   const [name, setName] = useState('');
@@ -19,6 +20,7 @@ function ComplaintPage(): ReactElement {
   const handleDetails = ({ target: { value } }: any) => {
     setDetails(value);
   };
+
   const onPressSendcomplaint = async () => {
     if (name === '') {
       alert('يجب إضافة اسم ');
@@ -28,20 +30,23 @@ function ComplaintPage(): ReactElement {
       alert('يجب ملئ تفاصيل الشكوي ');
     } else {
       // Add a new document with a generated id.
-      // const docRef = await addDoc(collection(firestor, 'complaints'), {
-      //   name: name,
-      //   email: email,
-      //   details: details,
-      // });
-      // return docRef;
+      await addDoc(collection(firestore, 'complaints'), {
+        name: name,
+        email: email,
+        details: details,
+      });
+      setName('');
+      setEmail('');
+      setDetails('');
     }
   };
+
   return (
     <LayoutPage imgUrl={complaint} imageStyle="w-9/12" contentCenter hideImage>
       <img
         src={circle}
         alt="circleDark"
-        className="w-80 sm:w-96 h-80 sm:h-96 absolute animate-spin dura"
+        className="w-80 sm:w-96 h-80 sm:h-96 absolute animate-spin dura hidden lg:block"
         style={{
           bottom: '-12rem',
           left: '-12rem',
@@ -61,6 +66,7 @@ function ComplaintPage(): ReactElement {
             placeholder="الاسم"
             className="custom-input"
             onChange={handleName}
+            value={name}
           />
           <input
             name="email"
@@ -68,6 +74,7 @@ function ComplaintPage(): ReactElement {
             className="custom-input"
             type="email"
             onChange={handleEmail}
+            value={email}
           />
           <textarea
             className="custom-input"
@@ -75,6 +82,7 @@ function ComplaintPage(): ReactElement {
             rows={13}
             placeholder="تفاصيل الشكوى"
             onChange={handleDetails}
+            value={details}
           />
           <Button
             buttonStyleType="solidGreen w-44"

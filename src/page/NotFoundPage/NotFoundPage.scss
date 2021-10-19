@@ -1,89 +1,47 @@
 @import '../../utils/constants.scss';
-.Not-found-page {
-  height: 100vh;
+.st0 {
+  font-family: 'FootlightMTLight';
+}
+.st1 {
+  font-size: 83.0285px;
+}
+.st2 {
+  fill: gray;
+}
+
+svg {
+  width: 500px;
+  height: 400px;
+  text-align: center;
+  fill: $primarycolor;
+}
+path#XMLID_5_ {
+  fill: $primarycolor;
+  filter: url(#blurFilter4);
+}
+path#XMLID_11_,
+path#XMLID_2_ {
+  fill: $primarycolor;
+}
+.circle {
+  animation: out 2s infinite ease-out;
+  fill: $primarycolor;
+}
+
+.not-found-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  .container-error-404 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    .h1-error-404 {
-      font-size: 260px;
-      color: $primarycolor;
-      position: relative;
-    }
-    .circle {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 10px solid $primarycolor;
-      border-left-color: transparent;
-      position: absolute;
-      top: 130px;
-      left: 156px;
-      animation: 1s infinite cir;
-    }
-    @keyframes cir {
-      0% {
-        transform: rotate(0deg);
-      }
-      50% {
-        transform: rotate(180deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-    .cir2 {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 5px solid $primarycolor;
-
-      border-right-color: transparent;
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      animation: 2s infinite cir2;
-    }
-    @keyframes cir2 {
-      0% {
-        transform: rotate(0deg);
-      }
-      30% {
-        transform: rotate(180deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-  }
-  .h {
-    left: 70px;
-  }
-  @media (min-width: 700px) {
-    .container-error-404 {
-      display: flex;
-      width: 410px;
-      position: relative;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .container-error-404 > .h1-error-404:first-of-type {
-      width: 250px;
-    }
-  }
+  align-items: center;
+  text-align: center;
+  height: 100vh;
   .not-found-button {
     display: flex;
-    justify-content: center;
+    align-items: center;
     cursor: pointer;
     color: $primarycolor;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
-    position: relative;
-    left: 20px;
-    top: -30px;
     transition: all 0.5s;
     &:hover {
       color: $darkColor;
@@ -94,8 +52,154 @@
     .left-arrow {
       transition: all 0.5s;
       width: 30px;
+      height: 30px;
       fill: $primarycolor;
       margin: 0px 15px 0 0px;
     }
   }
 }
+
+@-webkit-keyframes opacity {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes out {
+  0% {
+    r: 1;
+    opacity: 0.9;
+  }
+  25% {
+    r: 5;
+    opacity: 0.3;
+  }
+  50% {
+    r: 10;
+    opacity: 0.2;
+  }
+  75% {
+    r: 15;
+    opacity: 0.1;
+  }
+  100% {
+    r: 20;
+    opacity: 0;
+  }
+}
+
+// @import '../../utils/constants.scss';
+// .Not-found-page {
+//   height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   .container-error-404 {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+//     .h1-error-404 {
+//       font-size: 260px;
+//       color: $primarycolor;
+//       position: relative;
+//     }
+//     .circle {
+//       width: 150px;
+//       height: 150px;
+//       border-radius: 50%;
+//       border: 10px solid $primarycolor;
+//       border-left-color: transparent;
+//       position: absolute;
+//       top: 130px;
+//       left: 156px;
+//       animation: 1s infinite cir;
+//     }
+//     @keyframes cir {
+//       0% {
+//         transform: rotate(0deg);
+//       }
+//       50% {
+//         transform: rotate(180deg);
+//       }
+//       100% {
+//         transform: rotate(360deg);
+//       }
+//     }
+//     .cir2 {
+//       width: 120px;
+//       height: 120px;
+//       border-radius: 50%;
+//       border: 5px solid $primarycolor;
+
+//       border-right-color: transparent;
+//       position: absolute;
+//       top: 5px;
+//       left: 5px;
+//       animation: 2s infinite cir2;
+//     }
+//     @keyframes cir2 {
+//       0% {
+//         transform: rotate(0deg);
+//       }
+//       30% {
+//         transform: rotate(180deg);
+//       }
+//       100% {
+//         transform: rotate(360deg);
+//       }
+//     }
+//   }
+//   .h {
+//     left: 70px;
+//   }
+//   .not-found-button {
+//     display: flex;
+//     justify-content: center;
+//     cursor: pointer;
+//     color: $primarycolor;
+//     font-size: 30px;
+//     font-weight: 500;
+//     position: relative;
+//     left: 20px;
+//     top: -30px;
+//     transition: all 0.5s;
+//     &:hover {
+//       color: $darkColor;
+//       .left-arrow {
+//         fill: $darkColor;
+//       }
+//     }
+//     .left-arrow {
+//       transition: all 0.5s;
+//       width: 30px;
+//       fill: $primarycolor;
+//       margin: 0px 15px 0 0px;
+//     }
+//   }
+//   @media (min-width: 700px) {
+//     .container-error-404 {
+//       display: flex;
+//       width: 410px;
+//       position: relative;
+//       margin-left: auto;
+//       margin-right: auto;
+//     }
+//     .container-error-404 > .h1-error-404:first-of-type {
+//       width: 250px;
+//     }
+//   }
+// }

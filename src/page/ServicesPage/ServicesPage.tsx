@@ -6,33 +6,37 @@ import EmojiSmile from '../../assets/Icons/emojiSmile.svg';
 import Button from '../../components/Button/Button';
 import Dropdown from '../../components/Dropdown/Dropdown';
 
-// import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore';
+import { firestore } from './../../utils/firebase';
+
+const dropDownOptions = [
+  'إنشاء موقع',
+  'إنشاء موبيل app',
+  'إنشاء برنامج',
+  'التعديل على موقع أو برنامج او موبيل app',
+];
 
 const ServicesPage = (): ReactElement => {
-  const [selectedIndex, setSelectedIndex] = useState({});
-  const [ReqDescriptionValue, setReqDescriptionValue] = useState('');
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [reqDescriptionValue, setReqDescriptionValue] = useState<string>('');
 
-  useEffect(() => {
-    console.log('selectedIndex');
-    console.log(selectedIndex);
-    console.log(ReqDescriptionValue);
-  }, [selectedIndex, ReqDescriptionValue]);
+  useEffect(() => {}, [selectedIndex, reqDescriptionValue]);
 
   const onChangeReqAnService = ({ target: { value } }: any) => {
     setReqDescriptionValue(value);
   };
   const onPressSendReq = async () => {
-    if (selectedIndex === {}) alert('يجب اختيار نوع الطلب');
-    if (ReqDescriptionValue === '') alert('يجب أضافة تفاصيل الطلب');
+    if (selectedIndex === null) alert('يجب اختيار نوع الطلب');
+    if (reqDescriptionValue === '') alert('يجب أضافة تفاصيل الطلب');
 
     // Add a new document with a generated id.
-    // const docRef = await addDoc(collection(firestor, 'workReq'), {
-    //   requestType: selectedIndex,
-    //   requestDetails: descriptionReqValue,
-    // });
-    // return docRef;
-    // setSelectedIndex({});
-    // setDescriptionReqValue('');
+    await addDoc(collection(firestore, 'requests'), {
+      requestType: selectedIndex,
+      requestDetails: reqDescriptionValue,
+    });
+
+    setSelectedIndex(null);
+    setReqDescriptionValue('');
   };
 
   return (
@@ -63,7 +67,7 @@ const ServicesPage = (): ReactElement => {
       <div className="services-page grid grid-cols-1 xl:grid-cols-2 items-center">
         <div className="program-details flex flex-col items-center ">
           <div className="services-description-container px-0 md:px-28 text-center mb-8">
-            <span className=" text-2xl md:text-3xl lg:text-4xl">
+            <span className="text-2xl md:text-3xl lg:text-4xl">
               ارسل لنا <span className="text-primary">طلبك</span> لمساعدتك في{' '}
               <span className="text-primary">انشاء</span> او{' '}
               <span className="text-primary">تعديل</span> موقعك.
@@ -71,12 +75,7 @@ const ServicesPage = (): ReactElement => {
           </div>
           <Dropdown
             unselectedText="نوع الطلب"
-            options={[
-              'إنشاء موقع',
-              'إنشاء موبيل app',
-              'إنشاء برنامج',
-              'التعديل على موقع أو برنامج او موبيل app',
-            ]}
+            options={dropDownOptions}
             selectedIndex={selectedIndex}
             setSelectedIndex={setSelectedIndex}
           />
@@ -89,6 +88,7 @@ const ServicesPage = (): ReactElement => {
             rows={13}
             placeholder="تفاصيل الطلب"
             onChange={onChangeReqAnService}
+            value={reqDescriptionValue}
           />
           <Button
             onClick={onPressSendReq}

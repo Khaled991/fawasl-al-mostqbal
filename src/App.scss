@@ -45,9 +45,6 @@ a {
   box-sizing: border-box;
   outline: none;
 }
-* {
-  box-sizing: border-box;
-}
 
 input,
 textarea {
@@ -56,4 +53,29 @@ textarea {
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text;
+}
+
+.app {
+  .chat-button {
+    background-color: $primarycolor;
+    padding: 15px;
+    margin: 15px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 50%;
+    transition: 0.6s;
+    &:hover {
+      background-color: $secondcolor;
+      .chat-button-icon {
+        transform: scale(1.1, 1.1);
+      }
+    }
+    .chat-button-icon {
+      transition: 0.6s;
+      width: 30px;
+      height: 30px;
+      fill: $whiteColor;
+    }
+  }
 }

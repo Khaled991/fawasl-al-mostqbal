@@ -1,10 +1,7 @@
-import {
-  DocumentData,
-  QueryDocumentSnapshot,
-} from "../../../../node_modules/firebase/firestore/dist/firestore";
-import { IAction } from "../../redux.models";
-import { IMessageFirebase } from "./chat.models";
-import { chatActionTypes } from "./chat.types";
+import { DocumentData, QueryDocumentSnapshot } from 'firebase/firestore';
+import { IAction } from '../redux.models';
+import { IMessageFirebase } from './chat.models';
+import { chatActionTypes } from './chat.types';
 
 export const setMessagesAction = (
   messages: IMessageFirebase[],
@@ -43,4 +40,8 @@ export const modifyScrollHeightAction = (
 
 export const updateFirstMessageUidAction = (): IAction<any> => ({
   type: chatActionTypes.UPDATE_FIRST_MESSAGE_UID,
+});
+
+export const toggleChatAction = (): IAction<undefined> => ({
+  type: chatActionTypes.TOGGLE_IS_CHAT_SHOWN,
 });

@@ -1,13 +1,14 @@
-import { chatActionTypes } from "./chat.types";
-import { IChatState } from "./chat.models";
-import { IAction } from "./../../redux.models";
-import { modifyMessagesState } from "./chat.utils";
+import { chatActionTypes } from './chat.types';
+import { IChatState } from './chat.models';
+import { IAction } from '../redux.models';
+import { modifyMessagesState } from './chat.utils';
 
 const INITIAL_STATE: IChatState = {
   messages: [],
   lastLoadedMessageDocument: undefined,
   scrollHeight: 0,
-  firstMessageUid: "",
+  firstMessageUid: '',
+  isChatShown: false,
 };
 
 const chatReducer = (
@@ -27,7 +28,7 @@ const chatReducer = (
         ...action.payload,
         firstMessageUid: action.payload.messages.length
           ? action.payload.messages[0].msgId
-          : "",
+          : '',
       };
 
     case chatActionTypes.MODIFY_MESSAGE:
@@ -52,6 +53,12 @@ const chatReducer = (
       return {
         ...state,
         firstMessageUid: state.messages[0].msgId,
+      };
+
+    case chatActionTypes.TOGGLE_IS_CHAT_SHOWN:
+      return {
+        ...state,
+        isChatShown: !state.isChatShown,
       };
 
     default:
