@@ -26,6 +26,8 @@ import { getTenMessages } from './redux/chat/chat.utils';
 import { signInAnonymously } from 'firebase/auth';
 import { auth } from './utils/firebase';
 import { setAuthUuidAction } from './redux/uuid/auth.actions';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const PartnerDetailsPage = lazy(
   () => import('./page/PartnerDetailsPage/PartnerDetailsPage')
@@ -113,6 +115,7 @@ const App = (): ReactElement => {
         </button>
       )}
       {isChatShown && <Chat ref={messagesContainerRef} />}
+      <ToastContainer />
     </div>
   );
 };

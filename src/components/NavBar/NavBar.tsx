@@ -72,7 +72,7 @@ const NavBar = () => {
     <div className="z-100" ref={wrapperRef}>
       <div
         style={{ cursor: 'pointer' }}
-        className={`md:hidden absolute z-50 right-1 pointer flex flex-col items-end mr-2 mt-3 ${
+        className={`md:hidden fixed z-50 right-1 pointer flex flex-col items-end mr-2 mt-3 ${
           navbarIsActive ? 'opacity-0' : ''
         } transition-all duration-500`}
         onClick={() => setNavbarIsActive(true)}

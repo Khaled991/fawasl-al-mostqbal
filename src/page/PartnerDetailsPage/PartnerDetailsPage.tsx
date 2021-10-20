@@ -1,14 +1,14 @@
-import { ReactElement } from "react";
+import { ReactElement } from 'react';
 // import { ReactComponent as Logo } from '../../assets/Img/logo.svg';
-import Mobile from "../../assets/Icons/mobile.svg";
-import Phone from "../../assets/Icons/phone.svg";
-import Location from "../../assets/Icons/location.svg";
-import CommercialRecord from "../../assets/Icons/commercial-record.svg";
-import Email from "../../assets/Icons/email.svg";
-import "./PartnerDetailsPage.scss";
-import { motion } from "framer-motion";
-import LogoSvg from "../../assets/Img/logo.svg";
-import { partnersData } from "./../PartnersPage/PartnersData";
+import Mobile from '../../assets/Icons/mobile.svg';
+import Phone from '../../assets/Icons/phone.svg';
+import Location from '../../assets/Icons/location.svg';
+import CommercialRecord from '../../assets/Icons/commercial-record.svg';
+import Email from '../../assets/Icons/email.svg';
+import './PartnerDetailsPage.scss';
+import { motion } from 'framer-motion';
+import LogoSvg from '../../assets/Img/logo.svg';
+import { partnersData } from './../PartnersPage/PartnersData';
 
 const PartnerDetailsPage = ({
   location: { state },
@@ -109,7 +109,7 @@ const Logo = () => (
     <img
       src={LogoSvg}
       className="partner-details-logo w-20"
-      alt={`${"state.name"} logo`}
+      alt={`${'state.name'} logo`}
     />
   </motion.div>
 );

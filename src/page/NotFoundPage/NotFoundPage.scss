@@ -1,32 +1,4 @@
 @import '../../utils/constants.scss';
-.st0 {
-  font-family: 'FootlightMTLight';
-}
-.st1 {
-  font-size: 83.0285px;
-}
-.st2 {
-  fill: gray;
-}
-
-svg {
-  width: 500px;
-  height: 400px;
-  text-align: center;
-  fill: $primarycolor;
-}
-path#XMLID_5_ {
-  fill: $primarycolor;
-  filter: url(#blurFilter4);
-}
-path#XMLID_11_,
-path#XMLID_2_ {
-  fill: $primarycolor;
-}
-.circle {
-  animation: out 2s infinite ease-out;
-  fill: $primarycolor;
-}
 
 .not-found-page {
   display: flex;
@@ -56,6 +28,34 @@ path#XMLID_2_ {
       fill: $primarycolor;
       margin: 0px 15px 0 0px;
     }
+  }
+
+  .st0 {
+    font-family: 'FootlightMTLight';
+  }
+  .st1 {
+    font-size: 83.0285px;
+  }
+  .st2 {
+    fill: gray;
+  }
+  svg {
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    fill: $primarycolor;
+  }
+  path#XMLID_5_ {
+    fill: $primarycolor;
+    filter: url(#blurFilter4);
+  }
+  path#XMLID_11_,
+  path#XMLID_2_ {
+    fill: $primarycolor;
+  }
+  .circle {
+    animation: out 2s infinite ease-out;
+    fill: $primarycolor;
   }
 }
 
@@ -101,7 +101,6 @@ path#XMLID_2_ {
     opacity: 0;
   }
 }
-
 // @import '../../utils/constants.scss';
 // .Not-found-page {
 //   height: 100vh;

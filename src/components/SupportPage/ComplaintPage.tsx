@@ -5,6 +5,7 @@ import LayoutPage from './../../page/LayoutPage/LayoutPage';
 import circle from '../../assets/Img/circle.svg';
 import { collection, addDoc } from 'firebase/firestore';
 import { firestore } from '../../utils/firebase';
+import { ShowToast } from '../ShowToast/ShowToast';
 
 function ComplaintPage(): ReactElement {
   const [name, setName] = useState('');
@@ -23,11 +24,11 @@ function ComplaintPage(): ReactElement {
 
   const onPressSendcomplaint = async () => {
     if (name === '') {
-      alert('يجب إضافة اسم ');
+      ShowToast('يجب ادخال اسم المستخدم', 'error');
     } else if (email === '') {
-      alert('يجب إضافة بريد الكتروني ');
+      ShowToast('يجب ادخال البريد الألكتروني', 'error');
     } else if (details === '') {
-      alert('يجب ملئ تفاصيل الشكوي ');
+      ShowToast('يجب ادخال تفاصيل الشكوي', 'error');
     } else {
       // Add a new document with a generated id.
       await addDoc(collection(firestore, 'complaints'), {
@@ -38,6 +39,7 @@ function ComplaintPage(): ReactElement {
       setName('');
       setEmail('');
       setDetails('');
+      ShowToast('تم إرسال الشكوي بنجاح', 'success');
     }
   };
 

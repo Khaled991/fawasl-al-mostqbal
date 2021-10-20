@@ -6,6 +6,7 @@ import { ReactComponent as XIcon } from '../../assets/Icons/x.svg';
 import { toggleChatAction } from '../../redux/chat/chat.actions';
 import { useDispatch } from 'react-redux';
 import Button from '../Button/Button';
+import { ShowToast } from '../ShowToast/ShowToast';
 
 const SignInChat = ({ setIsUserName }: any): ReactElement => {
   const [userName, setUserName] = useState('');
@@ -14,8 +15,8 @@ const SignInChat = ({ setIsUserName }: any): ReactElement => {
     setUserName(value);
   };
 
-  const onClickSingInUser = async () => {
-    if (!userName) return alert('يجب ادخال اسم مستخدم');
+  const onClickSignInUser = async () => {
+    if (!userName) return ShowToast('يجب ادخال اسم المستخدم', 'error');
     await addDoc(collection(firestore, 'chatUsers'), {
       userName: userName,
     });
@@ -41,7 +42,7 @@ const SignInChat = ({ setIsUserName }: any): ReactElement => {
           value={userName}
         />
         <Button
-          onClick={onClickSingInUser}
+          onClick={onClickSignInUser}
           buttonStyleType="solidGreen w-full p-3 "
         >
           بدأ المحادثة
