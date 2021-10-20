@@ -1,0 +1,40 @@
+@import '../../utils/constants.scss';
+.chat {
+  @apply fixed bottom-8 left-8 grid grid-rows-chat-layout bg-white w-96 rounded-3xl border-solid border-primary border-2 py-3 px-4;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
+}
+.sign-in-chat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  height: 500px;
+  background-color: rgb(238, 238, 238);
+  direction: rtl;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
+  transition: 0.8s;
+  .close-sign-in-chat-icon {
+    stroke: $darkColor;
+    cursor: pointer;
+    width: 16px;
+    transition: 0.5s;
+    &:hover {
+      stroke: rgb(207, 52, 52);
+    }
+  }
+
+  .sign-in-chat-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chat-name-input {
+    border: 2px solid $primarycolor;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+  }
+}

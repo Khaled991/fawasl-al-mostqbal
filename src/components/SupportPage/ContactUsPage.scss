@@ -1,0 +1,12 @@
+@import '../../utils/constants.scss';
+.custom-button {
+  .chat-icon {
+    fill: $whiteColor;
+    transition: 0.5s;
+  }
+  &:hover {
+    .chat-icon {
+      fill: $primarycolor;
+    }
+  }
+}

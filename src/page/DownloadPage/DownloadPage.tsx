@@ -1,21 +1,16 @@
-import { ReactElement } from "react";
-import ReactPageScroller from "react-page-scroller";
-import {
-  DownloadCardsPages,
-  ProgramAndDownloadPages,
-  ProgramAndDownloadPages2,
-  ProgramAndDownloadPages3,
-} from "./programAndDownloadPages";
+import { ReactElement } from 'react';
+import DownloadCardsPage from './DownloadPages/DownloadCardsPages';
+import DownloadProgramDetailsPage from './DownloadPages/DownloadProgramDetailsPage';
+import DownloadProgramDetailsPage2 from './DownloadPages/DownloadProgramDetailsPage2';
+import DownloadProgramDetailsPage3 from './DownloadPages/DownloadProgramDetailsPage3';
 
 const DownloadPage = (): ReactElement => {
   return (
     <div className="download-scroll-page">
-      <ReactPageScroller>
-        <ProgramAndDownloadPages />
-        <ProgramAndDownloadPages2 />
-        <ProgramAndDownloadPages3 />
-        <DownloadCardsPages />
-      </ReactPageScroller>
+      <DownloadProgramDetailsPage />
+      <DownloadProgramDetailsPage2 />
+      <DownloadProgramDetailsPage3 />
+      <DownloadCardsPage />
     </div>
   );
 };

@@ -1,0 +1,60 @@
+@import '../../utils/constants.scss';
+.pricing-card {
+  flex: 1;
+  max-width: 360px;
+  background-color: #fff;
+  margin: 20px 10px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s linear;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+
+  &:hover .pricing-card-header {
+    box-shadow: 0 0 0 26em $primarycolor;
+  }
+  li {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+  .pricing-card-header {
+    background-color: $secondcolor;
+    display: inline-block;
+    color: $whiteColor;
+    padding: 12px 30px;
+    border-radius: 0 0 20px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.4s linear;
+  }
+  .price {
+    font-size: 70px;
+    color: $primarycolor;
+    margin: 40px 0;
+    transition: 0.2s linear;
+
+    sup,
+    span {
+      font-size: 22px;
+      font-weight: 500;
+    }
+  }
+  .order-btn {
+    margin-bottom: 40px;
+    margin-top: 70px;
+    padding: 15px 50px;
+    border-radius: 10px;
+  }
+}
+
+.pricing-card:hover,
+.pricing-card:hover .price {
+  color: $whiteColor;
+}
+
+@media screen and (max-width: 1100px) {
+  .pricing-card {
+    flex: 50%;
+  }
+}

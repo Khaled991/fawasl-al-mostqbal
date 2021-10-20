@@ -1,39 +1,23 @@
-import { ReactElement, useState } from "react";
-import chatIcon from "../../assets/Icons/chat.svg";
-import chat from "../../assets/Img/chatImage.svg";
-import { createStructuredSelector } from "reselect";
-import { connect, useDispatch } from "react-redux";
-import { IRootReducer } from "../../redux/redux.models";
-import ChatHeader from "../chat/chat-header";
-import ChatBody from "../chat/chat-body";
-import ChatFooter from "../chat/chat-footer";
-import { signInAnonymously } from "firebase/auth";
-import { auth } from "../../utils/firebase";
-import { Dispatch } from "redux";
-import { setAuthUuidAction } from "../../redux/uuid/auth.actions";
+import { ReactElement } from 'react';
+import { ReactComponent as ChatIcon } from '../../assets/Icons/chat.svg';
+import chat from '../../assets/Img/chatImage.svg';
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+import Button from '../Button/Button';
+import { toggleChatAction } from '../../redux/chat/chat.actions';
 
 // interface IContactUsPageProps {}
 
 function ContactUsPage(): ReactElement {
   // {}: IContactUsPageProps
-  const [showChat, setShowChat] = useState<boolean>(false);
   const dispatch: Dispatch = useDispatch();
 
   function onClickOpenChat() {
-    signInAnonymously(auth)
-      .then(async () => {
-        setShowChat(true);
-        dispatch(setAuthUuidAction(auth.currentUser?.uid ?? ""));
-      })
-      .catch((error) => {
-        // const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorMessage);
-      });
+    dispatch(toggleChatAction());
   }
 
   return (
-    <div className="w-full h-screen grid grid-cols-2 grid-rows-4 gap-10 md:pr-32 relative pt-8">
+    <div className="w-full h-screen grid grid-cols-2 grid-rows-4 gap-10 pr-0 xl:pr-32 relative pt-8">
       <div
         className="
           col-span-2
@@ -45,21 +29,21 @@ function ContactUsPage(): ReactElement {
         "
       >
         <div className="flex flex-col items-center md:px-20">
-          <div className="font-bold mb-4 text-center leading-snug text-4xl xl:text-5xl xl:leading-normal">
+          <div className="font-bold mb-4 text-center leading-snug text-4xl xl:text-4-5xl xl:leading-normal">
             <div className="w-full">
-              يمكنك التحدث مع أحد ممثلي{" "}
+              يمكنك التحدث مع أحد ممثلي{' '}
               <span className="text-primary">خدمة العملاء</span> إن لم تجد حل
-              لمشكلتك <div>نحن نعمل على الدوام</div>{" "}
+              لمشكلتك <div>نحن نعمل على الدوام</div>{' '}
               <span className="text-primary">٢٤</span> ساعة
             </div>
           </div>
-          <button
-            className="custom-button flex justify-center px-20 w-3/4 items-center"
+          <Button
+            buttonStyleType="solidGreen custom-button flex justify-center px-20 w-3/4 items-center"
             onClick={onClickOpenChat}
           >
             فتح محادثة
-            <img src={chatIcon} alt="chat icon" className="h-6 ml-3" />
-          </button>
+            <ChatIcon className="chat-icon h-6 ml-3" />
+          </Button>
         </div>
       </div>
 
@@ -78,21 +62,8 @@ function ContactUsPage(): ReactElement {
         src={chat}
         alt="chat"
       />
-      {showChat ? <Chat hideChat={() => setShowChat(false)} /> : ""}
     </div>
   );
 }
 
-function Chat({ hideChat }: any): ReactElement {
-  return (
-    <div className="absolute bottom-8 left-8 grid grid-rows-chat-layout bg-white w-96 rounded-3xl border-solid border-primary border-2 py-3 px-4">
-      <ChatHeader hideChat={hideChat} />
-      <ChatBody />
-      <ChatFooter />
-    </div>
-  );
-}
-
-const mapStateToProps = createStructuredSelector<IRootReducer, any>({});
-
-export default connect(mapStateToProps)(ContactUsPage);
+export default ContactUsPage;

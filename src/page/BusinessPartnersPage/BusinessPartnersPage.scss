@@ -1,0 +1,36 @@
+@import '../../utils/constants.scss';
+.business-partners-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  direction: rtl;
+  .business-partners-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    .business-partners-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $whiteColor;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      margin: 15px;
+      .business-partners-image-container {
+        display: flex;
+        border-radius: 20px 20px 0 0;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: rgba(48, 141, 98, 0.25);
+        height: 75%;
+        .business-partners-image {
+          width: 90px;
+          max-height: 75%;
+          fill: $darkColor;
+        }
+      }
+    }
+  }
+}

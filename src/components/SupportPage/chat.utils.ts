@@ -4,15 +4,16 @@ import {
   limit,
   orderBy,
   query,
-} from "@firebase/firestore";
-import { firestore } from "../../utils/firebase";
-import { IMessageFirebase } from "./../../redux/reducers/chat/chat.models";
+} from '@firebase/firestore';
+import { firestore } from '../../utils/firebase';
+import { Timestamp } from 'firebase/firestore';
+import { IMessageFirebase } from '../../redux/chat/chat.models';
 
-const messageRef = collection(firestore, "messages");
+const messageRef = collection(firestore, 'messages');
 
 export const retrieveMessagesQuery = query(
   messageRef,
-  orderBy("createdAt"),
+  orderBy('createdAt'),
   limit(25)
 );
 
@@ -20,10 +21,15 @@ export const getMessages = async (): Promise<IMessageFirebase[]> => {
   const messagesSnapshot = await getDocs(retrieveMessagesQuery);
 
   const messages: IMessageFirebase[] = [];
-  messagesSnapshot.forEach((doc) => {
+  messagesSnapshot.forEach(doc => {
     const { msgId, senderId, text, createdAt } = doc.data();
 
-    messages.push({ msgId, senderId, text, createdAt: new Date(createdAt) });
+    messages.push({
+      msgId,
+      senderId,
+      text,
+      createdAt: Timestamp.fromDate(new Date(createdAt)),
+    });
   });
 
   return messages;

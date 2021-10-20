@@ -7,24 +7,40 @@
   padding: 15px 35px;
   line-height: 20px;
   font-weight: 500;
-  transition: 0.5s;
+  transition: all 0.5s;
 }
 
 .btn.greenBorder {
   border: 2px solid $primarycolor;
   color: $primarycolor;
+  svg {
+    fill: $primarycolor;
+    transition: all 0.5s;
+  }
   &:hover {
     background-color: $primarycolor;
     color: $whiteColor;
+    svg {
+      fill: $whiteColor;
+    }
   }
 }
 .btn.solidGreen {
   background-color: $primarycolor;
   border: 2px solid $primarycolor;
   color: $whiteColor;
+  transition: all 0.5s;
+  svg {
+    fill: $whiteColor;
+
+    transition: all 0.5s;
+  }
   &:hover {
     border: 2px solid $primarycolor;
-    background-color: $whiteColor;
+    background-color: #f6f6f6;
     color: $primarycolor;
+    svg {
+      fill: $primarycolor;
+    }
   }
 }

@@ -1,12 +1,13 @@
-import { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import "./NavBar.scss";
-import { ReactComponent as Logo } from "../../assets/Img/logo.svg";
-import HomeIcon from "../../assets/Icons/home.svg";
-import VideosIcon from "../../assets/Icons/videos.svg";
-import DistributorsIcon from "../../assets/Icons/distributors.svg";
-import ServicesIcon from "../../assets/Icons/services.svg";
-import SupportIcon from "../../assets/Icons/support.svg";
+import { useEffect, useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import './NavBar.scss';
+import { ReactComponent as Logo } from '../../assets/Img/logo.svg';
+import HomeIcon from '../../assets/Icons/home.svg';
+import VideosIcon from '../../assets/Icons/videos.svg';
+import DistributorsIcon from '../../assets/Icons/distributors.svg';
+import ServicesIcon from '../../assets/Icons/services.svg';
+import SupportIcon from '../../assets/Icons/support.svg';
+import BusinessPartners from '../../assets/Icons/businessPartners.svg';
 
 interface INavBarData {
   icon: string;
@@ -29,10 +30,10 @@ function useOutsideCloseNavbar(
     }
 
     // Bind the event listener
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
       // Unbind the event listener on clean up
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref]);
@@ -41,7 +42,7 @@ function useOutsideCloseNavbar(
 const NavBar = () => {
   const wrapperRef = useRef(null);
   const [navbarIsActive, setNavbarIsActive] = useState(false);
-  const [activePage, setActivePage] = useState("");
+  const [activePage, setActivePage] = useState('');
 
   useOutsideCloseNavbar(wrapperRef, closeNavBar);
 
@@ -50,11 +51,12 @@ const NavBar = () => {
   }
 
   const navBarData: INavBarData[] = [
-    { path: "/", icon: HomeIcon, label: "الرئيسية" },
-    { path: "/videos", icon: VideosIcon, label: "فيديوهات" },
-    { path: "/partners", icon: DistributorsIcon, label: "الموزعين" },
-    { path: "/services", icon: ServicesIcon, label: "طلبات خاصة" },
-    { path: "/support", icon: SupportIcon, label: "الدعم" },
+    { path: '/', icon: HomeIcon, label: 'الرئيسية' },
+    { path: '/videos', icon: VideosIcon, label: 'فيديوهات' },
+    { path: '/partners', icon: DistributorsIcon, label: 'الموزعين' },
+    { path: '/services', icon: ServicesIcon, label: 'طلبات خاصة' },
+    { path: '/businessPartners', icon: BusinessPartners, label: 'شركائنا' },
+    { path: '/support', icon: SupportIcon, label: 'الدعم' },
   ];
   function onClickNavbarLink(path: string): void {
     setActivePage(path);
@@ -69,9 +71,9 @@ const NavBar = () => {
   return (
     <div className="z-100" ref={wrapperRef}>
       <div
-        style={{ cursor: "pointer" }}
-        className={`md:hidden absolute z-50 right-1 pointer flex flex-col items-end mr-2 mt-3 ${
-          navbarIsActive ? "opacity-0" : ""
+        style={{ cursor: 'pointer' }}
+        className={`md:hidden fixed z-50 right-1 pointer flex flex-col items-end mr-2 mt-3 ${
+          navbarIsActive ? 'opacity-0' : ''
         } transition-all duration-500`}
         onClick={() => setNavbarIsActive(true)}
       >
@@ -81,7 +83,7 @@ const NavBar = () => {
       </div>
       <nav
         className={`navbar-items-container ${
-          navbarIsActive ? "right-5" : ""
+          navbarIsActive ? 'right-5' : ''
         } md:right-5 transition-all duration-500 z-10`}
       >
         <div className="navbar-items">
@@ -95,14 +97,14 @@ const NavBar = () => {
                 <div
                   className={`nav-link-container ${
                     (
-                      path === "/"
+                      path === '/'
                         ? path === activePage
                         : activePage.includes(
-                            path === "/" ? "/" : path.replaceAll("/", "")
+                            path === '/' ? '/' : path.replaceAll('/', '')
                           )
                     )
-                      ? "active"
-                      : ""
+                      ? 'active'
+                      : ''
                   }`}
                   onClick={() => onClickNavbarLink(path)}
                 >
