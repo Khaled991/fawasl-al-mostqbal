@@ -10,11 +10,15 @@ import { Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Loading from "./components/loading/loading";
 import "./App.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { ReactComponent as ChatIcon } from "./assets/Icons/chat.svg";
+import {
+  useDispatch,
+  // , useSelector
+} from "react-redux";
+// import { ReactComponent as ChatIcon } from "./assets/Icons/chat.svg";
 import {
   modifyScrollHeightAction,
   setMessagesAction,
+  // toggleChatAction,
 } from "./redux/chat/chat.actions";
 import { getTenMessages } from "./redux/chat/chat.utils";
 import { signInAnonymously } from "firebase/auth";
@@ -22,6 +26,7 @@ import { auth } from "./utils/firebase";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { setAuthUuidAction } from "./redux/auth/auth.actions";
+// import Chat from "./components/Chat/Chat";
 
 const PartnerDetailsPage = lazy(
   () => import("./page/PartnerDetailsPage/PartnerDetailsPage")
@@ -41,8 +46,8 @@ const BusinessPartnersPage = lazy(
 );
 
 const App = (): ReactElement => {
-  const isChatButtonShown: boolean = useSelector(selectIsChatButtonShown);
-  const isChatShown: boolean = useSelector(selectIsChatShown);
+  // const isChatButtonShown: boolean = useSelector(selectIsChatButtonShown);
+  // const isChatShown: boolean = useSelector(selectIsChatShown);
   const dispatch = useDispatch();
   const messagesContainerRef: RefObject<HTMLDivElement> =
     useRef<HTMLDivElement>(null);
@@ -100,7 +105,7 @@ const App = (): ReactElement => {
       </div>
       {/* TODO footer */}
       {/* <Footer /> */}
-      {isChatButtonShown && !isChatShown && (
+      {/* {isChatButtonShown && !isChatShown && (
         <button
           onClick={() => dispatch(toggleChatAction())}
           className="chat-button"
@@ -108,8 +113,9 @@ const App = (): ReactElement => {
           <ChatIcon className="chat-button-icon" />
         </button>
       )}
-      {isChatShown && <Chat ref={messagesContainerRef} />}
+      {isChatShown && <Chat ref={messagesContainerRef} />} */}
       <ToastContainer />
     </div>
   );
 };
+export default App;

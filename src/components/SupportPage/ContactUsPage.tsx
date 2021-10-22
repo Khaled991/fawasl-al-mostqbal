@@ -1,26 +1,10 @@
-<<<<<<< HEAD
-import { ReactElement, useState } from "react";
-import chatIcon from "../../assets/Icons/chat.svg";
+import { ReactElement } from "react";
+import { ReactComponent as ChatIcon } from "../../assets/Icons/chat.svg";
 import chat from "../../assets/Img/chatImage.svg";
-import { createStructuredSelector } from "reselect";
-import { connect, useDispatch } from "react-redux";
-import { IRootReducer } from "../../redux/redux.models";
-import ChatHeader from "../chat/chat-header";
-import ChatBody from "../chat/chat-body";
-import ChatFooter from "../chat/chat-footer";
-import { signInAnonymously } from "firebase/auth";
-import { auth } from "../../utils/firebase";
+import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
-import { setAuthUuidAction } from "../../redux/auth/auth.actions";
-=======
-import { ReactElement } from 'react';
-import { ReactComponent as ChatIcon } from '../../assets/Icons/chat.svg';
-import chat from '../../assets/Img/chatImage.svg';
-import { useDispatch } from 'react-redux';
-import { Dispatch } from 'redux';
-import Button from '../Button/Button';
-import { toggleChatAction } from '../../redux/chat/chat.actions';
->>>>>>> 55be1e93eae93be44ff2bfe43da945fd0d1bc067
+import Button from "../Button/Button";
+import { toggleChatAction } from "../../redux/chat/chat.actions";
 
 // interface IContactUsPageProps {}
 
@@ -47,9 +31,9 @@ function ContactUsPage(): ReactElement {
         <div className="flex flex-col items-center md:px-20">
           <div className="font-bold mb-4 text-center leading-snug text-4xl xl:text-4-5xl xl:leading-normal">
             <div className="w-full">
-              يمكنك التحدث مع أحد ممثلي{' '}
+              يمكنك التحدث مع أحد ممثلي{" "}
               <span className="text-primary">خدمة العملاء</span> إن لم تجد حل
-              لمشكلتك <div>نحن نعمل على الدوام</div>{' '}
+              لمشكلتك <div>نحن نعمل على الدوام</div>{" "}
               <span className="text-primary">٢٤</span> ساعة
             </div>
           </div>
