@@ -1,5 +1,5 @@
-import { IMessageFirebase } from './chat.models';
-import { v4 as uuidv4 } from 'uuid';
+import { IMessageFirebase } from "./chat.models";
+import { v4 as uuidv4 } from "uuid";
 import {
   collection,
   doc,
@@ -11,11 +11,11 @@ import {
   startAfter,
   QueryDocumentSnapshot,
   DocumentData,
-} from '@firebase/firestore';
-import { firestore } from '../../utils/firebase';
-import { store } from '../store';
-import { Timestamp } from 'firebase/firestore';
-import { formatRelative } from 'date-fns';
+} from "@firebase/firestore";
+import { firestore } from "../../utils/firebase";
+import { store } from "../store";
+import { Timestamp } from "firebase/firestore";
+import { formatRelative } from "date-fns";
 
 export async function sendMessageToFireStore(
   myMessageText: string,
@@ -30,14 +30,14 @@ export async function sendMessageToFireStore(
 
   const chatMessagesRef = doc(
     firestore,
-    'chats',
+    "chats",
     myUuid,
-    'chatMessages',
+    "chatMessages",
     myMessage.msgId
   );
   batch.set(chatMessagesRef, myMessage);
 
-  const lastMessageSentRef = doc(firestore, 'chats', myUuid);
+  const lastMessageSentRef = doc(firestore, "chats", myUuid);
   batch.set(lastMessageSentRef, { lastMessageSent: myMessage.msgId });
 
   await batch.commit();
@@ -59,18 +59,18 @@ export function modifyMessagesState(
   modifiedMessage: IMessageFirebase,
   messagesBeforeModification: IMessageFirebase[]
 ) {
-  return messagesBeforeModification.map(message =>
+  return messagesBeforeModification.map((message) =>
     message.msgId === modifiedMessage.msgId ? modifiedMessage : message
   );
 }
 
 export const collectionMyMessagesRef = (myUuid: string) =>
-  collection(firestore, 'chats', myUuid, 'chatMessages');
+  collection(firestore, "chats", myUuid, "chatMessages");
 
 export const getMoreTenMessagesQuery = () => {
   return query(
     collectionMyMessagesRef(store.getState().auth.uuid),
-    orderBy('createdAt', 'desc'),
+    orderBy("createdAt", "desc"),
     startAfter(store.getState().chat.lastLoadedMessageDocument),
     limit(10)
   );
@@ -79,7 +79,7 @@ export const getMoreTenMessagesQuery = () => {
 export const getLastTenMessagesQuery = () => {
   return query(
     collectionMyMessagesRef(store.getState().auth.uuid),
-    orderBy('createdAt', 'desc'),
+    orderBy("createdAt", "desc"),
     limit(10)
   );
 };
@@ -97,7 +97,7 @@ export async function getTenMessages(): Promise<
   );
 
   const messages: IMessageFirebase[] = messagesDocSnap.docs.map(
-    doc => doc.data() as IMessageFirebase
+    (doc) => doc.data() as IMessageFirebase
   );
 
   const lastLoadedMessageDocumentIndex = messagesDocSnap.docs.length - 1;
@@ -109,7 +109,7 @@ export async function getTenMessages(): Promise<
 }
 
 export const formatDate = (date: Date) => {
-  let formattedDate = '';
+  let formattedDate = "";
   if (date) {
     // Convert the date in words relative to the current date
     formattedDate = formatRelative(date, new Date());
