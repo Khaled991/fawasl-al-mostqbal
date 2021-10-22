@@ -1,12 +1,12 @@
-import { ReactElement, useState } from 'react';
-import Search from '../../assets/Icons/search.svg';
-import { ReactComponent as YoutubeButton } from '../../assets/Img/youtube.svg';
-import './VideosPage.scss';
-import videos from './videos.data';
+import { ReactElement, useState } from "react";
+import Search from "../../assets/Icons/search.svg";
+import { ReactComponent as YoutubeButton } from "../../assets/Img/youtube.svg";
+import "./VideosPage.scss";
+import videos from "./videos.data";
 
 const VideosPage = (): ReactElement => {
   const [showModal, setShowModal] = useState<string | null>(null);
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
 
   const handelChangeValue = ({ target: { value } }: any) => {
     setSearchValue(value);
@@ -22,6 +22,7 @@ const VideosPage = (): ReactElement => {
         <span className="text-2xl font-medium hidden md:block ">
           الفيديوهات
         </span>
+        <span className="header-title">الفيديوهات</span>
         <div className="search-box">
           <input
             type="text"
@@ -33,7 +34,7 @@ const VideosPage = (): ReactElement => {
           <img src={Search} alt="" width="22" />
         </div>
       </div>
-      <div className="videos-container mt-7 md:mt-0 justify-center md:justify-start ">
+      <div className="videos-container mt-7 md:mt-0 justify-center md:justify-start overflow-y-auto">
         {filteredVideos.map(({ title, id }) => (
           <div className="video-and-title flex flex-col">
             <div className="relative float-left">

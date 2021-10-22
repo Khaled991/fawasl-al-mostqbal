@@ -1,12 +1,100 @@
 const videos = [
   {
     title: "video placeholder",
-    id: "NpEaa2P7qZI"
+    id: "NpEaa2P7qZI",
   },
   {
     title: "video placeholder 2",
-    id: "ScMzIvxBSi4"
-  }
-]
+    id: "ScMzIvxBSi4",
+  },
+  {
+    title: "video placeholder",
+    id: "NpEaa2P7qZI",
+  },
+  {
+    title: "video placeholder 2",
+    id: "ScMzIvxBSi4",
+  },
+  {
+    title: "video placeholder",
+    id: "NpEaa2P7qZI",
+  },
+  {
+    title: "video placeholder 2",
+    id: "ScMzIvxBSi4",
+  },
+  {
+    title: "video placeholder",
+    id: "NpEaa2P7qZI",
+  },
+  {
+    title: "video placeholder 2",
+    id: "ScMzIvxBSi4",
+  },
+  {
+    title: "video placeholder",
+    id: "NpEaa2P7qZI",
+  },
+  {
+    title: "video placeholder 2",
+    id: "ScMzIvxBSi4",
+  },
+  {
+    title: "video placeholder",
+    id: "NpEaa2P7qZI",
+  },
+  {
+    title: "video placeholder 2",
+    id: "ScMzIvxBSi4",
+  },
+  {
+    title: "video placeholder",
+    id: "NpEaa2P7qZI",
+  },
+  {
+    title: "video placeholder 2",
+    id: "ScMzIvxBSi4",
+  },
+  {
+    title: "video placeholder",
+    id: "NpEaa2P7qZI",
+  },
+  {
+    title: "video placeholder 2",
+    id: "ScMzIvxBSi4",
+  },
+  {
+    title: "video placeholder",
+    id: "NpEaa2P7qZI",
+  },
+  {
+    title: "video placeholder 2",
+    id: "ScMzIvxBSi4",
+  },
+  {
+    title: "video placeholder",
+    id: "NpEaa2P7qZI",
+  },
+  {
+    title: "video placeholder 2",
+    id: "ScMzIvxBSi4",
+  },
+  {
+    title: "video placeholder",
+    id: "NpEaa2P7qZI",
+  },
+  {
+    title: "video placeholder 2",
+    id: "ScMzIvxBSi4",
+  },
+  {
+    title: "video placeholder",
+    id: "NpEaa2P7qZI",
+  },
+  {
+    title: "video placeholder 2",
+    id: "ScMzIvxBSi4",
+  },
+];
 
-export default videos
+export default videos;

@@ -56,6 +56,11 @@ textarea {
   user-select: text;
 }
 
+#root,
+.app {
+  height: 100%;
+}
+
 .app {
   .chat-button {
     background-color: $primarycolor;
