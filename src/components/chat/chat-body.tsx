@@ -17,9 +17,9 @@ import { IMessageFirebase } from "../../redux/chat/chat.models";
 import {
   addMessageAction,
   addMoreMessagesAtTopAction,
+  updateFirstMessageUidAction,
   modifyMessageAction,
   modifyScrollHeightAction,
-  updateFirstMessageUidAction,
 } from "../../redux/chat/chat.actions";
 import {
   collectionMyMessagesRef,
