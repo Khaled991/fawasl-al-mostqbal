@@ -1,14 +1,15 @@
 @import '../../utils/constants.scss';
 .partners-page {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 96px);
   display: grid;
+  overflow-y: hidden;
+
   .partners-image-container {
-    // width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     padding: 30px;
     .partners-image {
       width: 100%;
@@ -21,6 +22,7 @@
     overflow-y: auto;
     padding: 10px;
     direction: rtl;
+
     .partners {
       width: 100%;
       .partner {
@@ -45,6 +47,7 @@
         .partner-logo {
           width: 70px;
           fill: $darkColor;
+          margin: 0;
         }
       }
     }
