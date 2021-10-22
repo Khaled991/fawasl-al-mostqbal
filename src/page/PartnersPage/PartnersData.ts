@@ -55,7 +55,7 @@ export const partnersData: IPartnersData[] = [
     name: "فواصل المستقبل 5",
     mobile: "+9665937291819",
     phoneNumber: "+9665937291819",
-    email: "fawaslalmostaqbl@yahoo.com",
+    email: "info@fwasel.com",
     CommercialRecord: "123-456-789",
     address: "٦ ش صابر السمان",
   },
