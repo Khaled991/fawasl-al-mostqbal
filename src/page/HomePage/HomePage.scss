@@ -27,12 +27,13 @@
     font-weight: bold;
     white-space: nowrap;
     overflow: hidden;
+    @apply text-center lg:text-right;
     .special-text-color {
       color: $primarycolor;
     }
   }
   .css-typing p:nth-child(1) {
-    width: 24ch;
+    width: 100%;
     -webkit-animation: type 2s steps(40, end);
     animation: type 2s steps(40, end);
     -webkit-animation-fill-mode: forwards;
@@ -40,7 +41,7 @@
   }
 
   .css-typing p:nth-child(2) {
-    width: 21ch;
+    width: 100%;
     opacity: 0;
     -webkit-animation: type2 2s steps(40, end);
     animation: type2 2s steps(40, end);
@@ -51,7 +52,7 @@
   }
 
   .css-typing p:nth-child(3) {
-    width: 14.5ch;
+    // width: 14.5ch;
     opacity: 0;
     -webkit-animation: type3 2s steps(22, end),
       blink 0.5s step-end infinite alternate;
@@ -60,6 +61,7 @@
     animation-delay: 4s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    @apply w-full md:w-80;
   }
 
   @keyframes type {
