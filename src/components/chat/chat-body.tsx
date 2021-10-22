@@ -118,10 +118,6 @@ const ChatBody = forwardRef(
         firstMessageUid !== messages[0]?.msgId
       ) {
         const perviousScrollHeight = scrollHeight;
-        // const currentScrollHeight =
-        //   messagesContainerRef?.current?.scrollHeight - perviousScrollHeight;
-
-        // const ascsac = messagesContainerRef?.current?.scrollHeight;
 
         dispatch(
           modifyScrollHeightAction(messagesContainerRef?.current?.scrollHeight)
