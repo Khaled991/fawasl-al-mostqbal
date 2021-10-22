@@ -5,45 +5,45 @@ import {
   useEffect,
   useRef,
   RefObject,
-} from 'react';
-import { Route, Switch } from 'react-router-dom';
-import NavBar from './components/NavBar/NavBar';
-import Loading from './components/loading/loading';
-import './App.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  selectIsChatButtonShown,
-  selectIsChatShown,
-} from './redux/chat/chat.selector';
-import { ReactComponent as ChatIcon } from './assets/Icons/chat.svg';
-import Chat from './components/Chat/Chat';
+} from "react";
+import { Route, Switch } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
+import Loading from "./components/loading/loading";
+import "./App.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { ReactComponent as ChatIcon } from "./assets/Icons/chat.svg";
 import {
   modifyScrollHeightAction,
   setMessagesAction,
   toggleChatAction,
-} from './redux/chat/chat.actions';
-import { getTenMessages } from './redux/chat/chat.utils';
-import { signInAnonymously } from 'firebase/auth';
-import { auth } from './utils/firebase';
-import { setAuthUuidAction } from './redux/uuid/auth.actions';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+} from "./redux/chat/chat.actions";
+import { getTenMessages } from "./redux/chat/chat.utils";
+import { signInAnonymously } from "firebase/auth";
+import { auth } from "./utils/firebase";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {
+  selectIsChatButtonShown,
+  selectIsChatShown,
+} from "./redux/chat/chat.selector";
+import Chat from "./components/Chat/Chat";
+import { setAuthUuidAction } from "./redux/uuid/auth.actions";
 
 const PartnerDetailsPage = lazy(
-  () => import('./page/PartnerDetailsPage/PartnerDetailsPage')
+  () => import("./page/PartnerDetailsPage/PartnerDetailsPage")
 );
 const AnswerOfQuestion = lazy(
-  () => import('./page/SupportPage/subpage/AnswerOfQuestion')
+  () => import("./page/SupportPage/subpage/AnswerOfQuestion")
 );
-const HomePage = lazy(() => import('./page/HomePage/HomePage'));
-const DownloadPage = lazy(() => import('./page/DownloadPage/DownloadPage'));
-const SupportPage = lazy(() => import('./page/SupportPage/SupportPage'));
-const PartnersPage = lazy(() => import('./page/PartnersPage/PartnersPage'));
-const ServicesPage = lazy(() => import('./page/ServicesPage/ServicesPage'));
-const NotFoundPage = lazy(() => import('./page/NotFoundPage/NotFoundPage'));
-const VideosPage = lazy(() => import('./page/VideosPage/VideosPage'));
+const HomePage = lazy(() => import("./page/HomePage/HomePage"));
+const DownloadPage = lazy(() => import("./page/DownloadPage/DownloadPage"));
+const SupportPage = lazy(() => import("./page/SupportPage/SupportPage"));
+const PartnersPage = lazy(() => import("./page/PartnersPage/PartnersPage"));
+const ServicesPage = lazy(() => import("./page/ServicesPage/ServicesPage"));
+const NotFoundPage = lazy(() => import("./page/NotFoundPage/NotFoundPage"));
+const VideosPage = lazy(() => import("./page/VideosPage/VideosPage"));
 const BusinessPartnersPage = lazy(
-  () => import('./page/BusinessPartnersPage/BusinessPartnersPage')
+  () => import("./page/BusinessPartnersPage/BusinessPartnersPage")
 );
 
 const App = (): ReactElement => {
@@ -56,7 +56,7 @@ const App = (): ReactElement => {
   useEffect(() => {
     signInAnonymously(auth)
       .then(async () => {
-        dispatch(setAuthUuidAction(auth.currentUser?.uid ?? ''));
+        dispatch(setAuthUuidAction(auth.currentUser?.uid ?? ""));
       })
       .then(async () => {
         const [messages, lastLoadedMessageDocument] = await getTenMessages();
@@ -68,7 +68,7 @@ const App = (): ReactElement => {
           )
         );
       })
-      .catch(error => {
+      .catch((error) => {
         // const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorMessage);
@@ -119,5 +119,4 @@ const App = (): ReactElement => {
     </div>
   );
 };
-
 export default App;
