@@ -1,9 +1,9 @@
-import { forwardRef, ReactElement, useState } from 'react';
-import SignInChat from '../SignInChat/SignInChat';
-import ChatBody from './chat-body';
-import ChatFooter from './ChatFooter/chat-footer';
-import ChatHeader from './ChatHeader/chat-header';
-import './Chat.scss';
+import { forwardRef, ReactElement, useState } from "react";
+import SignInChat from "../SignInChat/SignInChat";
+import ChatFooter from "./ChatFooter/chat-footer";
+import ChatHeader from "./ChatHeader/chat-header";
+import ChatBody from "./chat-body";
+import "./Chat.scss";
 
 const Chat = forwardRef((props, messagesContainerRef): ReactElement => {
   const [isUserName, setIsUserName] = useState(true);
