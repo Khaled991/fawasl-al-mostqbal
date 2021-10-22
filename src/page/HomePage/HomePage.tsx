@@ -13,7 +13,7 @@ const HomePage = () => {
         <img
           src={HomePageImage}
           alt="homePageImage"
-          className="home-page-image h-full"
+          className="home-page-image h-auto lg:h-full  lg:w-auto w-full"
         />
       </div>
       {/* <HomePageTextDesktop /> */}
@@ -70,6 +70,8 @@ const HomePageTextMobile = () => {
         lg:self-center
         items-center
         lg:items-start
+        mb-5
+        lg:mb-0
       "
     >
       <p>
