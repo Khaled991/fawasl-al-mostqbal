@@ -4,7 +4,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
+  @apply md:min-h-screen my-44 md:my-0;
+
+  &:first-of-type {
+    @apply mt-0;
+  }
+
   width: 100%;
   direction: rtl;
   overflow: hidden;
@@ -80,6 +85,10 @@
     width: min(1600px, 100%);
     margin: auto;
     direction: ltr;
+  }
+  .pricing-card {
+    width: 95%; //TODO: Here 100vw in mobile
+    // width: minmax(300px, 100%);
   }
   .mobile-app-links {
     display: flex;

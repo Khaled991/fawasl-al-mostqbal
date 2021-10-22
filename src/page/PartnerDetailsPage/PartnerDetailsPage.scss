@@ -1,5 +1,7 @@
 @import '../../utils/constants.scss';
 
+$logo-width: 220px;
+
 .grid-partner-details-page {
   .title-grid {
     display: flex;
@@ -19,8 +21,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 250px;
-    min-height: 250px;
+    min-width: $logo-width;
+    min-height: $logo-width;
     border-radius: 30px;
     background-color: #fff;
     border: $primarycolor solid 4px;
@@ -69,7 +71,7 @@
 }
 @media only screen and (min-width: 768px) {
   .grid-partner-details-page {
-    grid-template-columns: 0.5fr 50px 250px 50px 10fr 0.5fr;
+    grid-template-columns: 0.5fr 50px $logo-width 50px 10fr 0.5fr;
     grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr 6fr 1.5fr 0.5fr;
 
     .title-grid {
@@ -81,9 +83,9 @@
     .logo-grid {
       grid-row: 2/ 5;
       grid-column: 3/ 4;
-      min-width: 250px;
+      min-width: $logo-width;
       z-index: 2;
-      margin-top: 2rem;
+      margin-top: 3.75rem;
     }
 
     .info-grid {

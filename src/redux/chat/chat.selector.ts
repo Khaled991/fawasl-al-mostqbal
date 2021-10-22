@@ -1,6 +1,7 @@
 import { createSelector } from "reselect";
 import { IRootReducer } from "../redux.models";
-import { IChatState } from "./chat.models";
+import { IChatState, IMessageFirebase } from "./chat.models";
+import { sub } from "date-fns";
 
 export const selectChat = (state: IRootReducer) => state.chat;
 
