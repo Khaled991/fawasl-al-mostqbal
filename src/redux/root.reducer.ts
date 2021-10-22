@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import chatReducer from "./chat/chat.reducer";
 import { IRootReducer } from "./redux.models";
+import chatReducer from "./chat/chat.reducer";
 import { authReducer } from "./auth/auth.reducer";
 
 const rootReducer = combineReducers<IRootReducer>({

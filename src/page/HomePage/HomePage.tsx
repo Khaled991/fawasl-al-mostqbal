@@ -13,29 +13,75 @@ const HomePage = () => {
           className="home-page-image"
         />
       </div>
-      <div className="css-typing leading-relaxed text-3xl md:leading-loose lg:text-4xl lg:leading-lg xl:text-4-5xl xl:leading-xl self-start lg:self-center">
-        <p>
-          لم يكن من السهل ادارة{" "}
-          <span className="special-text-color">نقاط البيع</span>
-        </p>
-        <p>
-          <span className="special-text-color">والمحاسبة</span> ببرنامج واحد
-          ولكن
-        </p>
-        <p>
-          يمكنك الان <span className="special-text-color">ببرنامجنا</span>
-        </p>
-        <div className="buttons-and-text-container self-center lg:self-start">
-          <Link to="/download">
-            <Button buttonStyleType="solidGreen">جرب الآن</Button>
-          </Link>
-          {/* <Link to="/download">
-            <Button buttonStyleType="greenBorder">تجربة كاملة</Button>
-          </Link> */}
-        </div>
-      </div>
+      {/* <HomePageTextDesktop /> */}
+      <HomePageTextMobile />
     </div>
   );
 };
 
 export default HomePage;
+
+// const HomePageTextDesktop = () => {
+//   return (
+//     <div className="css-typing leading-relaxed text-3xl md:leading-loose lg:text-4xl lg:leading-lg xl:text-4-5xl xl:leading-xl self-start lg:self-center">
+//       <p>
+//         لم يكن من السهل ادارة{" "}
+//         <span className="special-text-color">نقاط البيع</span>
+//       </p>
+//       <p>
+//         <span className="special-text-color">والمحاسبة</span> ببرنامج واحد ولكن
+//       </p>
+//       <p>
+//         يمكنك الان <span className="special-text-color">ببرنامجنا</span>
+//       </p>
+//       <div className="buttons-and-text-container self-center lg:self-start">
+//         <Link to="/download">
+//           <Button buttonStyleType="solidGreen">جرب الآن</Button>
+//         </Link>
+//         {/* <Link to="/download">
+//       <Button buttonStyleType="greenBorder">تجربة كاملة</Button>
+//     </Link> */}
+//       </div>
+//     </div>
+//   );
+// };
+
+const HomePageTextMobile = () => {
+  return (
+    <div
+      className="css-typing
+        leading-relaxed
+        text-2xl
+        sm:text-3xl
+        sm:leading-loose
+        lg:text-4xl
+        lg:leading-lg
+        xl:text-4-5xl
+        xl:leading-xl
+        self-start
+        lg:self-center
+        items-center
+        md:items-start
+      "
+    >
+      <p>
+        لم يكن من السهل ادارة{" "}
+        <span className="special-text-color">نقاط البيع</span>
+      </p>
+      <p>
+        <span className="special-text-color">والمحاسبة</span> ببرنامج واحد ولكن
+      </p>
+      <p>
+        يمكنك الان <span className="special-text-color">ببرنامجنا</span>
+      </p>
+      <div className="buttons-and-text-container self-center lg:self-start">
+        <Link to="/download">
+          <Button buttonStyleType="solidGreen">جرب الآن</Button>
+        </Link>
+        {/* <Link to="/download">
+      <Button buttonStyleType="greenBorder">تجربة كاملة</Button>
+    </Link> */}
+      </div>
+    </div>
+  );
+};

@@ -1,11 +1,11 @@
-import { ReactElement } from 'react';
+import { ReactElement } from "react";
 
 // import ReactPageScroller from "react-page-scroller";
-import QuestionsPage from '../../components/SupportPage/QuestionsPage';
-import ComplaintPage from '../../components/SupportPage/ComplaintPage';
-import ContactUsPage from '../../components/SupportPage/ContactUsPage';
+import QuestionsPage from "../../components/SupportPage/QuestionsPage";
+import ComplaintPage from "../../components/SupportPage/ComplaintPage";
+// import ContactUsPage from "../../components/SupportPage/ContactUsPage";
 
-import './SupportPage.scss';
+import "./SupportPage.scss";
 
 const SupportPage = (): ReactElement => {
   return (
@@ -13,7 +13,7 @@ const SupportPage = (): ReactElement => {
     <div>
       <QuestionsPage />
       <ComplaintPage />
-      <ContactUsPage />
+      {/* <ContactUsPage /> */}
     </div>
     // </ReactPageScroller>
   );

@@ -5,50 +5,49 @@ import {
   useEffect,
   useRef,
   RefObject,
-} from 'react';
-import { Route, Switch } from 'react-router-dom';
-import NavBar from './components/NavBar/NavBar';
-import Loading from './components/loading/loading';
-import './App.scss';
-import { useDispatch, useSelector } from 'react-redux';
+} from "react";
+import { Route, Switch } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
+import Loading from "./components/loading/loading";
+import "./App.scss";
 import {
-  selectIsChatButtonShown,
-  selectIsChatShown,
-} from './redux/chat/chat.selector';
-import { ReactComponent as ChatIcon } from './assets/Icons/chat.svg';
-import Chat from './components/Chat/Chat';
+  useDispatch,
+  // , useSelector
+} from "react-redux";
+// import { ReactComponent as ChatIcon } from "./assets/Icons/chat.svg";
 import {
   modifyScrollHeightAction,
   setMessagesAction,
-  toggleChatAction,
-} from './redux/chat/chat.actions';
-import { getTenMessages } from './redux/chat/chat.utils';
-import { signInAnonymously } from 'firebase/auth';
-import { auth } from './utils/firebase';
-import { setAuthUuidAction } from './redux/uuid/auth.actions';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+  // toggleChatAction,
+} from "./redux/chat/chat.actions";
+import { getTenMessages } from "./redux/chat/chat.utils";
+import { signInAnonymously } from "firebase/auth";
+import { auth } from "./utils/firebase";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { setAuthUuidAction } from "./redux/auth/auth.actions";
+// import Chat from "./components/Chat/Chat";
 
 const PartnerDetailsPage = lazy(
-  () => import('./page/PartnerDetailsPage/PartnerDetailsPage')
+  () => import("./page/PartnerDetailsPage/PartnerDetailsPage")
 );
 const AnswerOfQuestion = lazy(
-  () => import('./page/SupportPage/subpage/AnswerOfQuestion')
+  () => import("./page/SupportPage/subpage/AnswerOfQuestion")
 );
-const HomePage = lazy(() => import('./page/HomePage/HomePage'));
-const DownloadPage = lazy(() => import('./page/DownloadPage/DownloadPage'));
-const SupportPage = lazy(() => import('./page/SupportPage/SupportPage'));
-const PartnersPage = lazy(() => import('./page/PartnersPage/PartnersPage'));
-const ServicesPage = lazy(() => import('./page/ServicesPage/ServicesPage'));
-const NotFoundPage = lazy(() => import('./page/NotFoundPage/NotFoundPage'));
-const VideosPage = lazy(() => import('./page/VideosPage/VideosPage'));
+const HomePage = lazy(() => import("./page/HomePage/HomePage"));
+const DownloadPage = lazy(() => import("./page/DownloadPage/DownloadPage"));
+const SupportPage = lazy(() => import("./page/SupportPage/SupportPage"));
+const PartnersPage = lazy(() => import("./page/PartnersPage/PartnersPage"));
+const ServicesPage = lazy(() => import("./page/ServicesPage/ServicesPage"));
+const NotFoundPage = lazy(() => import("./page/NotFoundPage/NotFoundPage"));
+const VideosPage = lazy(() => import("./page/VideosPage/VideosPage"));
 const BusinessPartnersPage = lazy(
-  () => import('./page/BusinessPartnersPage/BusinessPartnersPage')
+  () => import("./page/BusinessPartnersPage/BusinessPartnersPage")
 );
 
 const App = (): ReactElement => {
-  const isChatButtonShown: boolean = useSelector(selectIsChatButtonShown);
-  const isChatShown: boolean = useSelector(selectIsChatShown);
+  // const isChatButtonShown: boolean = useSelector(selectIsChatButtonShown);
+  // const isChatShown: boolean = useSelector(selectIsChatShown);
   const dispatch = useDispatch();
   const messagesContainerRef: RefObject<HTMLDivElement> =
     useRef<HTMLDivElement>(null);
@@ -56,7 +55,7 @@ const App = (): ReactElement => {
   useEffect(() => {
     signInAnonymously(auth)
       .then(async () => {
-        dispatch(setAuthUuidAction(auth.currentUser?.uid ?? ''));
+        dispatch(setAuthUuidAction(auth.currentUser?.uid ?? ""));
       })
       .then(async () => {
         const [messages, lastLoadedMessageDocument] = await getTenMessages();
@@ -68,7 +67,7 @@ const App = (): ReactElement => {
           )
         );
       })
-      .catch(error => {
+      .catch((error) => {
         // const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorMessage);
@@ -80,7 +79,7 @@ const App = (): ReactElement => {
   return (
     <div className="app">
       <NavBar />
-      <div className="pr-0 md:pr-32 pt-16 md:pt-0">
+      <div className="pr-0 md:pr-32 pt-16 md:pt-0 h-full">
         <Suspense fallback={<Loading />}>
           <Switch>
             <Route exact path="/" component={HomePage} />
@@ -106,7 +105,7 @@ const App = (): ReactElement => {
       </div>
       {/* TODO footer */}
       {/* <Footer /> */}
-      {isChatButtonShown && !isChatShown && (
+      {/* {isChatButtonShown && !isChatShown && (
         <button
           onClick={() => dispatch(toggleChatAction())}
           className="chat-button"
@@ -114,10 +113,9 @@ const App = (): ReactElement => {
           <ChatIcon className="chat-button-icon" />
         </button>
       )}
-      {isChatShown && <Chat ref={messagesContainerRef} />}
+      {isChatShown && <Chat ref={messagesContainerRef} />} */}
       <ToastContainer />
     </div>
   );
 };
-
 export default App;

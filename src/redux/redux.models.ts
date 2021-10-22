@@ -1,5 +1,5 @@
-import { IChatState } from './chat/chat.models';
-import { IAuthState } from './uuid/auth.models';
+import { IChatState } from "./chat/chat.models";
+import { IAuthState } from "./auth/auth.models";
 
 export interface IAction<T> {
   type: string;

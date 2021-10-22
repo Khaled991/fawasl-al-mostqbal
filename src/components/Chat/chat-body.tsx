@@ -1,33 +1,32 @@
-import { forwardRef, ReactElement, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Dispatch } from 'redux';
+import { forwardRef, ReactElement, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Dispatch } from "redux";
 
-import { onSnapshot } from '@firebase/firestore';
+import { onSnapshot } from "@firebase/firestore";
 
-import customerFemale from '../../assets/Icons/customerFemale.svg';
-import customerService from '../../assets/Icons/customerService.svg';
-
-import { selectUuid } from '../../redux/uuid/auth.selector';
+import customerFemale from "../../assets/Icons/customerFemale.svg";
+import customerService from "../../assets/Icons/customerService.svg";
 
 import {
   selectChat,
   selectFirstMessageUid,
   selectMessages,
   selectScrollHeight,
-} from '../../redux/chat/chat.selector';
-import { IMessageFirebase } from '../../redux/chat/chat.models';
+} from "../../redux/chat/chat.selector";
+import { IMessageFirebase } from "../../redux/chat/chat.models";
 import {
   addMessageAction,
   addMoreMessagesAtTopAction,
   modifyMessageAction,
   modifyScrollHeightAction,
   updateFirstMessageUidAction,
-} from '../../redux/chat/chat.actions';
+} from "../../redux/chat/chat.actions";
 import {
   collectionMyMessagesRef,
   formatDate,
   getTenMessages,
-} from '../../redux/chat/chat.utils';
+} from "../../redux/chat/chat.utils";
+import { selectUuid } from "../../redux/auth/auth.selector";
 
 const ChatBody = forwardRef(
   (props, messagesContainerRef: any): ReactElement => {
@@ -46,15 +45,15 @@ const ChatBody = forwardRef(
 
     function Message({ notMe, msg, createdAt }: IMessage): ReactElement {
       return (
-        <div className={notMe ? 'my-message' : 'peer-message'}>
+        <div className={notMe ? "my-message" : "peer-message"}>
           <div>
             {msg}
             <div className="text-xs mt-1">{createdAt}</div>
           </div>
           <img
             src={notMe ? customerFemale : customerService}
-            alt={notMe ? 'me' : 'peer'}
-            className={notMe ? 'my-message-image' : 'peer-message-image'}
+            alt={notMe ? "me" : "peer"}
+            className={notMe ? "my-message-image" : "peer-message-image"}
           />
         </div>
       );
@@ -74,10 +73,10 @@ const ChatBody = forwardRef(
           const changes = snapShot.docChanges();
 
           changes.forEach((change: any) => {
-            if (change.type === 'added' && changes.length === 1) {
+            if (change.type === "added" && changes.length === 1) {
               dispatch(addMessageAction(change.doc.data()));
               scrollChatToMostBottom();
-            } else if (change.type === 'modified')
+            } else if (change.type === "modified")
               dispatch(modifyMessageAction(change.doc.data()));
           });
         }
@@ -119,10 +118,6 @@ const ChatBody = forwardRef(
         firstMessageUid !== messages[0]?.msgId
       ) {
         const perviousScrollHeight = scrollHeight;
-        // const currentScrollHeight =
-        //   messagesContainerRef?.current?.scrollHeight - perviousScrollHeight;
-
-        // const ascsac = messagesContainerRef?.current?.scrollHeight;
 
         dispatch(
           modifyScrollHeightAction(messagesContainerRef?.current?.scrollHeight)
@@ -139,7 +134,7 @@ const ChatBody = forwardRef(
 
       const allMessagesLoaded =
         lastLoadedMessageDocument === undefined && messagesCount > 0;
-      return myUuid !== '' && !allMessagesLoaded;
+      return myUuid !== "" && !allMessagesLoaded;
     }
 
     return (

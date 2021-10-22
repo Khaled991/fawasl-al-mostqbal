@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 const DownloadCardsPage = (): ReactElement => {
   return (
     <div className="download-page items-start">
-      <div className="pricing-table flex-col md:flex-row	items-center md:items-start">
+      <div className="pricing-table flex-col md:flex-row items-center md:items-start">
         <DownloadCard
           version={'نسخة كاملة'}
           price={'01'}

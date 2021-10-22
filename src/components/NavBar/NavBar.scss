@@ -1,4 +1,4 @@
-@import '../../utils/constants.scss';
+@import "../../utils/constants.scss";
 
 .navbar-items-container {
   display: flex;
@@ -61,9 +61,8 @@
         .nav-link {
           font-size: 15px;
           font-weight: bold;
-          transform: scale(0.5, 0.5);
           transition: 0.8s;
-          color: rgba(255, 255, 255, 0);
+          color: rgba(255, 255, 255);
         }
       }
       .active {
@@ -75,7 +74,6 @@
         & .nav-link {
           font-size: 15px;
           font-weight: bold;
-          transform: scale(1, 1);
           transition: 0.8s;
           color: #fff;
         }

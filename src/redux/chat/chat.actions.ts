@@ -1,7 +1,7 @@
-import { DocumentData, QueryDocumentSnapshot } from 'firebase/firestore';
-import { IAction } from '../redux.models';
-import { IMessageFirebase } from './chat.models';
-import { chatActionTypes } from './chat.types';
+import { DocumentData, QueryDocumentSnapshot } from "firebase/firestore";
+import { IAction } from "../redux.models";
+import { IMessageFirebase } from "./chat.models";
+import { chatActionTypes } from "./chat.types";
 
 export const setMessagesAction = (
   messages: IMessageFirebase[],
