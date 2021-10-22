@@ -76,7 +76,7 @@ const PartnerDetailsPage = ({
       <div className="logo-grid">
         <Logo />
       </div>
-      <div className="info-grid">
+      <div className="info-grid md:mt-10">
         <RenderDetailsData />
       </div>
       <div className="map-grid">
