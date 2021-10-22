@@ -1,6 +1,6 @@
 import { forwardRef, ReactElement, useState } from "react";
 import SignInChat from "../SignInChat/SignInChat";
-import ChatBody from "./chat-body";
+import ChatBody from "./chat-body0";
 import ChatFooter from "./ChatFooter/chat-footer";
 import ChatHeader from "./ChatHeader/chat-header";
 import "./Chat.scss";
