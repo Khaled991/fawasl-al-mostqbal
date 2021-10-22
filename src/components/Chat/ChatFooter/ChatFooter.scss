@@ -1,0 +1,21 @@
+@import '../../../utils/constants.scss';
+
+.chat-send-button {
+  width: 24px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: 0.5s;
+  &:hover {
+    transform: translate(-3px, -3px);
+  }
+}
+
+.chat-icon-style {
+  width: 24px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.08, 1.08);
+  }
+}

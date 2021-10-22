@@ -1,4 +1,4 @@
-@import "../../utils/constants.scss";
+@import '../../utils/constants.scss';
 .container {
   .select-box {
     display: flex;
@@ -9,7 +9,6 @@
     .options-container {
       background: #fff;
       border: 2px solid $primarycolor;
-      max-height: 0;
       width: 100%;
       opacity: 0;
       transition: all 0.4s;
@@ -44,8 +43,8 @@
     font-size: 17px;
 
     &::after {
-      content: "";
-      background: url("../../assets/Icons/down-arrow.svg");
+      content: '';
+      background: url('../../assets/Icons/down-arrow.svg');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;

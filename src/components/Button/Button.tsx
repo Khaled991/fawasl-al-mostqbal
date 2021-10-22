@@ -5,14 +5,10 @@ const Button = ({
   children,
   onClick,
   buttonStyleType,
-  style,
+  ...props
 }: any): ReactElement => {
   return (
-    <button
-      onClick={onClick}
-      className={`btn ${buttonStyleType}`}
-      style={style}
-    >
+    <button onClick={onClick} className={`btn ${buttonStyleType}`} {...props}>
       {children}
     </button>
   );
