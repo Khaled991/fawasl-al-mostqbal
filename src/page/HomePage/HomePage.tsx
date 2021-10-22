@@ -1,20 +1,28 @@
-import "./HomePage.scss";
-import HomePageImage from "../../assets/Img/homePageImage.svg";
-import Button from "../../components/Button/Button";
-import { Link } from "react-router-dom";
+import './HomePage.scss';
+import HomePageImage from '../../assets/Img/homePageImage.svg';
+import Button from '../../components/Button/Button';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
-    <div className="home-page absolute md:relative grid grid-cols-1 lg:grid-cols-2 justify-items-center lg:justify-items-end">
-      <div className="home-page-image-container w-full z--1 right-0 md:z-1">
+    <div className="home-page absolute md:relative flex flex-col lg:flex-row justify-items-center lg:justify-items-end">
+      <div className="home-page-image-container lg:justify-items-end h-full z--1 right-0 md:z-1 flex-col flex-1 p-0 lg:pl-0 lg:p-20">
+        <div className="web-name web-name-mobile w-full text-center block lg:hidden lg:text-right">
+          فواصل المستقبل
+        </div>
         <img
           src={HomePageImage}
           alt="homePageImage"
-          className="home-page-image"
+          className="home-page-image h-full"
         />
       </div>
       {/* <HomePageTextDesktop /> */}
-      <HomePageTextMobile />
+      <div className=" self-start lg:self-center w-full lg:w-auto">
+        <div className="web-name text-center lg:text-right  hidden lg:block">
+          فواصل المستقبل
+        </div>
+        <HomePageTextMobile />
+      </div>
     </div>
   );
 };
@@ -61,11 +69,11 @@ const HomePageTextMobile = () => {
         self-start
         lg:self-center
         items-center
-        md:items-start
+        lg:items-start
       "
     >
       <p>
-        لم يكن من السهل ادارة{" "}
+        لم يكن من السهل ادارة{' '}
         <span className="special-text-color">نقاط البيع</span>
       </p>
       <p>
