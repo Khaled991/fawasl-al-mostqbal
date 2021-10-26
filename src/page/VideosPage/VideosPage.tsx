@@ -1,12 +1,13 @@
-import { ReactElement, useState } from "react";
-import Search from "../../assets/Icons/search.svg";
-import { ReactComponent as YoutubeButton } from "../../assets/Img/youtube.svg";
-import "./VideosPage.scss";
-import videos from "./videos.data";
+import { ReactElement, useState } from 'react';
+import Search from '../../assets/Icons/search.svg';
+import { ReactComponent as YoutubeButton } from '../../assets/Img/youtube.svg';
+import './VideosPage.scss';
+import videos from './videos.data';
+import PageContainer from '../../components/PageContainer/PageContainer';
 
 const VideosPage = (): ReactElement => {
   const [showModal, setShowModal] = useState<string | null>(null);
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
 
   const handelChangeValue = ({ target: { value } }: any) => {
     setSearchValue(value);
@@ -15,14 +16,10 @@ const VideosPage = (): ReactElement => {
   const filteredVideos = videos.filter(({ title }) =>
     title.includes(searchValue)
   );
-
   return (
-    <div className="videos-page">
-      <div className="video-header p-0 md:p-8 justify-center md:justify-between ">
-        <span className="text-2xl font-medium hidden md:block ">
-          الفيديوهات
-        </span>
-        <span className="header-title">الفيديوهات</span>
+    <PageContainer
+      title="الفيديوهات"
+      searchBox={
         <div className="search-box">
           <input
             type="text"
@@ -33,8 +30,22 @@ const VideosPage = (): ReactElement => {
           />
           <img src={Search} alt="" width="22" />
         </div>
-      </div>
-      <div className="videos-container mt-7 md:mt-0 justify-center md:justify-start overflow-y-auto">
+      }
+      modal={
+        showModal && (
+          <div className="modal" onClick={() => setShowModal(null)}>
+            <iframe
+              title="fullscreenvideo"
+              className="full-screen-video"
+              src={`https://www.youtube.com/embed/${showModal}?autoplay=1`}
+              allow="autoplay"
+              allowFullScreen
+            />
+          </div>
+        )
+      }
+    >
+      <div className="video-container">
         {filteredVideos.map(({ title, id }) => (
           <div className="video-and-title flex flex-col">
             <div className="relative float-left">
@@ -56,18 +67,7 @@ const VideosPage = (): ReactElement => {
           </div>
         ))}
       </div>
-      {showModal && (
-        <div className="modal" onClick={() => setShowModal(null)}>
-          <iframe
-            title="fullscreenvideo"
-            className="full-screen-video"
-            src={`https://www.youtube.com/embed/${showModal}?autoplay=1`}
-            allow="autoplay"
-            allowFullScreen
-          />
-        </div>
-      )}
-    </div>
+    </PageContainer>
   );
 };
 

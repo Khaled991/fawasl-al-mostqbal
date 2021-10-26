@@ -5,7 +5,7 @@ import './ServicesPage.scss';
 
 const ServicesPage = (): ReactElement => {
   return (
-    <div>
+    <div className="">
       <ServicesHome />
       <RequestServices />
     </div>

@@ -1,4 +1,4 @@
-@import "../../utils/constants.scss";
+@import '../../utils/constants.scss';
 .home-page {
   width: 100%;
   height: calc(100vh - 64px);
@@ -7,12 +7,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    .home-page-image {
-      padding: 50px;
-      width: 90%;
-    }
   }
 
+  .web-name {
+    color: $primarycolor;
+    font-weight: bold;
+    font-size: 78px;
+    text-shadow: 1px 1px 1px #000000c7;
+    margin-bottom: 50px;
+  }
+  .web-name-mobile {
+    font-size: 53px;
+    margin-bottom: 70px;
+  }
   .css-typing {
     direction: rtl;
     display: flex;
