@@ -61,6 +61,7 @@
     "@types/redux": "^3.6.0",
     "autoprefixer": "^9.8.6",
     "postcss": "^7.0.36",
+    "stylelint-config-recommended": "^6.0.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.14"
   }
 }
