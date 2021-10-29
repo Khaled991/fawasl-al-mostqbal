@@ -1,6 +1,6 @@
-import logo from "../../assets/Img/logo.svg";
+import logo from '../../assets/Img/logo.svg';
 
-interface IPartnersData {
+export interface IPartnersData {
   logo: string | undefined;
   name: string | undefined;
   mobile: string;
@@ -16,47 +16,47 @@ export const getNameAndLogoPartners = () =>
 export const partnersData: IPartnersData[] = [
   {
     logo: logo,
-    name: "فواصل المستقبل",
-    mobile: "+٩٦٦٥٩٣٧٢٩١٨١٩",
-    phoneNumber: "+٩٦٦٥٩٣٧٢٩١٨١٩",
-    email: "fawaslalmostaqbl@gmail.com",
-    CommercialRecord: "٧٨٩-٤٥٦-١٢٣",
-    address: "٦ ش صبر السمان متفرع من اللاشين",
+    name: 'فواصل المستقبل',
+    mobile: '+٩٦٦٥٩٣٧٢٩١٨١٩',
+    phoneNumber: '+٩٦٦٥٩٣٧٢٩١٨١٩',
+    email: 'fawaslalmostaqbl@gmail.com',
+    CommercialRecord: '٧٨٩-٤٥٦-١٢٣',
+    address: '٦ ش صبر السمان متفرع من اللاشين',
   },
   {
     logo: logo,
-    name: "فواصل المستقبل2",
-    mobile: "+٩٦٦٥٩٣٧٢٩١٨١٩",
-    phoneNumber: "+٩٦٦٥٩٣٧٢٩١٨١٩",
-    email: "fawaslalmostaqbl@gmail.com",
-    CommercialRecord: "٧٨٩-٤٥٦-١٢٣",
-    address: "٦ ش صبر السمان متفرع من اللاشين",
+    name: 'فواصل المستقبل2',
+    mobile: '+٩٦٦٥٩٣٧٢٩١٨١٩',
+    phoneNumber: '+٩٦٦٥٩٣٧٢٩١٨١٩',
+    email: 'fawaslalmostaqbl@gmail.com',
+    CommercialRecord: '٧٨٩-٤٥٦-١٢٣',
+    address: '٦ ش صبر السمان متفرع من اللاشين',
   },
   {
     logo: logo,
-    name: "فواصل المستقبل 3",
-    mobile: "+٩٦٦٥٩٣٧٢٩١٨١٩",
-    phoneNumber: "+٩٦٦٥٩٣٧٢٩١٨١٩",
-    email: "fawaslalmostaqbl@gmail.com",
-    CommercialRecord: "٧٨٩-٤٥٦-١٢٣",
-    address: "٦ ش صبر السمان متفرع من اللاشين",
+    name: 'فواصل المستقبل 3',
+    mobile: '+٩٦٦٥٩٣٧٢٩١٨١٩',
+    phoneNumber: '+٩٦٦٥٩٣٧٢٩١٨١٩',
+    email: 'fawaslalmostaqbl@gmail.com',
+    CommercialRecord: '٧٨٩-٤٥٦-١٢٣',
+    address: '٦ ش صبر السمان متفرع من اللاشين',
   },
   {
     logo: logo,
-    name: "فواصل المستقبل 4",
-    mobile: "+٩٦٦٥٩٣٧٢٩١٨١٩",
-    phoneNumber: "+٩٦٦٥٩٣٧٢٩١٨١٩",
-    email: "fawaslalmostaqbl@gmail.com",
-    CommercialRecord: "٧٨٩-٤٥٦-١٢٣",
-    address: "٦ ش صبر السمان متفرع من اللاشين",
+    name: 'فواصل المستقبل 4',
+    mobile: '+٩٦٦٥٩٣٧٢٩١٨١٩',
+    phoneNumber: '+٩٦٦٥٩٣٧٢٩١٨١٩',
+    email: 'fawaslalmostaqbl@gmail.com',
+    CommercialRecord: '٧٨٩-٤٥٦-١٢٣',
+    address: '٦ ش صبر السمان متفرع من اللاشين',
   },
   {
     logo: logo,
-    name: "فواصل المستقبل 5",
-    mobile: "+9665937291819",
-    phoneNumber: "+9665937291819",
-    email: "info@fwasel.com",
-    CommercialRecord: "123-456-789",
-    address: "٦ ش صابر السمان",
+    name: 'فواصل المستقبل 5',
+    mobile: '+9665937291819',
+    phoneNumber: '+9665937291819',
+    email: 'info@fwasel.com',
+    CommercialRecord: '123-456-789',
+    address: '٦ ش صابر السمان',
   },
 ];
