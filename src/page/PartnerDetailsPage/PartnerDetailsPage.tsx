@@ -1,6 +1,7 @@
-import { ReactElement } from "react";
-import { partnersData } from "../PartnersPage/PartnersData";
-import "./PartnerDetailsPage.scss";
+import { ReactElement } from 'react';
+import { partnersData } from '../PartnersPage/PartnersData';
+import './PartnerDetailsPage.scss';
+import ReactPageScroller from 'react-page-scroller';
 
 const PartnerDetailsPage = ({
   location: { state },
@@ -8,49 +9,78 @@ const PartnerDetailsPage = ({
     params: { id },
   },
 }: any): ReactElement => {
-  const details = partnersData[id];
+  // useEffect(() => {
+  //   const innerHeight = window.innerHeight;
+
+  //   scrollTo(innerHeight * Number(id));
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
+
+  // const scrollTo = (position: number) => {
+  //   window.scrollTo(0, position);
+  // };
+
+  const RenderPartnerDetailPage = ({ details }: any) => {
+    return (
+      <div>
+        <div className="partner-details__container z-1">
+          <div className="partner-details__title">
+            <img
+              src={details.logo}
+              alt="logo"
+              className="partner-details__logo"
+            />
+            <div className="partner-details__name">{details.name}</div>
+          </div>
+          <div className="details-coulmn w-full">
+            <div className="row-partner-details flex justify-evenly w-full flex-col md:flex-row">
+              <div className="partner-details__data">
+                <div className="partner-details__data--title">الجوال</div>
+                <div className="partner-details__data--data">
+                  {details.mobile}
+                </div>
+              </div>
+              <div className="partner-details__data">
+                <div className="partner-details__data--title">أرضي</div>
+                <div className="partner-details__data--data">
+                  {details.phoneNumber}
+                </div>
+              </div>
+              <div className="partner-details__data">
+                <div className="partner-details__data--title">سجل تجاري</div>
+                <div className="partner-details__data--data">
+                  {details.CommercialRecord}
+                </div>
+              </div>
+            </div>
+            <div className="partner-details__data flex-1 md:flex-none">
+              <div className="partner-details__data--title">
+                البريد الالكتروني
+              </div>
+              <div className="partner-details__data--data">{details.email}</div>
+            </div>
+            <div className="partner-details__data flex-1 md:flex-none">
+              <div className="partner-details__data--title">العنوان</div>
+              <div className="partner-details__data--data">
+                {details.address}
+              </div>
+            </div>
+          </div>
+          <Map className="w-full h-1/5" />
+        </div>
+        <Map isNotMobile />
+      </div>
+    );
+  };
 
   return (
-    <div>
-      <div className="partner-details__container z-1">
-        <div className="partner-details__title">
-          <img
-            src={details.logo}
-            alt="logo"
-            className="partner-details__logo"
-          />
-          <div className="partner-details__name">{details.name}</div>
-        </div>
-        <div className="flex justify-evenly w-full flex-col md:flex-row">
-          <div className="partner-details__data">
-            <div className="partner-details__data--title">الجوال</div>
-            <div className="partner-details__data--data">{details.mobile}</div>
-          </div>
-          <div className="partner-details__data">
-            <div className="partner-details__data--title">أرضي</div>
-            <div className="partner-details__data--data">
-              {details.phoneNumber}
-            </div>
-          </div>
-          <div className="partner-details__data">
-            <div className="partner-details__data--title">سجل تجاري</div>
-            <div className="partner-details__data--data">
-              {details.CommercialRecord}
-            </div>
-          </div>
-        </div>
-        <div className="partner-details__data">
-          <div className="partner-details__data--title">البريد الالكتروني</div>
-          <div className="partner-details__data--data">{details.email}</div>
-        </div>
-        <div className="partner-details__data">
-          <div className="partner-details__data--title">العنوان</div>
-          <div className="partner-details__data--data">{details.address}</div>
-        </div>
-        <Map className="w-screen h-1/5" />
-      </div>
-      <Map isNotMobile />
-    </div>
+    <ReactPageScroller containerHeight="100%" customPageNumber={Number(id)}>
+      {/* <> */}
+      {partnersData.map((details, i) => (
+        <RenderPartnerDetailPage key={i} details={details} />
+      ))}
+      {/* </> */}
+    </ReactPageScroller>
   );
 };
 
@@ -66,7 +96,7 @@ export default PartnerDetailsPage;
 // import './PartnerDetailsPage.scss';
 // import { motion } from 'framer-motion';
 // import LogoSvg from '../../assets/Img/logo.svg';
-// import { partnersData } from './../PartnersPage/PartnersData';
+// import { partnersData, IPartnersData } from './../PartnersPage/PartnersData';
 
 // const PartnerDetailsPage = ({
 //   location: { state },
@@ -178,8 +208,8 @@ const Map = ({ isNotMobile, className, ...props }: any) => (
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59982.395917305126!2d41.495147351755044!3d20.012722007789492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15ef459576d00615%3A0x502c5b028b9e526d!2z2KfZhNio2KfYrdipINin2YTYs9i52YjYr9mK2Kk!5e0!3m2!1sar!2seg!4v1631402197667!5m2!1sar!2seg"
     className={`${
       isNotMobile
-        ? "md:w-1/4 md:h-screen z-[1] hidden md:block"
-        : "md:hidden block"
+        ? 'md:w-1/4 md:h-screen z-[1] hidden md:block'
+        : 'md:hidden block'
     } ${className}`}
     loading="lazy"
     {...props}

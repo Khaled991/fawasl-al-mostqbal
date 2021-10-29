@@ -1,4 +1,4 @@
-@import "../../utils/constants.scss";
+@import '../../utils/constants.scss';
 
 html {
   font-size: 80%;
@@ -11,16 +11,35 @@ html {
 }
 
 .partner-details__container {
-  background-image: url("../../assets/Img/background.webp");
+  background-image: url('../../assets/Img/background.webp');
   background-size: cover;
   direction: rtl;
   @screen md {
     clip-path: polygon(10% 0, 100% 0, 100% 100%, 20% 100%);
     padding-left: 15%;
   }
-  @apply h-screen w-full absolute flex justify-between items-center flex-col pr-0 md:pr-32 md:py-24;
+  @media only screen and (max-width: 768px) {
+    height: calc(100vh - 56px);
+  }
+  height: 100vh;
+
+  .details-coulmn {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    @media only screen and (max-width: 768px) {
+      flex: 1;
+      overflow: auto;
+    }
+  }
+  @apply w-full absolute flex justify-around md:justify-between items-center flex-col pr-0 md:pr-32 md:py-24;
 
   .partner-details__title {
+    // @media only screen and (max-width: 768px) {
+    //   flex: 1;
+    // }
     @apply flex items-center justify-center flex-col md:flex-row;
 
     .partner-details__logo {
@@ -28,18 +47,27 @@ html {
     }
 
     .partner-details__name {
-      @apply text-5xl md:text-6xl font-bold md:pr-12 text-center md:text-right;
+      @apply text-4xl md:text-6xl font-bold md:pr-12 text-center md:text-right;
     }
   }
-
+  .row-partner-details {
+    @media only screen and (max-width: 768px) {
+      flex: 3;
+    }
+  }
   .partner-details__data {
     @apply text-center my-4;
+
+    @media only screen and (max-width: 768px) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
 
     .partner-details__data--title {
       @apply font-bold text-3xl mb-3;
     }
     .partner-details__data--data {
-      @apply text-3xl;
+      @apply text-2xl;
     }
   }
 }

@@ -5,44 +5,44 @@ import {
   useEffect,
   useRef,
   RefObject,
-} from "react";
-import { Route, Switch } from "react-router-dom";
-import NavBar from "./components/NavBar/NavBar";
-import Loading from "./components/loading/loading";
-import "./App.scss";
+} from 'react';
+import { Route, Switch } from 'react-router-dom';
+import NavBar from './components/NavBar/NavBar';
+import Loading from './components/loading/loading';
+import './App.scss';
 import {
   useDispatch,
   // , useSelector
-} from "react-redux";
+} from 'react-redux';
 // import { ReactComponent as ChatIcon } from "./assets/Icons/chat.svg";
 import {
   modifyScrollHeightAction,
   setMessagesAction,
   // toggleChatAction,
-} from "./redux/chat/chat.actions";
-import { getTenMessages } from "./redux/chat/chat.utils";
-import { signInAnonymously } from "firebase/auth";
-import { auth } from "./utils/firebase";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { setAuthUuidAction } from "./redux/auth/auth.actions";
+} from './redux/chat/chat.actions';
+import { getTenMessages } from './redux/chat/chat.utils';
+import { signInAnonymously } from 'firebase/auth';
+import { auth } from './utils/firebase';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { setAuthUuidAction } from './redux/auth/auth.actions';
 // import Chat from "./components/Chat/Chat";
 
 const PartnerDetailsPage = lazy(
-  () => import("./page/PartnerDetailsPage/PartnerDetailsPage")
+  () => import('./page/PartnerDetailsPage/PartnerDetailsPage')
 );
 const AnswerOfQuestion = lazy(
-  () => import("./page/SupportPage/subpage/AnswerOfQuestion")
+  () => import('./page/SupportPage/subpage/AnswerOfQuestion')
 );
-const HomePage = lazy(() => import("./page/HomePage/HomePage"));
-const DownloadPage = lazy(() => import("./page/DownloadPage/DownloadPage"));
-const SupportPage = lazy(() => import("./page/SupportPage/SupportPage"));
-const PartnersPage = lazy(() => import("./page/PartnersPage/PartnersPage"));
-const ServicesPage = lazy(() => import("./page/ServicesPage/ServicesPage"));
-const NotFoundPage = lazy(() => import("./page/NotFoundPage/NotFoundPage"));
-const VideosPage = lazy(() => import("./page/VideosPage/VideosPage"));
+const HomePage = lazy(() => import('./page/HomePage/HomePage'));
+const DownloadPage = lazy(() => import('./page/DownloadPage/DownloadPage'));
+const SupportPage = lazy(() => import('./page/SupportPage/SupportPage'));
+const PartnersPage = lazy(() => import('./page/PartnersPage/PartnersPage'));
+const ServicesPage = lazy(() => import('./page/ServicesPage/ServicesPage'));
+const NotFoundPage = lazy(() => import('./page/NotFoundPage/NotFoundPage'));
+const VideosPage = lazy(() => import('./page/VideosPage/VideosPage'));
 const BusinessPartnersPage = lazy(
-  () => import("./page/BusinessPartnersPage/BusinessPartnersPage")
+  () => import('./page/BusinessPartnersPage/BusinessPartnersPage')
 );
 
 const App = (): ReactElement => {
@@ -55,7 +55,7 @@ const App = (): ReactElement => {
   useEffect(() => {
     signInAnonymously(auth)
       .then(async () => {
-        dispatch(setAuthUuidAction(auth.currentUser?.uid ?? ""));
+        dispatch(setAuthUuidAction(auth.currentUser?.uid ?? ''));
       })
       .then(async () => {
         const [messages, lastLoadedMessageDocument] = await getTenMessages();
@@ -67,7 +67,7 @@ const App = (): ReactElement => {
           )
         );
       })
-      .catch((error) => {
+      .catch(error => {
         // const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorMessage);
@@ -79,7 +79,7 @@ const App = (): ReactElement => {
   return (
     <div className="app">
       <NavBar />
-      <div className="pr-0 md:pr-32 pt-16 md:pt-0 h-full">
+      <div className=" pr-0 md:pr-32 pt-16 md:pt-0 h-full">
         <Suspense fallback={<Loading />}>
           <Switch>
             <Route exact path="/" component={HomePage} />

@@ -15,6 +15,7 @@ const PartnersPage = ({ match: { url } }: any): ReactElement => {
             {getNameAndLogoPartners().map(function ({ logo, name }, i) {
               return (
                 <motion.div
+                  key={i}
                   transition={{ duration: 0.5 }}
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
