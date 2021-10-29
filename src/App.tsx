@@ -79,7 +79,7 @@ const App = (): ReactElement => {
   return (
     <div className="app">
       <NavBar />
-      <div className=" pr-0 md:pr-32 pt-16 md:pt-0 h-full">
+      <div className="pr-0 md:pr-32 pt-16 md:pt-0 h-full">
         <Suspense fallback={<Loading />}>
           <Switch>
             <Route exact path="/" component={HomePage} />
